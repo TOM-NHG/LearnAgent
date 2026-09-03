@@ -1,0 +1,21 @@
+﻿Department_ID,Department_Name,Faculty_Name,Manager_Name,Annual_Budget,Created_Date
+DEP001,Công nghệ thông tin,Khối Công nghệ thông tin,Dũng Hoàng Vũ,18487095000,2007-05-24
+DEP002,Tài chính - Kế toán,Khối Tài chính - Kế toán,Anh Nam Dương,5735396000,2010-04-14
+DEP003,Quản trị kinh doanh,Khối Quản trị kinh doanh,Thành Đặng,14035103000,2012-11-24
+DEP004,Kinh tế,Khối Kinh tế,Khoa Mai,13293002000,2004-12-19
+DEP005,Luật,Khối Luật,Khoa Phạm,2516841000,2018-02-14
+DEP006,Ngoại ngữ,Khối Ngoại ngữ,Khoa Bùi,18190632000,2006-02-04
+DEP007,Kỹ thuật điện,Khối Kỹ thuật điện,Quang Đức Vũ,8958338000,2012-09-17
+DEP008,Kỹ thuật xây dựng,Khối Kỹ thuật xây dựng,Cô An Dương,4117786000,2012-12-25
+DEP009,Công nghệ sinh học,Khối Công nghệ sinh học,Khoa Văn Trần,19103413000,2001-12-10
+DEP010,Du lịch - Khách sạn,Khối Du lịch - Khách sạn,Cô An Nguyễn,15672032000,2013-01-30
+DEP011,Truyền thông,Khối Truyền thông,Hải Mai,5911183000,2012-09-08
+DEP012,Khoa học dữ liệu,Khối Khoa học dữ liệu,Quý Cô Linh Đặng,14271938000,2013-11-07
+DEP013,Công tác sinh viên,Khối hành chính,Bà Phương Dương,9754195000,2008-05-19
+DEP014,Đào tạo,Khối hành chính,Ông Tùng Trần,6399166000,2005-08-11
+DEP015,Khảo thí,Khối hành chính,Anh Thành Vũ,7296138000,2016-06-01
+DEP016,Cơ sở vật chất,Khối hành chính,Dương Lê,13853776000,2015-05-27
+DEP017,Nghiên cứu khoa học,Khối hành chính,Bà Hạnh Nguyễn,15670991000,2002-03-26
+DEP018,Thư viện,Khối hành chính,Hưng Phạm,2379324000,2014-01-09
+DEP019,Hợp tác quốc tế,Khối hành chính,Bảo Quang Dương,17964627000,2007-01-06
+DEP020,Hành chính - Nhân sự,Khối hành chính,Quang Dương,7604349000,2016-10-05

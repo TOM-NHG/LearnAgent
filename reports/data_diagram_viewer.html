@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent of MRP - Full 6 Tables Architecture & ERD Diagram Viewer</title>
+  <!-- Google Fonts & Mermaid CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --accent-purple: #a855f7;
+      --accent-green: #4ade80;
+      --accent-orange: #fb923c;
+      --accent-red: #f87171;
+      --accent-yellow: #facc15;
+      --border-color: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #a855f7, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent-blue);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .badge-gold {
+      background: rgba(250, 204, 21, 0.15);
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      color: var(--accent-yellow);
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-blue);
+    }
+    .note-box {
+      background: rgba(250, 204, 21, 0.08);
+      border-left: 4px solid var(--accent-yellow);
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #fef08a;
+    }
+    .mermaid-wrapper {
+      background: #090d16;
+      border-radius: 8px;
+      padding: 24px;
+      overflow-x: auto;
+      text-align: center;
+      border: 1px solid var(--border-color);
+    }
+    .img-viewer {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      gap: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    th {
+      background: rgba(255,255,255,0.05);
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+    tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .code-tag {
+      font-family: 'Fira Code', monospace;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: #38bdf8;
+    }
+    .pk { color: var(--accent-red); font-weight: bold; }
+    .fk { color: var(--accent-orange); font-weight: bold; }
+    .audit { color: var(--accent-yellow); font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Agent of MRP — Trực Quan Hóa Cấu Trúc Toàn Bộ 6 Bảng</h1>
+    <p>5 Bảng Dữ Liệu Nghiệp Vụ Vận Hành (Data Warehouse) + 1 Bảng Audit Log / Kiểm Soát Chất Lượng</p>
+    <div class="badge-bar">
+      <span class="badge">🏛️ dim_departments (20)</span>
+      <span class="badge">🎓 dim_students (1.490)</span>
+      <span class="badge">🧾 fact_tuition_invoices (2.985)</span>
+      <span class="badge">💳 fact_payments (3.500)</span>
+      <span class="badge">🏢 fact_expenses (1.985)</span>
+      <span class="badge badge-gold">📋 data_quality_manifest (1.086 - Audit Log)</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab('tab-erd-interactive')">🔍 Sơ Đồ ERD 6 Bảng Tương Tác</button>
+    <button class="tab-btn" onclick="openTab('tab-erd-static')">🖼️ Sơ Đồ ERD Ảnh Vector (PNG)</button>
+    <button class="tab-btn" onclick="openTab('tab-pipeline')">🔄 Luồng Pipeline & Feature Store</button>
+    <button class="tab-btn" onclick="openTab('tab-dictionary')">📚 Từ Điển 6 Bảng Dữ Liệu</button>
+  </div>
+
+  <!-- TAB 1: INTERACTIVE MERMAID ERD -->
+  <div id="tab-erd-interactive" class="tab-content active">
+    <div class="card">
+      <div class="card-title">Sơ Đồ ERD 6 Bảng (Toàn Diện)</div>
+      
+      <div class="note-box">
+        💡 <strong>Giải thích phân loại 6 bảng:</strong><br>
+        • <strong>5 bảng nghiệp vụ chính (Business Entities):</strong> <code>dim_departments</code>, <code>dim_students</code>, <code>fact_tuition_invoices</code>, <code>fact_payments</code>, <code>fact_expenses</code> tạo thành mô hình Star/Snowflake Schema với các quan hệ Khóa chính (PK) – Khóa ngoại (FK).<br>
+        • <strong>Bảng thứ 6 (<code>data_quality_manifest</code>):</strong> Là bảng <em>Metadata / Audit Log</em> theo dõi kiểm định chất lượng, ghi lại 1.086 sự kiện lỗi gắn với <code>Table_Name</code> và <code>Record_ID</code> của các bảng nghiệp vụ.
+      </div>
+
+      <div class="mermaid-wrapper">
+        <div class="mermaid">
+erDiagram
+    dim_departments ||--o{ dim_students : "1:N (Department_ID)"
+    dim_departments ||--o{ fact_expenses : "1:N (Department_ID)"
+    dim_students ||--o{ fact_tuition_invoices : "1:N (Student_ID)"
+    fact_tuition_invoices ||--o{ fact_payments : "1:N (Invoice_ID)"
+    dim_students ||--o{ fact_payments : "1:N (Student_ID derived)"
+
+    data_quality_manifest }o--|| dim_students : "Audit Log (Record_ID)"
+    data_quality_manifest }o--|| fact_tuition_invoices : "Audit Log (Record_ID)"
+    data_quality_manifest }o--|| fact_payments : "Audit Log (Record_ID)"
+    data_quality_manifest }o--|| fact_expenses : "Audit Log (Record_ID)"
+
+    dim_departments {
+        VARCHAR Department_ID PK "Mã khoa (DEP001..DEP020)"
+        NVARCHAR Department_Name "Tên khoa"
+        NVARCHAR Faculty_Name "Khối đào tạo"
+        NVARCHAR Manager_Name "Người quản lý"
+        BIGINT Annual_Budget "Ngân sách năm"
+        DATE Created_Date "Ngày thành lập"
+    }
+
+    dim_students {
+        VARCHAR Student_ID PK "Mã sinh viên (1.490 dòng)"
+        NVARCHAR Full_Name "Họ tên Title Case"
+        DATE Date_Of_Birth "YYYY-MM-DD"
+        ENUM Gender "Male, Female, Other"
+        VARCHAR Email "email@domain.com"
+        VARCHAR Phone "09xxxxxxxx"
+        VARCHAR Department_ID FK "Tham chiếu dim_departments"
+        NVARCHAR Major "Chuyên ngành (Imputed)"
+        DATE Enrollment_Date "YYYY-MM-DD"
+        ENUM Status "Active, Graduated, Suspended, Dropped Out"
+        DATE Dropout_Date "Ngày nghỉ học"
+    }
+
+    fact_tuition_invoices {
+        VARCHAR Invoice_ID PK "Mã hóa đơn (2.985 dòng)"
+        VARCHAR Student_ID FK "Tham chiếu dim_students"
+        ENUM Semester "HK1, HK2, HK Hè"
+        CHAR Academic_Year "2025-2026"
+        DATE Invoice_Date "YYYY-MM-DD"
+        DATE Due_Date "YYYY-MM-DD"
+        BIGINT Tuition_Fee "Học phí gốc"
+        BIGINT Scholarship_Amount "Học bổng"
+        BIGINT Late_Fee "Phí trễ hạn"
+        BIGINT Total_Amount "Học phí - Học bổng + Phí trễ"
+        ENUM Calculated_Invoice_Status "Paid, Partially Paid, Overdue, Issued"
+        BIGINT Remaining_Balance "Công nợ thực tế còn lại"
+    }
+
+    fact_payments {
+        VARCHAR Payment_ID PK "Mã giao dịch (3.500 dòng)"
+        VARCHAR Invoice_ID FK "Tham chiếu fact_tuition_invoices"
+        VARCHAR Student_ID FK "Tham chiếu dim_students"
+        DATE Payment_Date "YYYY-MM-DD"
+        ENUM Payment_Method "Bank Transfer, Cash, Card, E-Wallet"
+        BIGINT Amount_Paid "Số tiền thanh toán"
+        VARCHAR Transaction_Reference "Mã tham chiếu ngân hàng"
+        ENUM Payment_Status "Successful, Pending, Failed, Reversed"
+    }
+
+    fact_expenses {
+        VARCHAR Expense_ID PK "Mã chi phí (1.985 dòng)"
+        VARCHAR Department_ID FK "Tham chiếu dim_departments"
+        DATE Expense_Date "YYYY-MM-DD"
+        ENUM Expense_Category "Salary, Equipment, Maintenance..."
+        NVARCHAR Vendor_Name "Nhà cung cấp"
+        NVARCHAR Description "Mô tả khoản chi"
+        BIGINT Amount "Số tiền (Đã sửa lỗi x100)"
+        ENUM Approval_Status "Approved, Pending, Rejected"
+        ENUM Payment_Method "Bank Transfer, Cash, Corporate Card"
+    }
+
+    data_quality_manifest {
+        VARCHAR Table_Name "Tên bảng nghiệp vụ bị lỗi"
+        VARCHAR Record_ID "Mã bản ghi (Student_ID, Invoice_ID...)"
+        VARCHAR Error_Type "Loại lỗi (DATE, DUPLICATE, OUTLIER...)"
+        VARCHAR Column_Name "Cột bị lỗi"
+        TEXT Original_Value "Giá trị trước khi làm bẩn"
+        TEXT Corrupted_Value "Giá trị bị làm bẩn"
+        TEXT Description "Mô tả chi tiết lỗi"
+    }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: STATIC HIGH-RES ERD -->
+  <div id="tab-erd-static" class="tab-content">
+    <div class="card">
+      <div class="card-title">Sơ Đồ ERD Ảnh Độ Phân Giải Cao 6 Bảng (300 DPI)</div>
+      <p style="color: var(--text-muted); margin-bottom: 16px;">
+        File ảnh lưu tại: <span class="code-tag">reports/figures/dataset_entity_relationship_diagram.png</span>
+      </p>
+      <img src="figures/dataset_entity_relationship_diagram.png" alt="ERD Diagram 6 Tables" class="img-viewer">
+    </div>
+  </div>
+
+  <!-- TAB 3: PIPELINE & ML FEATURE STORE -->
+  <div id="tab-pipeline" class="tab-content">
+    <div class="card">
+      <div class="card-title">Kiến Trúc Pipeline Xử Lý & Feature Store Cho ML</div>
+      <div class="mermaid-wrapper">
+        <div class="mermaid">
+flowchart LR
+    subgraph RawData ["1. Dữ Liệu Gốc (6 File CSV)"]
+        R1[(dim_students)]
+        R2[(dim_departments)]
+        R3[(fact_tuition_invoices)]
+        R4[(fact_payments)]
+        R5[(fact_expenses)]
+        R6[(data_quality_manifest)]
+    end
+
+    subgraph Pipeline ["2. Automated Remediation Engine"]
+        P1[Khử Trùng Lặp 40 dòng]
+        P2[Chuẩn Hóa Ngày ISO-8601]
+        P3[Chuẩn Hóa Text & Phone]
+        P4[Khắc Phục Ngoại Lệ Chi Phí x100]
+        P5[Đối Soát Công Nợ & Status]
+    end
+
+    subgraph CleanZone ["3. Clean Data Layer (.parquet / .csv)"]
+        C1[(dim_students_clean)]
+        C2[(dim_departments_clean)]
+        C3[(fact_tuition_invoices_clean)]
+        C4[(fact_payments_clean)]
+        C5[(fact_expenses_clean)]
+    end
+
+    subgraph MLFeatureStore ["4. ML-Ready Feature Store"]
+        ML1[ml_student_finance_features<br/>• payment_completion_rate<br/>• target_is_dropped_out<br/>• target_high_debt_risk]
+        ML2[ml_invoice_risk_features<br/>• debt_ratio<br/>• is_fully_paid]
+    end
+
+    RawData --> Pipeline
+    Pipeline --> CleanZone
+    CleanZone --> MLFeatureStore
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Tối Ưu Hóa Lưu Trữ (Parquet vs CSV)</div>
+        <img src="figures/storage_optimization_comparison.png" alt="Storage Comparison" class="img-viewer">
+      </div>
+      <div class="card">
+        <div class="card-title">Phân Phối Đặc Trưng & Target ML</div>
+        <img src="figures/ml_features_and_target_distribution.png" alt="ML Distribution" class="img-viewer">
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: DATA DICTIONARY -->
+  <div id="tab-dictionary" class="tab-content">
+    <div class="card">
+      <div class="card-title">Từ Điển Toàn Bộ 6 Bảng Dữ Liệu (Data Dictionary)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên Bảng</th>
+            <th>Phân Loại</th>
+            <th>Số Dòng</th>
+            <th>Khóa Chính (PK)</th>
+            <th>Vai Trò & Chức Năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><code>dim_departments</code></td>
+            <td>Dimension Table</td>
+            <td>20</td>
+            <td><span class="pk">Department_ID</span></td>
+            <td>Danh mục khoa/phòng ban và ngân sách hoạt động</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>dim_students</code></td>
+            <td>Dimension Table</td>
+            <td>1.490</td>
+            <td><span class="pk">Student_ID</span></td>
+            <td>Danh mục hồ sơ sinh viên, chuyên ngành, trạng thái học tập</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code>fact_tuition_invoices</code></td>
+            <td>Fact Table</td>
+            <td>2.985</td>
+            <td><span class="pk">Invoice_ID</span></td>
+            <td>Hóa đơn học phí, học bổng, phí trễ hạn và công nợ</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>fact_payments</code></td>
+            <td>Fact Table</td>
+            <td>3.500</td>
+            <td><span class="pk">Payment_ID</span></td>
+            <td>Giao dịch thanh toán học phí qua ngân hàng/thẻ</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code>fact_expenses</code></td>
+            <td>Fact Table</td>
+            <td>1.985</td>
+            <td><span class="pk">Expense_ID</span></td>
+            <td>Chi phí vận hành theo khoa/phòng ban</td>
+          </tr>
+          <tr style="background: rgba(250, 204, 21, 0.05);">
+            <td>6</td>
+            <td><code>data_quality_manifest</code></td>
+            <td><span class="audit">Audit Log / Metadata</span></td>
+            <td>1.086</td>
+            <td>Composite Key</td>
+            <td>Nhật ký kiểm soát chất lượng & ghi nhận lỗi cài cắm trong data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    securityLevel: 'loose',
+    er: {
+      useMaxWidth: true,
+      diagramPadding: 20
+    }
+  });
+
+  function openTab(tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(c => c.classList.remove('active'));
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

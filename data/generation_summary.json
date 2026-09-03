@@ -1,0 +1,33 @@
+{
+  "seed": 20260828,
+  "total_rows": 10020,
+  "rows_per_table": {
+    "dim_students": 1500,
+    "dim_departments": 20,
+    "fact_tuition_invoices": 3000,
+    "fact_payments": 3500,
+    "fact_expenses": 2000
+  },
+  "manifest_events": 1086,
+  "error_events_by_type": {
+    "MIXED_DATE_FORMAT": 557,
+    "INCONSISTENT_TEXT_FORMAT": 122,
+    "MISSING_PAYMENT_DATE": 88,
+    "PAYMENT_BEFORE_INVOICE": 70,
+    "AMOUNT_PAID_EXCEEDS_INVOICE": 70,
+    "PAYMENT_AFTER_DROPOUT": 60,
+    "MISSING_MAJOR": 45,
+    "EXACT_DUPLICATE_ROW": 40,
+    "TOTAL_FORMULA_MISMATCH": 30,
+    "EXPENSE_OUTLIER_X100": 4
+  },
+  "quality_checks": {
+    "all_target_row_counts_match": true,
+    "student_duplicates_present": true,
+    "invoice_duplicates_present": true,
+    "expense_duplicates_present": true,
+    "missing_major_present": true,
+    "missing_payment_date_present": true,
+    "mixed_date_formats_present": true
+  }
+}

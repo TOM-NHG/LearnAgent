@@ -1,0 +1,4192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRP Executive Financial & Student Analytics Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #090d16;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-card-hover: rgba(51, 65, 85, 0.8);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(56, 189, 248, 0.25);
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-cyan: #06b6d4;
+            --accent-blue: #3b82f6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-purple: #8b5cf6;
+            
+            --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            --gradient-rose: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 50% 85%, rgba(244, 63, 94, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Top Header */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #fff;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .brand-title h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-title p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-emerald);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent-emerald);
+            box-shadow: 0 0 8px var(--accent-emerald);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: rgba(15, 23, 42, 0.6);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 2rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.9rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-cyan);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Tab Content */
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .kpi-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-cyan);
+            opacity: 0.7;
+        }
+
+        .kpi-card.rose::before { background: var(--accent-rose); }
+        .kpi-card.emerald::before { background: var(--accent-emerald); }
+        .kpi-card.amber::before { background: var(--accent-amber); }
+        .kpi-card.purple::before { background: var(--accent-purple); }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .kpi-title {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .kpi-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .kpi-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .kpi-sub {
+            font-size: 0.775rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .kpi-sub .badge {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .col-12 { grid-column: span 12; }
+        .col-8 { grid-column: span 8; }
+        .col-7 { grid-column: span 7; }
+        .col-6 { grid-column: span 6; }
+        .col-5 { grid-column: span 5; }
+        .col-4 { grid-column: span 4; }
+
+        .card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .card-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 320px;
+            width: 100%;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        table.custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+
+        table.custom-table th {
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 0.85rem 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table.custom-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+        }
+
+        table.custom-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Formula Modal / Drawer */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #0f172a;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(6, 182, 212, 0.2);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 850px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            animation: zoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: var(--accent-rose);
+            color: #fff;
+        }
+
+        .code-block {
+            background: #060911;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.825rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .sql-keyword { color: #f43f5e; font-weight: 600; }
+        .sql-func { color: #f59e0b; }
+        .sql-str { color: #10b981; }
+        .sql-num { color: #c084fc; }
+
+        /* Search input */
+        .search-bar {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            color: #fff;
+            font-size: 0.85rem;
+            width: 300px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        }
+
+        .badge-pill {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-danger { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+        .badge-warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-info { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+        .progress-bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+            height: 6px;
+            border-radius: 9999px;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 0.35rem;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 9999px;
+            background: var(--gradient-primary);
+        }
+
+        @media (max-width: 1024px) {
+            .col-8, .col-7, .col-6, .col-5, .col-4 { grid-column: span 12; }
+            .search-bar { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand-container">
+            <div class="brand-logo">MRP</div>
+            <div class="brand-title">
+                <h1>Executive Financial & Student Analytics</h1>
+                <p>Formula & Semantic SQL Intelligence Engine • Neo4j & AI-Agent Ready</p>
+            </div>
+        </div>
+        <div class="header-meta">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Dataset Cleaned & Verified</span>
+            </div>
+            <button class="card-action-btn" onclick="openSqlStudio('overview')">
+                🔍 SQL Formula Explorer
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('overview')">
+            📊 Tổng Quan Tài Chính (Executive Overview)
+        </button>
+        <button class="tab-btn" onclick="switchTab('departments')">
+            🏛️ Hiệu Quả Tài Chính Theo Khoa
+        </button>
+        <button class="tab-btn" onclick="switchTab('aging')">
+            ⏳ Phân Nhóm Tuổi Nợ (Debt Aging)
+        </button>
+        <button class="tab-btn" onclick="switchTab('students')">
+            🎯 Điểm Rủi Ro Sinh Viên (Risk & Dropout)
+        </button>
+        <button class="tab-btn" onclick="switchTab('quality')">
+            🛡️ Chất Lượng Dữ Liệu & Audit Log
+        </button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- TAB 1: EXECUTIVE OVERVIEW -->
+        <section id="pane-overview" class="tab-pane active">
+            <!-- KPI Cards Grid -->
+            <div class="kpi-grid">
+                <div class="kpi-card" onclick="openSqlStudio('billed')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">1. Tổng Học Phí Lập HĐ</span>
+                        <div class="kpi-icon">📜</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-billed">55.33 tỷ</div>
+                    <div class="kpi-sub">
+                        <span>2.985 Hóa đơn phát hành</span>
+                        <span class="badge badge-info">Billed Total</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card emerald" onclick="openSqlStudio('collected')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">2. Tổng Tiền Thực Thu</span>
+                        <div class="kpi-icon">💵</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-collected">37.08 tỷ</div>
+                    <div class="kpi-sub">
+                        <span>Đã thu thành công</span>
+                        <span class="badge badge-success" id="kpi-collection-rate">67.01%</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card amber" onclick="openSqlStudio('debt')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">3. Công Nợ Còn Lại</span>
+                        <div class="kpi-icon">⏳</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-debt">27.81 tỷ</div>
+                    <div class="kpi-sub">
+                        <span>Chưa thu được</span>
+                        <span class="badge badge-warning">Remaining</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card rose" onclick="openSqlStudio('overdue')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">4. Công Nợ Quá Hạn</span>
+                        <div class="kpi-icon">⚠️</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-overdue">20.09 tỷ</div>
+                    <div class="kpi-sub">
+                        <span id="kpi-overdue-ratio">72.22% tổng công nợ</span>
+                        <span class="badge badge-danger">> Due Date</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card purple" onclick="openSqlStudio('expense')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">5. Tổng Chi Phí (Approved)</span>
+                        <div class="kpi-icon">🏢</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-expense">118.60 tỷ</div>
+                    <div class="kpi-sub">
+                        <span>Đã giải ngân các khoa</span>
+                        <span class="badge badge-info">1.985 Khoản chi</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card rose" onclick="openSqlStudio('netflow')">
+                    <div class="kpi-header">
+                        <span class="kpi-title">6. Dòng Tiền Thuần</span>
+                        <div class="kpi-icon">📉</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-netflow">-81.52 tỷ</div>
+                    <div class="kpi-sub">
+                        <span>Thu học phí − Chi hoạt động</span>
+                        <span class="badge badge-danger">Net Cash Flow</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 1 -->
+            <div class="charts-grid">
+                <div class="card col-8">
+                    <div class="card-header">
+                        <h2 class="card-title">📈 Diễn Biến Thu Học Phí & Hóa Đơn Qua Các Học Kỳ</h2>
+                        <button class="card-action-btn" onclick="openSqlStudio('semester_trend')">Xem SQL Lệnh</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chartSemesterTrend"></canvas>
+                    </div>
+                </div>
+
+                <div class="card col-4">
+                    <div class="card-header">
+                        <h2 class="card-title">⏳ Cơ Cấu Phân Nhóm Tuổi Nợ</h2>
+                        <button class="card-action-btn" onclick="openSqlStudio('debt_aging')">Xem SQL Lệnh</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chartDebtAgingDonut"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 2 -->
+            <div class="charts-grid">
+                <div class="card col-6">
+                    <div class="card-header">
+                        <h2 class="card-title">💼 Cơ Cấu Chi Phí Theo Danh Mục Nghiệp Vụ</h2>
+                        <button class="card-action-btn" onclick="openSqlStudio('expense')">Xem SQL Lệnh</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chartExpenseCategory"></canvas>
+                    </div>
+                </div>
+
+                <div class="card col-6">
+                    <div class="card-header">
+                        <h2 class="card-title">💳 Kênh Thanh Toán & Tỷ Lệ Giao Dịch Thành Công</h2>
+                        <button class="card-action-btn" onclick="openSqlStudio('payments')">Xem SQL Lệnh</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chartPaymentMethods"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: DEPARTMENT PERFORMANCE -->
+        <section id="pane-departments" class="tab-pane">
+            <div class="card col-12">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">🏛️ Ma Trận Hiệu Quả Tài Chính Theo 20 Khoa/Phòng Ban</h2>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Học phí lập HĐ, Thực thu, Chi phí phê duyệt, Dòng tiền thuần và Tỷ lệ giải ngân ngân sách (Budget Burn Rate)</p>
+                    </div>
+                    <button class="card-action-btn" onclick="openSqlStudio('dept_performance')">🔍 SQL Hiệu Quả Khoa</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table" id="deptTable">
+                        <thead>
+                            <tr>
+                                <th>Khoa / Phòng Ban</th>
+                                <th>Khối Quản Lý</th>
+                                <th>SV Đang Học</th>
+                                <th>Học Phí Lập HĐ</th>
+                                <th>Thực Thu</th>
+                                <th>Tỷ Lệ Thu</th>
+                                <th>Chi Phí Đã Duyệt</th>
+                                <th>Dòng Tiền Thuần</th>
+                                <th>Giải Ngân / Ngân Sách</th>
+                            </tr>
+                        </thead>
+                        <tbody id="deptTableBody">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: DEBT AGING -->
+        <section id="pane-aging" class="tab-pane">
+            <div class="charts-grid">
+                <div class="card col-7">
+                    <div class="card-header">
+                        <h2 class="card-title">⏳ Chi Tiết Giá Trị Nợ Theo Từng Phân Nhóm Tuổi Nợ</h2>
+                        <button class="card-action-btn" onclick="openSqlStudio('debt_aging')">Xem SQL</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="chartDebtAgingBar"></canvas>
+                    </div>
+                </div>
+                <div class="card col-5">
+                    <div class="card-header">
+                        <h2 class="card-title">📋 Bảng Thống Kê Phân Nhóm Nợ</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Phân Nhóm Tuổi Nợ</th>
+                                    <th>Số HĐ</th>
+                                    <th>Tổng Nợ (VNĐ)</th>
+                                    <th>Tỷ Trọng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="agingTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: STUDENT RISK -->
+        <section id="pane-students" class="tab-pane">
+            <div class="card col-12">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">🎯 Bảng Xếp Hạng Nguy Cơ Nợ Xấu & Sinh Viên Bỏ Học</h2>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Dữ liệu từ Feature Store `ml_student_finance_features` kết hợp Composite Risk Scoring (0 - 100)</p>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <input type="text" id="studentSearch" class="search-bar" placeholder="Tìm sinh viên theo tên, MSSV, khoa..." oninput="filterStudents()">
+                        <button class="card-action-btn" onclick="openSqlStudio('student_risk')">🔍 SQL Scoring Formula</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>MSSV</th>
+                                <th>Họ Và Tên</th>
+                                <th>Khoa / Ngành</th>
+                                <th>Trạng Thái</th>
+                                <th>Tổng Nợ Chưa Thu</th>
+                                <th>Tỷ Lệ Đã Thu</th>
+                                <th>Giao Dịch Hỏng</th>
+                                <th>Điểm Rủi Ro Tổng Hợp</th>
+                                <th>Cảnh Báo ML</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: DATA QUALITY AUDIT -->
+        <section id="pane-quality" class="tab-pane">
+            <div class="card col-12">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title">🛡️ Nhật Ký Kiểm Soát Lỗi Dữ Liệu (1.086 Sự Kiện Đã Được Remediation)</h2>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Truy xuất trực tiếp từ bảng audit `data_quality_manifest` trước khi đối soát</p>
+                    </div>
+                    <button class="card-action-btn" onclick="openSqlStudio('data_quality')">🔍 SQL Audit Log</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Bảng Dữ Liệu</th>
+                                <th>Mã Loại Lỗi (Error Type)</th>
+                                <th>Cột Bị Lỗi</th>
+                                <th>Số Bản Ghi</th>
+                                <th>Mô Tả Vi Phạm</th>
+                                <th>Trạng Thái Khắc Phục</th>
+                            </tr>
+                        </thead>
+                        <tbody id="auditTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for SQL Formula Explorer -->
+    <div id="sqlModal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeSqlModal()">✕</button>
+            <div id="modalBody">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Inject Embedded Data & Dashboard Logic -->
+    <script>
+        // Load data injected from Python pipeline
+        let DASHBOARD_DATA = null;
+
+        // Fallback or Embedded JSON Load
+        const rawJsonData = /* INJECT_JSON_START */ {
+  "metadata": {
+    "as_of_date": "2026-08-30",
+    "engine": "SQLite 3.x / Python Remediation Pipeline",
+    "status": "Verified Clean & Reconciled"
+  },
+  "kpi_overview": {
+    "Total_Invoices_Count": 2985.0,
+    "Total_Billed_Tuition": 55333687000.0,
+    "Gross_Tuition_Fee": 63634110000.0,
+    "Total_Scholarship_Granted": 8889847000.0,
+    "Total_Late_Fee_Charged": 589424000.0,
+    "Total_Collected_Tuition": 37078057000.0,
+    "Total_Remaining_Debt": 27811288000.0,
+    "Collection_Rate_Pct": 67.01,
+    "Total_Overdue_Debt": 20085224000.0,
+    "Overdue_To_Debt_Ratio_Pct": 72.22,
+    "Total_Expenses_Approved": 118600667000.0,
+    "Total_Expenses_All": 352390891000.0,
+    "Net_Cash_Flow": -81522610000.0
+  },
+  "debt_aging": [
+    {
+      "Aging_Bucket": "0. Đã Tất Toán (Paid in Full)",
+      "Invoices_Count": 707,
+      "Total_Debt_In_Bucket": 0,
+      "Share_Of_Total_Debt_Pct": 0.0
+    },
+    {
+      "Aging_Bucket": "1. Trong Hạn (Current / Not Due)",
+      "Invoices_Count": 631,
+      "Total_Debt_In_Bucket": 7726064000,
+      "Share_Of_Total_Debt_Pct": 27.78
+    },
+    {
+      "Aging_Bucket": "2. Quá Hạn 1 - 30 Ngày",
+      "Invoices_Count": 27,
+      "Total_Debt_In_Bucket": 325275000,
+      "Share_Of_Total_Debt_Pct": 1.17
+    },
+    {
+      "Aging_Bucket": "3. Quá Hạn 31 - 60 Ngày",
+      "Invoices_Count": 23,
+      "Total_Debt_In_Bucket": 282029000,
+      "Share_Of_Total_Debt_Pct": 1.01
+    },
+    {
+      "Aging_Bucket": "4. Quá Hạn 61 - 90 Ngày",
+      "Invoices_Count": 32,
+      "Total_Debt_In_Bucket": 280227000,
+      "Share_Of_Total_Debt_Pct": 1.01
+    },
+    {
+      "Aging_Bucket": "5. Nợ Xấu > 90 Ngày",
+      "Invoices_Count": 1565,
+      "Total_Debt_In_Bucket": 19197693000,
+      "Share_Of_Total_Debt_Pct": 69.03
+    }
+  ],
+  "department_performance": [
+    {
+      "Department_ID": "DEP002",
+      "Department_Name": "Tài chính - Kế toán",
+      "Faculty_Name": "Khối Tài chính - Kế toán",
+      "Manager_Name": "Anh Nam Dương",
+      "Annual_Budget": 5735396000,
+      "Total_Students": 102,
+      "Active_Students": 146,
+      "Dropped_Students": 13,
+      "Billed_Tuition": 3885351000,
+      "Collected_Tuition": 2517752000,
+      "Remaining_Debt": 2039512000,
+      "Collection_Rate_Pct": 64.8,
+      "Approved_Expenses": 3217941000,
+      "Net_Cash_Flow": -700189000,
+      "Budget_Burn_Rate_Pct": 56.11,
+      "Cost_Per_Active_Student": 22040692.0
+    },
+    {
+      "Department_ID": "DEP011",
+      "Department_Name": "Truyền thông",
+      "Faculty_Name": "Khối Truyền thông",
+      "Manager_Name": "Hải Mai",
+      "Annual_Budget": 5911183000,
+      "Total_Students": 130,
+      "Active_Students": 146,
+      "Dropped_Students": 39,
+      "Billed_Tuition": 4192789000,
+      "Collected_Tuition": 3195348000,
+      "Remaining_Debt": 1902023000,
+      "Collection_Rate_Pct": 76.21,
+      "Approved_Expenses": 4897117000,
+      "Net_Cash_Flow": -1701769000,
+      "Budget_Burn_Rate_Pct": 82.84,
+      "Cost_Per_Active_Student": 33541897.0
+    },
+    {
+      "Department_ID": "DEP010",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Faculty_Name": "Khối Du lịch - Khách sạn",
+      "Manager_Name": "Cô An Nguyễn",
+      "Annual_Budget": 15672032000,
+      "Total_Students": 127,
+      "Active_Students": 180,
+      "Dropped_Students": 33,
+      "Billed_Tuition": 4517212000,
+      "Collected_Tuition": 2782929000,
+      "Remaining_Debt": 2317531000,
+      "Collection_Rate_Pct": 61.61,
+      "Approved_Expenses": 5298357000,
+      "Net_Cash_Flow": -2515428000,
+      "Budget_Burn_Rate_Pct": 33.81,
+      "Cost_Per_Active_Student": 29435317.0
+    },
+    {
+      "Department_ID": "DEP012",
+      "Department_Name": "Khoa học dữ liệu",
+      "Faculty_Name": "Khối Khoa học dữ liệu",
+      "Manager_Name": "Quý Cô Linh Đặng",
+      "Annual_Budget": 14271938000,
+      "Total_Students": 135,
+      "Active_Students": 170,
+      "Dropped_Students": 40,
+      "Billed_Tuition": 5069423000,
+      "Collected_Tuition": 3272796000,
+      "Remaining_Debt": 2618051000,
+      "Collection_Rate_Pct": 64.56,
+      "Approved_Expenses": 5956913000,
+      "Net_Cash_Flow": -2684117000,
+      "Budget_Burn_Rate_Pct": 41.74,
+      "Cost_Per_Active_Student": 35040665.0
+    },
+    {
+      "Department_ID": "DEP008",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Faculty_Name": "Khối Kỹ thuật xây dựng",
+      "Manager_Name": "Cô An Dương",
+      "Annual_Budget": 4117786000,
+      "Total_Students": 119,
+      "Active_Students": 166,
+      "Dropped_Students": 44,
+      "Billed_Tuition": 4525535000,
+      "Collected_Tuition": 3621652000,
+      "Remaining_Debt": 2024143000,
+      "Collection_Rate_Pct": 80.03,
+      "Approved_Expenses": 6448091000,
+      "Net_Cash_Flow": -2826439000,
+      "Budget_Burn_Rate_Pct": 156.59,
+      "Cost_Per_Active_Student": 38843922.0
+    },
+    {
+      "Department_ID": "DEP001",
+      "Department_Name": "Công nghệ thông tin",
+      "Faculty_Name": "Khối Công nghệ thông tin",
+      "Manager_Name": "Dũng Hoàng Vũ",
+      "Annual_Budget": 18487095000,
+      "Total_Students": 135,
+      "Active_Students": 160,
+      "Dropped_Students": 44,
+      "Billed_Tuition": 4730254000,
+      "Collected_Tuition": 3053506000,
+      "Remaining_Debt": 2479101000,
+      "Collection_Rate_Pct": 64.55,
+      "Approved_Expenses": 6160357000,
+      "Net_Cash_Flow": -3106851000,
+      "Budget_Burn_Rate_Pct": 33.32,
+      "Cost_Per_Active_Student": 38502231.0
+    },
+    {
+      "Department_ID": "DEP006",
+      "Department_Name": "Ngoại ngữ",
+      "Faculty_Name": "Khối Ngoại ngữ",
+      "Manager_Name": "Khoa Bùi",
+      "Annual_Budget": 18190632000,
+      "Total_Students": 139,
+      "Active_Students": 163,
+      "Dropped_Students": 50,
+      "Billed_Tuition": 5463789000,
+      "Collected_Tuition": 3513881000,
+      "Remaining_Debt": 2763324000,
+      "Collection_Rate_Pct": 64.31,
+      "Approved_Expenses": 6970997000,
+      "Net_Cash_Flow": -3457116000,
+      "Budget_Burn_Rate_Pct": 38.32,
+      "Cost_Per_Active_Student": 42766853.0
+    },
+    {
+      "Department_ID": "DEP004",
+      "Department_Name": "Kinh tế",
+      "Faculty_Name": "Khối Kinh tế",
+      "Manager_Name": "Khoa Mai",
+      "Annual_Budget": 13293002000,
+      "Total_Students": 143,
+      "Active_Students": 180,
+      "Dropped_Students": 39,
+      "Billed_Tuition": 5152851000,
+      "Collected_Tuition": 3473805000,
+      "Remaining_Debt": 2684856000,
+      "Collection_Rate_Pct": 67.42,
+      "Approved_Expenses": 6944608000,
+      "Net_Cash_Flow": -3470803000,
+      "Budget_Burn_Rate_Pct": 52.24,
+      "Cost_Per_Active_Student": 38581156.0
+    },
+    {
+      "Department_ID": "DEP005",
+      "Department_Name": "Luật",
+      "Faculty_Name": "Khối Luật",
+      "Manager_Name": "Khoa Phạm",
+      "Annual_Budget": 2516841000,
+      "Total_Students": 123,
+      "Active_Students": 171,
+      "Dropped_Students": 27,
+      "Billed_Tuition": 4774577000,
+      "Collected_Tuition": 3435693000,
+      "Remaining_Debt": 2269813000,
+      "Collection_Rate_Pct": 71.96,
+      "Approved_Expenses": 6920838000,
+      "Net_Cash_Flow": -3485145000,
+      "Budget_Burn_Rate_Pct": 274.98,
+      "Cost_Per_Active_Student": 40472737.0
+    },
+    {
+      "Department_ID": "DEP009",
+      "Department_Name": "Công nghệ sinh học",
+      "Faculty_Name": "Khối Công nghệ sinh học",
+      "Manager_Name": "Khoa Văn Trần",
+      "Annual_Budget": 19103413000,
+      "Total_Students": 111,
+      "Active_Students": 137,
+      "Dropped_Students": 25,
+      "Billed_Tuition": 4096559000,
+      "Collected_Tuition": 2364003000,
+      "Remaining_Debt": 2258516000,
+      "Collection_Rate_Pct": 57.71,
+      "Approved_Expenses": 6118148000,
+      "Net_Cash_Flow": -3754145000,
+      "Budget_Burn_Rate_Pct": 32.03,
+      "Cost_Per_Active_Student": 44658015.0
+    },
+    {
+      "Department_ID": "DEP013",
+      "Department_Name": "Công tác sinh viên",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Bà Phương Dương",
+      "Annual_Budget": 9754195000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 3856427000,
+      "Net_Cash_Flow": -3856427000,
+      "Budget_Burn_Rate_Pct": 39.54,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP003",
+      "Department_Name": "Quản trị kinh doanh",
+      "Faculty_Name": "Khối Quản trị kinh doanh",
+      "Manager_Name": "Thành Đặng",
+      "Annual_Budget": 14035103000,
+      "Total_Students": 115,
+      "Active_Students": 145,
+      "Dropped_Students": 36,
+      "Billed_Tuition": 4708113000,
+      "Collected_Tuition": 3018045000,
+      "Remaining_Debt": 2479982000,
+      "Collection_Rate_Pct": 64.1,
+      "Approved_Expenses": 6875070000,
+      "Net_Cash_Flow": -3857025000,
+      "Budget_Burn_Rate_Pct": 48.98,
+      "Cost_Per_Active_Student": 47414276.0
+    },
+    {
+      "Department_ID": "DEP018",
+      "Department_Name": "Thư viện",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Hưng Phạm",
+      "Annual_Budget": 2379324000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 5057999000,
+      "Net_Cash_Flow": -5057999000,
+      "Budget_Burn_Rate_Pct": 212.58,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP015",
+      "Department_Name": "Khảo thí",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Anh Thành Vũ",
+      "Annual_Budget": 7296138000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 5172039000,
+      "Net_Cash_Flow": -5172039000,
+      "Budget_Burn_Rate_Pct": 70.89,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP016",
+      "Department_Name": "Cơ sở vật chất",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Dương Lê",
+      "Annual_Budget": 13853776000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 5417567000,
+      "Net_Cash_Flow": -5417567000,
+      "Budget_Burn_Rate_Pct": 39.11,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP007",
+      "Department_Name": "Kỹ thuật điện",
+      "Faculty_Name": "Khối Kỹ thuật điện",
+      "Manager_Name": "Quang Đức Vũ",
+      "Annual_Budget": 8958338000,
+      "Total_Students": 111,
+      "Active_Students": 153,
+      "Dropped_Students": 40,
+      "Billed_Tuition": 4217234000,
+      "Collected_Tuition": 2828647000,
+      "Remaining_Debt": 1974436000,
+      "Collection_Rate_Pct": 67.07,
+      "Approved_Expenses": 8288194000,
+      "Net_Cash_Flow": -5459547000,
+      "Budget_Burn_Rate_Pct": 92.52,
+      "Cost_Per_Active_Student": 54171203.0
+    },
+    {
+      "Department_ID": "DEP020",
+      "Department_Name": "Hành chính - Nhân sự",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Quang Dương",
+      "Annual_Budget": 7604349000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 5466570000,
+      "Net_Cash_Flow": -5466570000,
+      "Budget_Burn_Rate_Pct": 71.89,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP014",
+      "Department_Name": "Đào tạo",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Ông Tùng Trần",
+      "Annual_Budget": 6399166000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 5672689000,
+      "Net_Cash_Flow": -5672689000,
+      "Budget_Burn_Rate_Pct": 88.65,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP019",
+      "Department_Name": "Hợp tác quốc tế",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Bảo Quang Dương",
+      "Annual_Budget": 17964627000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 6738286000,
+      "Net_Cash_Flow": -6738286000,
+      "Budget_Burn_Rate_Pct": 37.51,
+      "Cost_Per_Active_Student": NaN
+    },
+    {
+      "Department_ID": "DEP017",
+      "Department_Name": "Nghiên cứu khoa học",
+      "Faculty_Name": "Khối hành chính",
+      "Manager_Name": "Bà Hạnh Nguyễn",
+      "Annual_Budget": 15670991000,
+      "Total_Students": 0,
+      "Active_Students": 0,
+      "Dropped_Students": 0,
+      "Billed_Tuition": 0,
+      "Collected_Tuition": 0,
+      "Remaining_Debt": 0,
+      "Collection_Rate_Pct": NaN,
+      "Approved_Expenses": 7122459000,
+      "Net_Cash_Flow": -7122459000,
+      "Budget_Burn_Rate_Pct": 45.45,
+      "Cost_Per_Active_Student": NaN
+    }
+  ],
+  "expense_categories": [
+    {
+      "Expense_Category": "Salary",
+      "Transactions_Count": 239,
+      "Total_Amount": 142046622000,
+      "Approved_Amount": 47546544000,
+      "Pending_Amount": 40753034000,
+      "Category_Share_Pct": 40.31
+    },
+    {
+      "Expense_Category": "Research",
+      "Transactions_Count": 256,
+      "Total_Amount": 67718503000,
+      "Approved_Amount": 22250729000,
+      "Pending_Amount": 25814684000,
+      "Category_Share_Pct": 19.22
+    },
+    {
+      "Expense_Category": "Equipment",
+      "Transactions_Count": 239,
+      "Total_Amount": 48126624000,
+      "Approved_Amount": 17669537000,
+      "Pending_Amount": 15128897000,
+      "Category_Share_Pct": 13.66
+    },
+    {
+      "Expense_Category": "Scholarship",
+      "Transactions_Count": 225,
+      "Total_Amount": 34395392000,
+      "Approved_Amount": 10534174000,
+      "Pending_Amount": 12529967000,
+      "Category_Share_Pct": 9.76
+    },
+    {
+      "Expense_Category": "Marketing",
+      "Transactions_Count": 233,
+      "Total_Amount": 22848959000,
+      "Approved_Amount": 8204469000,
+      "Pending_Amount": 6811975000,
+      "Category_Share_Pct": 6.48
+    },
+    {
+      "Expense_Category": "Maintenance",
+      "Transactions_Count": 249,
+      "Total_Amount": 20044698000,
+      "Approved_Amount": 6650701000,
+      "Pending_Amount": 6459973000,
+      "Category_Share_Pct": 5.69
+    },
+    {
+      "Expense_Category": "Utilities",
+      "Transactions_Count": 266,
+      "Total_Amount": 12975582000,
+      "Approved_Amount": 4100734000,
+      "Pending_Amount": 5170072000,
+      "Category_Share_Pct": 3.68
+    },
+    {
+      "Expense_Category": "Office Supplies",
+      "Transactions_Count": 278,
+      "Total_Amount": 4234511000,
+      "Approved_Amount": 1643779000,
+      "Pending_Amount": 1271726000,
+      "Category_Share_Pct": 1.2
+    }
+  ],
+  "top_risk_students": [
+    {
+      "Student_ID": "STU000728",
+      "Full_Name": "Xuân Dương",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Chưa phân ngành",
+      "Status": "Suspended",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 68773000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 68773000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 100.0
+    },
+    {
+      "Student_ID": "STU001370",
+      "Full_Name": "Nhật Lê",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 27054000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27054000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 100.0
+    },
+    {
+      "Student_ID": "STU001148",
+      "Full_Name": "Ông Quang Phạm",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 23972000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 23972000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 100.0
+    },
+    {
+      "Student_ID": "STU000433",
+      "Full_Name": "An Hoàng",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 77070000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 77070000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000118",
+      "Full_Name": "Phương Mai Bùi",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 63260000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 63260000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU001036",
+      "Full_Name": "Tú Đặng",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 57455000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 57455000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU001053",
+      "Full_Name": "Hưng Bùi",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 40326000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 40326000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU001160",
+      "Full_Name": "Bà Nhật Bùi",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 38850000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 38850000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000114",
+      "Full_Name": "Nhiên Lê",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 37478000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 37478000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU001039",
+      "Full_Name": "Bảo Phạm",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 29014000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 29014000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000813",
+      "Full_Name": "Tùng Bùi",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Graduated",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 27614000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27614000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000102",
+      "Full_Name": "Nam Hữu Lê",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 27585000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27585000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000327",
+      "Full_Name": "Thành Thế Nguyễn",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 23369000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 23369000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000956",
+      "Full_Name": "Minh Lê",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 22065000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 22065000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000930",
+      "Full_Name": "Khoa Đặng",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Active",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 17911000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 17911000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU001300",
+      "Full_Name": "Tùng Hoàng Bùi",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 9464000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 9464000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 90.0
+    },
+    {
+      "Student_ID": "STU000994",
+      "Full_Name": "Cô Vân Mai",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Suspended",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 73536000,
+      "total_tuition_paid": 6661000,
+      "total_remaining_debt": 66875000,
+      "payment_completion_rate": 0.090581484,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 81.4
+    },
+    {
+      "Student_ID": "STU001351",
+      "Full_Name": "Quang Trần",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 27438000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27438000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 80.0
+    },
+    {
+      "Student_ID": "STU000333",
+      "Full_Name": "Tú Hữu Đặng",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Graduated",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 9019000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 9019000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 1.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 80.0
+    },
+    {
+      "Student_ID": "STU001128",
+      "Full_Name": "Nhật Đức Phạm",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 44441000,
+      "total_tuition_paid": 2830000,
+      "total_remaining_debt": 41611000,
+      "payment_completion_rate": 0.06367993,
+      "failed_payments_count": 2,
+      "payment_failure_rate": 0.6666667,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 77.5
+    },
+    {
+      "Student_ID": "STU000978",
+      "Full_Name": "Cô Lâm Bùi",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 27545000,
+      "total_tuition_paid": 8917000,
+      "total_remaining_debt": 18628000,
+      "payment_completion_rate": 0.3237248,
+      "failed_payments_count": 2,
+      "payment_failure_rate": 0.6666667,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 77.1
+    },
+    {
+      "Student_ID": "STU001345",
+      "Full_Name": "Anh Trọng Lê",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Suspended",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 39878000,
+      "total_tuition_paid": 8268000,
+      "total_remaining_debt": 31610000,
+      "payment_completion_rate": 0.20733236,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 76.7
+    },
+    {
+      "Student_ID": "STU001323",
+      "Full_Name": "Vi Trần",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 50039000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 50039000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 75.0
+    },
+    {
+      "Student_ID": "STU000624",
+      "Full_Name": "Bà Ngọc Phạm",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 36695000,
+      "total_tuition_paid": 9954000,
+      "total_remaining_debt": 26741000,
+      "payment_completion_rate": 0.27126312,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 74.1
+    },
+    {
+      "Student_ID": "STU000700",
+      "Full_Name": "Bảo Văn Dương",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 38598000,
+      "total_tuition_paid": 2418000,
+      "total_remaining_debt": 36180000,
+      "payment_completion_rate": 0.06264573,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 72.5
+    },
+    {
+      "Student_ID": "STU000843",
+      "Full_Name": "Tú Lê",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 35081000,
+      "total_tuition_paid": 11116000,
+      "total_remaining_debt": 23965000,
+      "payment_completion_rate": 0.31686667,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 72.3
+    },
+    {
+      "Student_ID": "STU000338",
+      "Full_Name": "Phúc Hoàng Đặng",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 38678000,
+      "total_tuition_paid": 7546000,
+      "total_remaining_debt": 31132000,
+      "payment_completion_rate": 0.19509798,
+      "failed_payments_count": 2,
+      "payment_failure_rate": 0.6666667,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 72.2
+    },
+    {
+      "Student_ID": "STU001215",
+      "Full_Name": "Thành Thế Đặng",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 47600000,
+      "total_tuition_paid": 3724000,
+      "total_remaining_debt": 43876000,
+      "payment_completion_rate": 0.07823529,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 71.9
+    },
+    {
+      "Student_ID": "STU000793",
+      "Full_Name": "Quý Cô Hà Nguyễn",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 85808000,
+      "total_tuition_paid": 9071000,
+      "total_remaining_debt": 76737000,
+      "payment_completion_rate": 0.10571276,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.8
+    },
+    {
+      "Student_ID": "STU001050",
+      "Full_Name": "Hải Thị Đặng",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 46202000,
+      "total_tuition_paid": 16569000,
+      "total_remaining_debt": 29633000,
+      "payment_completion_rate": 0.35862085,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.7
+    },
+    {
+      "Student_ID": "STU000926",
+      "Full_Name": "Trọng Trí Đặng",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Dropped Out",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 79756000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 79756000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000308",
+      "Full_Name": "An Đặng",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Dropped Out",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 73142000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 73142000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000749",
+      "Full_Name": "Ông Trọng Trần",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Dropped Out",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 54697000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 54697000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000447",
+      "Full_Name": "Quang Lê",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 52468000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 52468000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000660",
+      "Full_Name": "Huy Trí Lê",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 46375000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 46375000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000622",
+      "Full_Name": "Cô Linh Mai",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 43067000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 43067000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000633",
+      "Full_Name": "Anh Châu Vũ",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 36242000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 36242000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001010",
+      "Full_Name": "Nhật Xuân Đặng",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 33578000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 33578000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001225",
+      "Full_Name": "Phương Đức Vũ",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 30452000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 30452000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000026",
+      "Full_Name": "Chị Chi Mai",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 29973000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 29973000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000762",
+      "Full_Name": "Bảo Thế Vũ",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 29956000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 29956000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001276",
+      "Full_Name": "Bà Nhật Mai",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 29760000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 29760000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001484",
+      "Full_Name": "Bà Hương Hoàng",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 27828000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27828000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001364",
+      "Full_Name": "Khoa Bảo Phạm",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 27415000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 27415000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001179",
+      "Full_Name": "Linh Lê",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 26379000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 26379000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001131",
+      "Full_Name": "Nam Lê",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 26208000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 26208000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000717",
+      "Full_Name": "Huy Trần",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 24152000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 24152000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000598",
+      "Full_Name": "Hải Vũ",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 23916000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 23916000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000409",
+      "Full_Name": "Chị Vi Nguyễn",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 23889000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 23889000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001064",
+      "Full_Name": "Hưng Mai",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 21063000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 21063000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000535",
+      "Full_Name": "Hải Bùi",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 20187000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 20187000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000421",
+      "Full_Name": "Khoa Đặng",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 19297000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 19297000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000410",
+      "Full_Name": "Lan Hoàng",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 19076000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 19076000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000869",
+      "Full_Name": "Hưng Hoàng",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 19056000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 19056000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000171",
+      "Full_Name": "Kim Dương",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 18788000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 18788000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000446",
+      "Full_Name": "Anh Đặng",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 18384000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 18384000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000881",
+      "Full_Name": "Quý Cô Hà Dương",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 18357000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 18357000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000442",
+      "Full_Name": "Bác Quang Nguyễn",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 17018000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 17018000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000690",
+      "Full_Name": "Anh Trọng Mai",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 16664000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 16664000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001443",
+      "Full_Name": "Cô Hải Bùi",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 15873000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 15873000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU001165",
+      "Full_Name": "Yến Hoàng",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Suspended",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 15155000,
+      "total_tuition_paid": 0,
+      "total_remaining_debt": 15155000,
+      "payment_completion_rate": 0.0,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 70.0
+    },
+    {
+      "Student_ID": "STU000520",
+      "Full_Name": "Trung Vũ",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 50472000,
+      "total_tuition_paid": 12728000,
+      "total_remaining_debt": 37744000,
+      "payment_completion_rate": 0.2521794,
+      "failed_payments_count": 2,
+      "payment_failure_rate": 0.6666667,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 69.9
+    },
+    {
+      "Student_ID": "STU000773",
+      "Full_Name": "Hà Hải Dương",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 47220000,
+      "total_tuition_paid": 6548000,
+      "total_remaining_debt": 40672000,
+      "payment_completion_rate": 0.13867006,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 69.5
+    },
+    {
+      "Student_ID": "STU000725",
+      "Full_Name": "Khoa Bùi",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 57648000,
+      "total_tuition_paid": 8813000,
+      "total_remaining_debt": 48835000,
+      "payment_completion_rate": 0.15287608,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 68.9
+    },
+    {
+      "Student_ID": "STU000324",
+      "Full_Name": "Quý Cô Vân Trần",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 49969000,
+      "total_tuition_paid": 8186000,
+      "total_remaining_debt": 41783000,
+      "payment_completion_rate": 0.16382156,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 68.4
+    },
+    {
+      "Student_ID": "STU000864",
+      "Full_Name": "Nhiên Hoàng",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 47418000,
+      "total_tuition_paid": 8071000,
+      "total_remaining_debt": 39347000,
+      "payment_completion_rate": 0.17020963,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 68.2
+    },
+    {
+      "Student_ID": "STU001444",
+      "Full_Name": "An Trí Bùi",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Graduated",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 80622000,
+      "total_tuition_paid": 13888000,
+      "total_remaining_debt": 66734000,
+      "payment_completion_rate": 0.17226067,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 68.1
+    },
+    {
+      "Student_ID": "STU000370",
+      "Full_Name": "Ông Khoa Lê",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 36963000,
+      "total_tuition_paid": 6516000,
+      "total_remaining_debt": 30447000,
+      "payment_completion_rate": 0.17628439,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 67.9
+    },
+    {
+      "Student_ID": "STU001162",
+      "Full_Name": "Khoa Phạm",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 29935000,
+      "total_tuition_paid": 5645000,
+      "total_remaining_debt": 24290000,
+      "payment_completion_rate": 0.18857525,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 67.5
+    },
+    {
+      "Student_ID": "STU001430",
+      "Full_Name": "Vũ Mai",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 46581000,
+      "total_tuition_paid": 9122000,
+      "total_remaining_debt": 37459000,
+      "payment_completion_rate": 0.19583091,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 67.2
+    },
+    {
+      "Student_ID": "STU001260",
+      "Full_Name": "Hải Văn Hoàng",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Chưa phân ngành",
+      "Status": "Dropped Out",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 99170000,
+      "total_tuition_paid": 33040000,
+      "total_remaining_debt": 66130000,
+      "payment_completion_rate": 0.33316526,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 66.7
+    },
+    {
+      "Student_ID": "STU000137",
+      "Full_Name": "Bà Hương Trần",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 34648000,
+      "total_tuition_paid": 3419000,
+      "total_remaining_debt": 31229000,
+      "payment_completion_rate": 0.098678134,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 66.1
+    },
+    {
+      "Student_ID": "STU000025",
+      "Full_Name": "Cô Hải Hoàng",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Suspended",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 32431000,
+      "total_tuition_paid": 3431000,
+      "total_remaining_debt": 29000000,
+      "payment_completion_rate": 0.10579384,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 65.8
+    },
+    {
+      "Student_ID": "STU000868",
+      "Full_Name": "Mai Phạm",
+      "Department_Name": "Quản trị kinh doanh",
+      "Major": "Quản trị kinh doanh",
+      "Status": "Active",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 32690000,
+      "total_tuition_paid": 7544000,
+      "total_remaining_debt": 25146000,
+      "payment_completion_rate": 0.23077394,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 65.8
+    },
+    {
+      "Student_ID": "STU000276",
+      "Full_Name": "Vân Vũ",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Suspended",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 49709000,
+      "total_tuition_paid": 5793000,
+      "total_remaining_debt": 43916000,
+      "payment_completion_rate": 0.11653825,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 65.3
+    },
+    {
+      "Student_ID": "STU000726",
+      "Full_Name": "Ngọc Dương",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Suspended",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 74419000,
+      "total_tuition_paid": 8905000,
+      "total_remaining_debt": 65514000,
+      "payment_completion_rate": 0.1196603,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 65.2
+    },
+    {
+      "Student_ID": "STU000651",
+      "Full_Name": "An Trí Đặng",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Dropped Out",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 97675000,
+      "total_tuition_paid": 30569000,
+      "total_remaining_debt": 67106000,
+      "payment_completion_rate": 0.31296647,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.25,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 65.0
+    },
+    {
+      "Student_ID": "STU001327",
+      "Full_Name": "Anh Châu Nguyễn",
+      "Department_Name": "Công nghệ sinh học",
+      "Major": "Công nghệ sinh học",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 45838000,
+      "total_tuition_paid": 5853000,
+      "total_remaining_debt": 39985000,
+      "payment_completion_rate": 0.12768881,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 64.9
+    },
+    {
+      "Student_ID": "STU001178",
+      "Full_Name": "Bà Phương Nguyễn",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 26438000,
+      "total_tuition_paid": 3368000,
+      "total_remaining_debt": 23070000,
+      "payment_completion_rate": 0.1273924,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 64.9
+    },
+    {
+      "Student_ID": "STU000280",
+      "Full_Name": "Bà Nhật Mai",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 28459000,
+      "total_tuition_paid": 10823000,
+      "total_remaining_debt": 17636000,
+      "payment_completion_rate": 0.38030148,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 64.8
+    },
+    {
+      "Student_ID": "STU000525",
+      "Full_Name": "Thành Đức Đặng",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 28875000,
+      "total_tuition_paid": 3904000,
+      "total_remaining_debt": 24971000,
+      "payment_completion_rate": 0.13520347,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 64.6
+    },
+    {
+      "Student_ID": "STU000350",
+      "Full_Name": "Bảo Hữu Lê",
+      "Department_Name": "Khoa học dữ liệu",
+      "Major": "Khoa học dữ liệu",
+      "Status": "Graduated",
+      "total_invoices_count": 1,
+      "total_tuition_billed": 22821000,
+      "total_tuition_paid": 5948000,
+      "total_remaining_debt": 16873000,
+      "payment_completion_rate": 0.26063713,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 64.6
+    },
+    {
+      "Student_ID": "STU000704",
+      "Full_Name": "An Mai Bảo Phạm",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 23868000,
+      "total_tuition_paid": 3294000,
+      "total_remaining_debt": 20574000,
+      "payment_completion_rate": 0.13800906,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 64.5
+    },
+    {
+      "Student_ID": "STU001211",
+      "Full_Name": "Thành Quang Trần",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 49652000,
+      "total_tuition_paid": 7442000,
+      "total_remaining_debt": 42210000,
+      "payment_completion_rate": 0.14988318,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 64.0
+    },
+    {
+      "Student_ID": "STU000262",
+      "Full_Name": "Bà Mai Đặng",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 27677000,
+      "total_tuition_paid": 4382000,
+      "total_remaining_debt": 23295000,
+      "payment_completion_rate": 0.1583264,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 63.7
+    },
+    {
+      "Student_ID": "STU000345",
+      "Full_Name": "Nhiên Trí Đặng",
+      "Department_Name": "Tài chính - Kế toán",
+      "Major": "Tài chính - Kế toán",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 45639000,
+      "total_tuition_paid": 13182000,
+      "total_remaining_debt": 32457000,
+      "payment_completion_rate": 0.28883192,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 63.4
+    },
+    {
+      "Student_ID": "STU000323",
+      "Full_Name": "Quý Ông Châu Hoàng",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 26998000,
+      "total_tuition_paid": 4525000,
+      "total_remaining_debt": 22473000,
+      "payment_completion_rate": 0.16760501,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 63.3
+    },
+    {
+      "Student_ID": "STU000950",
+      "Full_Name": "Lan Phạm",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 35679000,
+      "total_tuition_paid": 19521000,
+      "total_remaining_debt": 16158000,
+      "payment_completion_rate": 0.54712856,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 63.1
+    },
+    {
+      "Student_ID": "STU000040",
+      "Full_Name": "Quang Vũ",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Suspended",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 31928000,
+      "total_tuition_paid": 5648000,
+      "total_remaining_debt": 26280000,
+      "payment_completion_rate": 0.17689802,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 62.9
+    },
+    {
+      "Student_ID": "STU001158",
+      "Full_Name": "Bác Trung Mai",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Graduated",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 23882000,
+      "total_tuition_paid": 7295000,
+      "total_remaining_debt": 16587000,
+      "payment_completion_rate": 0.30546018,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 62.8
+    },
+    {
+      "Student_ID": "STU000467",
+      "Full_Name": "Thành Quang Hoàng",
+      "Department_Name": "Công nghệ thông tin",
+      "Major": "Công nghệ thông tin",
+      "Status": "Active",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 73360000,
+      "total_tuition_paid": 13429000,
+      "total_remaining_debt": 59931000,
+      "payment_completion_rate": 0.18305616,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 62.7
+    },
+    {
+      "Student_ID": "STU000628",
+      "Full_Name": "Ngọc Lê",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 38217000,
+      "total_tuition_paid": 7090000,
+      "total_remaining_debt": 31127000,
+      "payment_completion_rate": 0.18551953,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 62.6
+    },
+    {
+      "Student_ID": "STU000975",
+      "Full_Name": "Quý Cô Vi Nguyễn",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Dropped Out",
+      "total_invoices_count": 4,
+      "total_tuition_billed": 86401000,
+      "total_tuition_paid": 16452000,
+      "total_remaining_debt": 69949000,
+      "payment_completion_rate": 0.19041446,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 62.4
+    },
+    {
+      "Student_ID": "STU001352",
+      "Full_Name": "Lâm Phú Vũ",
+      "Department_Name": "Ngoại ngữ",
+      "Major": "Ngoại ngữ",
+      "Status": "Dropped Out",
+      "total_invoices_count": 5,
+      "total_tuition_billed": 76201000,
+      "total_tuition_paid": 29171000,
+      "total_remaining_debt": 56050000,
+      "payment_completion_rate": 0.3828165,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.25,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 62.2
+    },
+    {
+      "Student_ID": "STU000772",
+      "Full_Name": "Lâm Phạm",
+      "Department_Name": "Kỹ thuật điện",
+      "Major": "Kỹ thuật điện",
+      "Status": "Dropped Out",
+      "total_invoices_count": 5,
+      "total_tuition_billed": 124010000,
+      "total_tuition_paid": 43012000,
+      "total_remaining_debt": 86274000,
+      "payment_completion_rate": 0.346843,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.2,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 62.1
+    },
+    {
+      "Student_ID": "STU000044",
+      "Full_Name": "Nhiên Xuân Trần",
+      "Department_Name": "Kỹ thuật xây dựng",
+      "Major": "Kỹ thuật xây dựng",
+      "Status": "Active",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 69060000,
+      "total_tuition_paid": 13597000,
+      "total_remaining_debt": 55463000,
+      "payment_completion_rate": 0.19688676,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 62.1
+    },
+    {
+      "Student_ID": "STU001483",
+      "Full_Name": "Anh Vũ Dương",
+      "Department_Name": "Luật",
+      "Major": "Luật",
+      "Status": "Graduated",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 41760000,
+      "total_tuition_paid": 13780000,
+      "total_remaining_debt": 27980000,
+      "payment_completion_rate": 0.32998085,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 61.8
+    },
+    {
+      "Student_ID": "STU000754",
+      "Full_Name": "Phương Xuân Vũ",
+      "Department_Name": "Kinh tế",
+      "Major": "Kinh tế",
+      "Status": "Graduated",
+      "total_invoices_count": 2,
+      "total_tuition_billed": 47100000,
+      "total_tuition_paid": 15905000,
+      "total_remaining_debt": 31195000,
+      "payment_completion_rate": 0.33768576,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.5,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 61.5
+    },
+    {
+      "Student_ID": "STU000298",
+      "Full_Name": "Hải Văn Mai",
+      "Department_Name": "Du lịch - Khách sạn",
+      "Major": "Du lịch - Khách sạn",
+      "Status": "Suspended",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 32050000,
+      "total_tuition_paid": 14905000,
+      "total_remaining_debt": 24647000,
+      "payment_completion_rate": 0.4650546,
+      "failed_payments_count": 1,
+      "payment_failure_rate": 0.33333334,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 1,
+      "target_is_dropped_out": 0,
+      "Composite_Risk_Score": 61.4
+    },
+    {
+      "Student_ID": "STU001383",
+      "Full_Name": "Bác Minh Vũ",
+      "Department_Name": "Truyền thông",
+      "Major": "Truyền thông",
+      "Status": "Dropped Out",
+      "total_invoices_count": 3,
+      "total_tuition_billed": 64369000,
+      "total_tuition_paid": 14079000,
+      "total_remaining_debt": 50290000,
+      "payment_completion_rate": 0.2187233,
+      "failed_payments_count": 0,
+      "payment_failure_rate": 0.0,
+      "has_overdue_debt": 1,
+      "target_high_debt_risk": 0,
+      "target_is_dropped_out": 1,
+      "Composite_Risk_Score": 61.3
+    }
+  ],
+  "data_quality_audit": [
+    {
+      "Table_Name": "fact_payments",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Payment_Date",
+      "Total_Corrupted_Records": 123,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "fact_tuition_invoices",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Due_Date",
+      "Total_Corrupted_Records": 104,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "fact_tuition_invoices",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Invoice_Date",
+      "Total_Corrupted_Records": 104,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "fact_payments",
+      "Error_Type": "MISSING_PAYMENT_DATE",
+      "Column_Name": "Payment_Date",
+      "Total_Corrupted_Records": 88,
+      "Sample_Description": "Giao dịch tồn tại nhưng ngày thanh toán bị null."
+    },
+    {
+      "Table_Name": "fact_payments",
+      "Error_Type": "AMOUNT_PAID_EXCEEDS_INVOICE",
+      "Column_Name": "Amount_Paid",
+      "Total_Corrupted_Records": 70,
+      "Sample_Description": "Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn."
+    },
+    {
+      "Table_Name": "fact_payments",
+      "Error_Type": "PAYMENT_BEFORE_INVOICE",
+      "Column_Name": "Payment_Date",
+      "Total_Corrupted_Records": 70,
+      "Sample_Description": "Ngày đóng tiền sớm hơn ngày tạo hóa đơn."
+    },
+    {
+      "Table_Name": "fact_expenses",
+      "Error_Type": "INCONSISTENT_TEXT_FORMAT",
+      "Column_Name": "Vendor_Name",
+      "Total_Corrupted_Records": 69,
+      "Sample_Description": "Chuỗi bị biến đổi kiểu lower."
+    },
+    {
+      "Table_Name": "fact_expenses",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Expense_Date",
+      "Total_Corrupted_Records": 69,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "fact_payments",
+      "Error_Type": "PAYMENT_AFTER_DROPOUT",
+      "Column_Name": "Payment_Date",
+      "Total_Corrupted_Records": 60,
+      "Sample_Description": "Sinh viên STU000041 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "INCONSISTENT_TEXT_FORMAT",
+      "Column_Name": "Full_Name",
+      "Total_Corrupted_Records": 52,
+      "Sample_Description": "Chuỗi bị biến đổi kiểu lower."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Date_Of_Birth",
+      "Total_Corrupted_Records": 52,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Dropout_Date",
+      "Total_Corrupted_Records": 52,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Enrollment_Date",
+      "Total_Corrupted_Records": 52,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "MISSING_MAJOR",
+      "Column_Name": "Major",
+      "Total_Corrupted_Records": 45,
+      "Sample_Description": "Sinh viên thiếu thông tin chuyên ngành."
+    },
+    {
+      "Table_Name": "fact_tuition_invoices",
+      "Error_Type": "TOTAL_FORMULA_MISMATCH",
+      "Column_Name": "Total_Amount",
+      "Total_Corrupted_Records": 30,
+      "Sample_Description": "Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee."
+    },
+    {
+      "Table_Name": "fact_expenses",
+      "Error_Type": "EXACT_DUPLICATE_ROW",
+      "Column_Name": "ALL_COLUMNS",
+      "Total_Corrupted_Records": 15,
+      "Sample_Description": "Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+    },
+    {
+      "Table_Name": "fact_tuition_invoices",
+      "Error_Type": "EXACT_DUPLICATE_ROW",
+      "Column_Name": "ALL_COLUMNS",
+      "Total_Corrupted_Records": 15,
+      "Sample_Description": "Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+    },
+    {
+      "Table_Name": "dim_students",
+      "Error_Type": "EXACT_DUPLICATE_ROW",
+      "Column_Name": "ALL_COLUMNS",
+      "Total_Corrupted_Records": 10,
+      "Sample_Description": "Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+    },
+    {
+      "Table_Name": "fact_expenses",
+      "Error_Type": "EXPENSE_OUTLIER_X100",
+      "Column_Name": "Amount",
+      "Total_Corrupted_Records": 4,
+      "Sample_Description": "Khoản chi của DEP004 bị nhân 100 lần do lỗi nhập liệu."
+    },
+    {
+      "Table_Name": "dim_departments",
+      "Error_Type": "INCONSISTENT_TEXT_FORMAT",
+      "Column_Name": "Manager_Name",
+      "Total_Corrupted_Records": 1,
+      "Sample_Description": "Chuỗi bị biến đổi kiểu spaces."
+    },
+    {
+      "Table_Name": "dim_departments",
+      "Error_Type": "MIXED_DATE_FORMAT",
+      "Column_Name": "Created_Date",
+      "Total_Corrupted_Records": 1,
+      "Sample_Description": "Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD."
+    }
+  ],
+  "semester_trends": [
+    {
+      "Academic_Year": "2019-2020",
+      "Semester": "HK Hè",
+      "Invoices_Count": 4,
+      "Total_Billed": 73721000,
+      "Total_Collected": 11058000,
+      "Total_Unpaid": 62663000,
+      "Collection_Rate_Pct": 15.0
+    },
+    {
+      "Academic_Year": "2019-2020",
+      "Semester": "HK1",
+      "Invoices_Count": 4,
+      "Total_Billed": 83358000,
+      "Total_Collected": 11680000,
+      "Total_Unpaid": 71678000,
+      "Collection_Rate_Pct": 14.01
+    },
+    {
+      "Academic_Year": "2019-2020",
+      "Semester": "HK2",
+      "Invoices_Count": 6,
+      "Total_Billed": 123367000,
+      "Total_Collected": 37288000,
+      "Total_Unpaid": 88332000,
+      "Collection_Rate_Pct": 30.23
+    },
+    {
+      "Academic_Year": "2020-2021",
+      "Semester": "HK Hè",
+      "Invoices_Count": 28,
+      "Total_Billed": 528827000,
+      "Total_Collected": 418985000,
+      "Total_Unpaid": 249022000,
+      "Collection_Rate_Pct": 79.23
+    },
+    {
+      "Academic_Year": "2020-2021",
+      "Semester": "HK1",
+      "Invoices_Count": 34,
+      "Total_Billed": 578502000,
+      "Total_Collected": 385310000,
+      "Total_Unpaid": 277716000,
+      "Collection_Rate_Pct": 66.6
+    },
+    {
+      "Academic_Year": "2020-2021",
+      "Semester": "HK2",
+      "Invoices_Count": 23,
+      "Total_Billed": 458168000,
+      "Total_Collected": 180694000,
+      "Total_Unpaid": 286877000,
+      "Collection_Rate_Pct": 39.44
+    },
+    {
+      "Academic_Year": "2021-2022",
+      "Semester": "HK Hè",
+      "Invoices_Count": 63,
+      "Total_Billed": 1156692000,
+      "Total_Collected": 688273000,
+      "Total_Unpaid": 621189000,
+      "Collection_Rate_Pct": 59.5
+    },
+    {
+      "Academic_Year": "2021-2022",
+      "Semester": "HK1",
+      "Invoices_Count": 74,
+      "Total_Billed": 1343595000,
+      "Total_Collected": 958447000,
+      "Total_Unpaid": 643771000,
+      "Collection_Rate_Pct": 71.33
+    },
+    {
+      "Academic_Year": "2021-2022",
+      "Semester": "HK2",
+      "Invoices_Count": 67,
+      "Total_Billed": 1320165000,
+      "Total_Collected": 844812000,
+      "Total_Unpaid": 667114000,
+      "Collection_Rate_Pct": 63.99
+    },
+    {
+      "Academic_Year": "2022-2023",
+      "Semester": "HK Hè",
+      "Invoices_Count": 106,
+      "Total_Billed": 2040667000,
+      "Total_Collected": 1471702000,
+      "Total_Unpaid": 964545000,
+      "Collection_Rate_Pct": 72.12
+    },
+    {
+      "Academic_Year": "2022-2023",
+      "Semester": "HK1",
+      "Invoices_Count": 100,
+      "Total_Billed": 2035802000,
+      "Total_Collected": 1319764000,
+      "Total_Unpaid": 1096239000,
+      "Collection_Rate_Pct": 64.83
+    },
+    {
+      "Academic_Year": "2022-2023",
+      "Semester": "HK2",
+      "Invoices_Count": 102,
+      "Total_Billed": 1839633000,
+      "Total_Collected": 1363414000,
+      "Total_Unpaid": 918739000,
+      "Collection_Rate_Pct": 74.11
+    },
+    {
+      "Academic_Year": "2023-2024",
+      "Semester": "HK Hè",
+      "Invoices_Count": 124,
+      "Total_Billed": 2186222000,
+      "Total_Collected": 1674817000,
+      "Total_Unpaid": 991053000,
+      "Collection_Rate_Pct": 76.61
+    },
+    {
+      "Academic_Year": "2023-2024",
+      "Semester": "HK1",
+      "Invoices_Count": 125,
+      "Total_Billed": 2463605000,
+      "Total_Collected": 1288499000,
+      "Total_Unpaid": 1429755000,
+      "Collection_Rate_Pct": 52.3
+    },
+    {
+      "Academic_Year": "2023-2024",
+      "Semester": "HK2",
+      "Invoices_Count": 117,
+      "Total_Billed": 2112676000,
+      "Total_Collected": 1408341000,
+      "Total_Unpaid": 1121834000,
+      "Collection_Rate_Pct": 66.66
+    },
+    {
+      "Academic_Year": "2024-2025",
+      "Semester": "HK Hè",
+      "Invoices_Count": 149,
+      "Total_Billed": 2704414000,
+      "Total_Collected": 1610269000,
+      "Total_Unpaid": 1444500000,
+      "Collection_Rate_Pct": 59.54
+    },
+    {
+      "Academic_Year": "2024-2025",
+      "Semester": "HK1",
+      "Invoices_Count": 159,
+      "Total_Billed": 2970801000,
+      "Total_Collected": 2198462000,
+      "Total_Unpaid": 1412144000,
+      "Collection_Rate_Pct": 74.0
+    },
+    {
+      "Academic_Year": "2024-2025",
+      "Semester": "HK2",
+      "Invoices_Count": 136,
+      "Total_Billed": 2441420000,
+      "Total_Collected": 1684950000,
+      "Total_Unpaid": 1193840000,
+      "Collection_Rate_Pct": 69.02
+    },
+    {
+      "Academic_Year": "2025-2026",
+      "Semester": "HK Hè",
+      "Invoices_Count": 175,
+      "Total_Billed": 3256389000,
+      "Total_Collected": 2488055000,
+      "Total_Unpaid": 1448368000,
+      "Collection_Rate_Pct": 76.41
+    },
+    {
+      "Academic_Year": "2025-2026",
+      "Semester": "HK1",
+      "Invoices_Count": 157,
+      "Total_Billed": 2852304000,
+      "Total_Collected": 2059867000,
+      "Total_Unpaid": 1320412000,
+      "Collection_Rate_Pct": 72.22
+    },
+    {
+      "Academic_Year": "2025-2026",
+      "Semester": "HK2",
+      "Invoices_Count": 158,
+      "Total_Billed": 2856815000,
+      "Total_Collected": 1934688000,
+      "Total_Unpaid": 1350357000,
+      "Collection_Rate_Pct": 67.72
+    },
+    {
+      "Academic_Year": "2026-2027",
+      "Semester": "HK Hè",
+      "Invoices_Count": 144,
+      "Total_Billed": 2666978000,
+      "Total_Collected": 1752369000,
+      "Total_Unpaid": 1333948000,
+      "Collection_Rate_Pct": 65.71
+    },
+    {
+      "Academic_Year": "2026-2027",
+      "Semester": "HK1",
+      "Invoices_Count": 133,
+      "Total_Billed": 2302637000,
+      "Total_Collected": 1343717000,
+      "Total_Unpaid": 1209496000,
+      "Collection_Rate_Pct": 58.36
+    },
+    {
+      "Academic_Year": "2026-2027",
+      "Semester": "HK2",
+      "Invoices_Count": 163,
+      "Total_Billed": 3106116000,
+      "Total_Collected": 1883876000,
+      "Total_Unpaid": 1636320000,
+      "Collection_Rate_Pct": 60.65
+    },
+    {
+      "Academic_Year": "2027-2028",
+      "Semester": "HK Hè",
+      "Invoices_Count": 120,
+      "Total_Billed": 2273413000,
+      "Total_Collected": 1637777000,
+      "Total_Unpaid": 1201798000,
+      "Collection_Rate_Pct": 72.04
+    },
+    {
+      "Academic_Year": "2027-2028",
+      "Semester": "HK1",
+      "Invoices_Count": 103,
+      "Total_Billed": 1943121000,
+      "Total_Collected": 1362884000,
+      "Total_Unpaid": 1004196000,
+      "Collection_Rate_Pct": 70.14
+    },
+    {
+      "Academic_Year": "2027-2028",
+      "Semester": "HK2",
+      "Invoices_Count": 110,
+      "Total_Billed": 2028360000,
+      "Total_Collected": 1265658000,
+      "Total_Unpaid": 1071281000,
+      "Collection_Rate_Pct": 62.4
+    },
+    {
+      "Academic_Year": "2028-2029",
+      "Semester": "HK Hè",
+      "Invoices_Count": 50,
+      "Total_Billed": 926349000,
+      "Total_Collected": 583407000,
+      "Total_Unpaid": 450170000,
+      "Collection_Rate_Pct": 62.98
+    },
+    {
+      "Academic_Year": "2028-2029",
+      "Semester": "HK1",
+      "Invoices_Count": 72,
+      "Total_Billed": 1291753000,
+      "Total_Collected": 602892000,
+      "Total_Unpaid": 762001000,
+      "Collection_Rate_Pct": 46.67
+    },
+    {
+      "Academic_Year": "2028-2029",
+      "Semester": "HK2",
+      "Invoices_Count": 62,
+      "Total_Billed": 1108754000,
+      "Total_Collected": 774909000,
+      "Total_Unpaid": 569374000,
+      "Collection_Rate_Pct": 69.89
+    },
+    {
+      "Academic_Year": "2029-2030",
+      "Semester": "HK Hè",
+      "Invoices_Count": 34,
+      "Total_Billed": 680685000,
+      "Total_Collected": 430180000,
+      "Total_Unpaid": 324981000,
+      "Collection_Rate_Pct": 63.2
+    },
+    {
+      "Academic_Year": "2029-2030",
+      "Semester": "HK1",
+      "Invoices_Count": 35,
+      "Total_Billed": 656807000,
+      "Total_Collected": 530657000,
+      "Total_Unpaid": 257963000,
+      "Collection_Rate_Pct": 80.79
+    },
+    {
+      "Academic_Year": "2029-2030",
+      "Semester": "HK2",
+      "Invoices_Count": 29,
+      "Total_Billed": 538069000,
+      "Total_Collected": 457965000,
+      "Total_Unpaid": 212570000,
+      "Collection_Rate_Pct": 85.11
+    },
+    {
+      "Academic_Year": "2030-2031",
+      "Semester": "HK Hè",
+      "Invoices_Count": 8,
+      "Total_Billed": 139049000,
+      "Total_Collected": 111715000,
+      "Total_Unpaid": 58737000,
+      "Collection_Rate_Pct": 80.34
+    },
+    {
+      "Academic_Year": "2030-2031",
+      "Semester": "HK1",
+      "Invoices_Count": 3,
+      "Total_Billed": 55874000,
+      "Total_Collected": 20085000,
+      "Total_Unpaid": 38765000,
+      "Collection_Rate_Pct": 35.95
+    },
+    {
+      "Academic_Year": "2030-2031",
+      "Semester": "HK2",
+      "Invoices_Count": 8,
+      "Total_Billed": 188579000,
+      "Total_Collected": 280591000,
+      "Total_Unpaid": 19540000,
+      "Collection_Rate_Pct": 148.79
+    }
+  ],
+  "payment_methods": [
+    {
+      "Payment_Method": "Bank Transfer",
+      "Payment_Status": "Successful",
+      "Transactions_Count": 776,
+      "Total_Amount": 9361643000
+    },
+    {
+      "Payment_Method": "Bank Transfer",
+      "Payment_Status": "Pending",
+      "Transactions_Count": 45,
+      "Total_Amount": 604652000
+    },
+    {
+      "Payment_Method": "Bank Transfer",
+      "Payment_Status": "Failed",
+      "Transactions_Count": 46,
+      "Total_Amount": 565517000
+    },
+    {
+      "Payment_Method": "Bank Transfer",
+      "Payment_Status": "Reversed",
+      "Transactions_Count": 25,
+      "Total_Amount": 278105000
+    },
+    {
+      "Payment_Method": "Card",
+      "Payment_Status": "Successful",
+      "Transactions_Count": 748,
+      "Total_Amount": 9110987000
+    },
+    {
+      "Payment_Method": "Card",
+      "Payment_Status": "Failed",
+      "Transactions_Count": 51,
+      "Total_Amount": 644576000
+    },
+    {
+      "Payment_Method": "Card",
+      "Payment_Status": "Pending",
+      "Transactions_Count": 45,
+      "Total_Amount": 638531000
+    },
+    {
+      "Payment_Method": "Card",
+      "Payment_Status": "Reversed",
+      "Transactions_Count": 21,
+      "Total_Amount": 306495000
+    },
+    {
+      "Payment_Method": "Cash",
+      "Payment_Status": "Successful",
+      "Transactions_Count": 731,
+      "Total_Amount": 9211987000
+    },
+    {
+      "Payment_Method": "Cash",
+      "Payment_Status": "Failed",
+      "Transactions_Count": 58,
+      "Total_Amount": 676660000
+    },
+    {
+      "Payment_Method": "Cash",
+      "Payment_Status": "Pending",
+      "Transactions_Count": 50,
+      "Total_Amount": 536884000
+    },
+    {
+      "Payment_Method": "Cash",
+      "Payment_Status": "Reversed",
+      "Transactions_Count": 24,
+      "Total_Amount": 296663000
+    },
+    {
+      "Payment_Method": "E-Wallet",
+      "Payment_Status": "Successful",
+      "Transactions_Count": 755,
+      "Total_Amount": 9393440000
+    },
+    {
+      "Payment_Method": "E-Wallet",
+      "Payment_Status": "Failed",
+      "Transactions_Count": 56,
+      "Total_Amount": 822284000
+    },
+    {
+      "Payment_Method": "E-Wallet",
+      "Payment_Status": "Pending",
+      "Transactions_Count": 47,
+      "Total_Amount": 600842000
+    },
+    {
+      "Payment_Method": "E-Wallet",
+      "Payment_Status": "Reversed",
+      "Transactions_Count": 22,
+      "Total_Amount": 320876000
+    }
+  ]
+} /* INJECT_JSON_END */
+
+        // SQL Definitions and Explanations Dictionary
+        const SQL_FORMULA_DOCS = {
+            overview: {
+                title: "1. Tổng Hợp KPI Tài Chính Toàn Trường",
+                math: "Total_Billed = SUM(Tuition_Fee - Scholarship_Amount + Late_Fee)<br>Total_Collected = SUM(Amount_Paid WHERE Payment_Status = 'Successful')<br>Remaining_Debt = MAX(0, Total_Billed - Total_Collected)",
+                sql: `WITH PaymentSummary AS (
+    SELECT 
+        Invoice_ID,
+        SUM(CASE WHEN Payment_Status = 'Successful' THEN Amount_Paid ELSE 0 END) AS Paid_Amount
+    FROM fact_payments
+    GROUP BY Invoice_ID
+),
+InvoiceDetail AS (
+    SELECT 
+        i.Invoice_ID,
+        (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) AS Net_Invoice_Amount,
+        COALESCE(p.Paid_Amount, 0) AS Total_Paid,
+        MAX(0, (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) - COALESCE(p.Paid_Amount, 0)) AS Remaining_Debt,
+        CASE 
+            WHEN MAX(0, (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) - COALESCE(p.Paid_Amount, 0)) > 0 
+                 AND DATE('2026-08-30') > DATE(i.Due_Date)
+            THEN MAX(0, (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) - COALESCE(p.Paid_Amount, 0))
+            ELSE 0 
+        END AS Overdue_Debt
+    FROM fact_tuition_invoices i
+    LEFT JOIN PaymentSummary p ON i.Invoice_ID = p.Invoice_ID
+)
+SELECT 
+    COUNT(Invoice_ID) AS Total_Invoices,
+    SUM(Net_Invoice_Amount) AS Total_Billed_Tuition,
+    SUM(Total_Paid) AS Total_Collected_Tuition,
+    SUM(Remaining_Debt) AS Total_Remaining_Debt,
+    ROUND(SUM(Total_Paid) * 100.0 / SUM(Net_Invoice_Amount), 2) AS Collection_Rate_Pct,
+    SUM(Overdue_Debt) AS Total_Overdue_Debt
+FROM InvoiceDetail;`,
+                explanation: "Sử dụng CTE `PaymentSummary` để đối soát số tiền thanh toán thực tế thành công (`Successful`), sau đó `LEFT JOIN` với bảng hóa đơn để tính bù trừ học bổng, phí trễ hạn và công nợ tồn đọng."
+            },
+            debt_aging: {
+                title: "2. Phân Nhóm Tuổi Nợ (Debt Aging Buckets)",
+                math: "Days_Overdue = JULIANDAY('2026-08-30') - JULIANDAY(Due_Date)",
+                sql: `WITH InvoiceDebt AS (
+    SELECT 
+        i.Invoice_ID,
+        i.Due_Date,
+        (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) AS Net_Invoice_Amount,
+        COALESCE(SUM(CASE WHEN p.Payment_Status = 'Successful' THEN p.Amount_Paid ELSE 0 END), 0) AS Total_Paid,
+        MAX(0, (i.Tuition_Fee - i.Scholarship_Amount + i.Late_Fee) - COALESCE(SUM(CASE WHEN p.Payment_Status = 'Successful' THEN p.Amount_Paid ELSE 0 END), 0)) AS Debt_Amount,
+        CAST(JULIANDAY('2026-08-30') - JULIANDAY(i.Due_Date) AS INTEGER) AS Days_Overdue
+    FROM fact_tuition_invoices i
+    LEFT JOIN fact_payments p ON i.Invoice_ID = p.Invoice_ID
+    GROUP BY i.Invoice_ID
+)
+SELECT 
+    CASE 
+        WHEN Debt_Amount = 0 THEN '0. Đã Tất Toán'
+        WHEN Days_Overdue <= 0 THEN '1. Trong Hạn'
+        WHEN Days_Overdue BETWEEN 1 AND 30 THEN '2. Quá Hạn 1 - 30 Ngày'
+        WHEN Days_Overdue BETWEEN 31 AND 60 THEN '3. Quá Hạn 31 - 60 Ngày'
+        WHEN Days_Overdue BETWEEN 61 AND 90 THEN '4. Quá Hạn 61 - 90 Ngày'
+        ELSE '5. Nợ Xấu > 90 Ngày'
+    END AS Aging_Bucket,
+    COUNT(Invoice_ID) AS Invoices_Count,
+    SUM(Debt_Amount) AS Total_Debt_In_Bucket
+FROM InvoiceDebt
+GROUP BY Aging_Bucket
+ORDER BY Aging_Bucket;`,
+                explanation: "Sử dụng hàm ngày `JULIANDAY` để tính số ngày trễ hạn so với mốc phân tích và phân loại vào 6 nhóm tuổi nợ tài chính chuẩn."
+            },
+            dept_performance: {
+                title: "3. Hiệu Quả Tài Chính & Ngân Sách Theo Khoa",
+                math: "Net_Cash_Flow = Collected_Tuition - Approved_Expenses<br>Budget_Burn_Rate = (Approved_Expenses / Annual_Budget) * 100%",
+                sql: `WITH DeptTuition AS (
+    SELECT 
+        s.Department_ID,
+        COUNT(DISTINCT s.Student_ID) AS Total_Students,
+        SUM(i.Total_Amount) AS Dept_Billed_Tuition,
+        SUM(i.Total_Paid_Successful) AS Dept_Collected_Tuition,
+        SUM(i.Remaining_Balance) AS Dept_Remaining_Debt
+    FROM dim_students s
+    LEFT JOIN fact_tuition_invoices i ON s.Student_ID = i.Student_ID
+    GROUP BY s.Department_ID
+),
+DeptExpenses AS (
+    SELECT 
+        Department_ID,
+        SUM(CASE WHEN Approval_Status = 'Approved' THEN Amount ELSE 0 END) AS Approved_Expenses
+    FROM fact_expenses
+    GROUP BY Department_ID
+)
+SELECT 
+    d.Department_ID,
+    d.Department_Name,
+    d.Annual_Budget,
+    t.Dept_Billed_Tuition,
+    t.Dept_Collected_Tuition,
+    e.Approved_Expenses,
+    (t.Dept_Collected_Tuition - e.Approved_Expenses) AS Net_Cash_Flow,
+    ROUND(e.Approved_Expenses * 100.0 / d.Annual_Budget, 2) AS Budget_Burn_Rate_Pct
+FROM dim_departments d
+LEFT JOIN DeptTuition t ON d.Department_ID = t.Department_ID
+LEFT JOIN DeptExpenses e ON d.Department_ID = e.Department_ID;`,
+                explanation: "Tổng hợp 2 chiều: (1) Doanh thu học phí từ sinh viên thuộc khoa và (2) Chi phí hoạt động đã duyệt của khoa để đánh giá dòng tiền thuần và tỷ lệ sử dụng ngân sách."
+            },
+            student_risk: {
+                title: "4. Điểm Rủi Ro Tổng Hợp Sinh Viên (Composite Risk Score)",
+                math: "Risk_Score = (1 - Payment_Rate)*40 + Failure_Rate*30 + Debt_Penalty*20 + Status_Penalty*10",
+                sql: `SELECT 
+    s.Student_ID,
+    s.Full_Name,
+    d.Department_Name,
+    m.total_remaining_debt,
+    m.payment_completion_rate,
+    m.payment_failure_rate,
+    ROUND(
+        (1.0 - m.payment_completion_rate) * 40.0 +
+        m.payment_failure_rate * 30.0 +
+        (CASE WHEN m.total_remaining_debt > 15000000 THEN 20.0 WHEN m.total_remaining_debt > 0 THEN 10.0 ELSE 0.0 END) +
+        (CASE WHEN s.Status = 'Suspended' THEN 10.0 WHEN s.Status = 'Dropped Out' THEN 10.0 ELSE 0.0 END),
+        1
+    ) AS Composite_Risk_Score
+FROM ml_student_features m
+JOIN dim_students s ON m.Student_ID = s.Student_ID
+JOIN dim_departments d ON s.Department_ID = d.Department_ID
+ORDER BY Composite_Risk_Score DESC;`,
+                explanation: "Trọng số chuẩn hóa từ 0-100 kết hợp tỷ lệ chưa nộp tiền, tần suất giao dịch thẻ/chuyển khoản bị fail, quy mô công nợ vượt 15 triệu VNĐ và cờ cảnh báo trạng thái."
+            }
+        };
+
+        // Format Currency Helper
+        function formatVND(val) {
+            if (val === null || val === undefined) return '0 ₫';
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND', maximumFractionDigits: 0 }).format(val);
+        }
+
+        function formatBillion(val) {
+            if (val === null || val === undefined) return '0 tỷ';
+            return (val / 1e9).toFixed(2) + ' tỷ';
+        }
+
+        // Tab Switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            const targetPane = document.getElementById('pane-' + tabId);
+            if (targetPane) targetPane.classList.add('active');
+        }
+
+        // SQL Modal Drawer
+        function openSqlStudio(key) {
+            const doc = SQL_FORMULA_DOCS[key] || SQL_FORMULA_DOCS['overview'];
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <h2 style="font-family: 'Outfit'; color: #fff; font-size: 1.4rem; margin-bottom: 0.5rem;">${doc.title}</h2>
+                <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 8px; padding: 0.75rem 1rem; color: #38bdf8; font-size: 0.85rem; margin-bottom: 1rem;">
+                    <strong>📐 Công thức Toán / Nghiệp vụ:</strong><br>
+                    <code>${doc.math}</code>
+                </div>
+                <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Lệnh SQL Chuẩn (Standard ANSI / SQLite Engine):</h4>
+                <div class="code-block">${doc.sql.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+                <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid #10b981; padding: 0.75rem 1rem; border-radius: 4px; color: #cbd5e1; font-size: 0.85rem;">
+                    <strong>💡 Ý nghĩa & Giải thích cú pháp:</strong><br>
+                    ${doc.explanation}
+                </div>
+            `;
+            
+            document.getElementById('sqlModal').classList.add('active');
+        }
+
+        function closeSqlModal() {
+            document.getElementById('sqlModal').classList.remove('active');
+        }
+
+        function closeModalOnOuterClick(e) {
+            if (e.target.id === 'sqlModal') closeSqlModal();
+        }
+
+        // Fetch / Load Full Dataset and Render
+        async function initDashboard() {
+            try {
+                const response = await fetch('dashboard_data.json');
+                DASHBOARD_DATA = await response.json();
+            } catch (err) {
+                console.log("Loading embedded dataset fallback...");
+                DASHBOARD_DATA = rawJsonData;
+            }
+
+            renderOverviewMetrics();
+            renderCharts();
+            renderDepartmentTable();
+            renderAgingTable();
+            renderStudentTable();
+            renderAuditTable();
+        }
+
+        function renderOverviewMetrics() {
+            if (!DASHBOARD_DATA || !DASHBOARD_DATA.kpi_overview) return;
+            const k = DASHBOARD_DATA.kpi_overview;
+            
+            document.getElementById('kpi-billed').textContent = formatBillion(k.Total_Billed_Tuition);
+            document.getElementById('kpi-collected').textContent = formatBillion(k.Total_Collected_Tuition);
+            document.getElementById('kpi-collection-rate').textContent = k.Collection_Rate_Pct + '%';
+            document.getElementById('kpi-debt').textContent = formatBillion(k.Total_Remaining_Debt);
+            document.getElementById('kpi-overdue').textContent = formatBillion(k.Total_Overdue_Debt);
+            document.getElementById('kpi-overdue-ratio').textContent = k.Overdue_To_Debt_Ratio_Pct + '% tổng công nợ';
+            document.getElementById('kpi-expense').textContent = formatBillion(k.Total_Expenses_Approved);
+            document.getElementById('kpi-netflow').textContent = formatBillion(k.Net_Cash_Flow);
+        }
+
+        function renderCharts() {
+            if (!DASHBOARD_DATA) return;
+
+            // Chart 1: Semester Trend
+            if (DASHBOARD_DATA.semester_trends) {
+                const ctx1 = document.getElementById('chartSemesterTrend').getContext('2d');
+                const labels = DASHBOARD_DATA.semester_trends.map(s => `${s.Academic_Year} (${s.Semester})`);
+                const billed = DASHBOARD_DATA.semester_trends.map(s => s.Total_Billed / 1e9);
+                const collected = DASHBOARD_DATA.semester_trends.map(s => s.Total_Collected / 1e9);
+
+                new Chart(ctx1, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            { label: 'Học Phí Lập HĐ (Tỷ ₫)', data: billed, backgroundColor: '#38bdf8', borderRadius: 6 },
+                            { label: 'Thực Thu (Tỷ ₫)', data: collected, backgroundColor: '#10b981', borderRadius: 6 }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: '#94a3b8' } } },
+                        scales: {
+                            x: { ticks: { color: '#64748b', maxRotation: 45 }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                            y: { ticks: { color: '#64748b' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                        }
+                    }
+                });
+            }
+
+            // Chart 2: Debt Aging Donut
+            if (DASHBOARD_DATA.debt_aging) {
+                const ctx2 = document.getElementById('chartDebtAgingDonut').getContext('2d');
+                const validAging = DASHBOARD_DATA.debt_aging.filter(a => a.Total_Debt_In_Bucket > 0);
+                const labels = validAging.map(a => a.Aging_Bucket.replace(/^\d+\.\s*/, ''));
+                const values = validAging.map(a => a.Total_Debt_In_Bucket / 1e9);
+
+                new Chart(ctx2, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: values,
+                            backgroundColor: ['#38bdf8', '#fbbf24', '#f97316', '#ef4444', '#b91c1c'],
+                            borderWidth: 2,
+                            borderColor: '#0f172a'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', boxWidth: 12, font: { size: 10 } } } }
+                    }
+                });
+
+                // Chart 2b: Debt Aging Bar in Tab 3
+                const ctxBar = document.getElementById('chartDebtAgingBar').getContext('2d');
+                new Chart(ctxBar, {
+                    type: 'bar',
+                    data: {
+                        labels: validAging.map(a => a.Aging_Bucket),
+                        datasets: [{
+                            label: 'Quy Mô Nợ (Tỷ VNĐ)',
+                            data: values,
+                            backgroundColor: ['#38bdf8', '#fbbf24', '#f97316', '#ef4444', '#b91c1c'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+                            y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                        }
+                    }
+                });
+            }
+
+            // Chart 3: Expense Categories
+            if (DASHBOARD_DATA.expense_categories) {
+                const ctx3 = document.getElementById('chartExpenseCategory').getContext('2d');
+                const expLabels = DASHBOARD_DATA.expense_categories.map(e => e.Expense_Category);
+                const expAmounts = DASHBOARD_DATA.expense_categories.map(e => e.Approved_Amount / 1e9);
+
+                new Chart(ctx3, {
+                    type: 'bar',
+                    data: {
+                        labels: expLabels,
+                        datasets: [{
+                            label: 'Chi Phí Đã Duyệt (Tỷ ₫)',
+                            data: expAmounts,
+                            backgroundColor: '#8b5cf6',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { ticks: { color: '#64748b' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                            y: { ticks: { color: '#94a3b8' }, grid: { display: false } }
+                        }
+                    }
+                });
+            }
+
+            // Chart 4: Payment Methods
+            if (DASHBOARD_DATA.payment_methods) {
+                const ctx4 = document.getElementById('chartPaymentMethods').getContext('2d');
+                const methodsMap = {};
+                DASHBOARD_DATA.payment_methods.forEach(p => {
+                    if (!methodsMap[p.Payment_Method]) methodsMap[p.Payment_Method] = { Success: 0, Failed: 0, Other: 0 };
+                    if (p.Payment_Status === 'Successful') methodsMap[p.Payment_Method].Success += p.Total_Amount / 1e9;
+                    else if (p.Payment_Status === 'Failed') methodsMap[p.Payment_Method].Failed += p.Total_Amount / 1e9;
+                    else methodsMap[p.Payment_Method].Other += p.Total_Amount / 1e9;
+                });
+
+                const pLabels = Object.keys(methodsMap);
+                new Chart(ctx4, {
+                    type: 'bar',
+                    data: {
+                        labels: pLabels,
+                        datasets: [
+                            { label: 'Thành Công', data: pLabels.map(k => methodsMap[k].Success), backgroundColor: '#10b981' },
+                            { label: 'Thất Bại', data: pLabels.map(k => methodsMap[k].Failed), backgroundColor: '#f43f5e' }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: '#94a3b8' } } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+                            y: { ticks: { color: '#64748b' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                        }
+                    }
+                });
+            }
+        }
+
+        function renderDepartmentTable() {
+            if (!DASHBOARD_DATA || !DASHBOARD_DATA.department_performance) return;
+            const tbody = document.getElementById('deptTableBody');
+            tbody.innerHTML = '';
+
+            DASHBOARD_DATA.department_performance.forEach(d => {
+                const tr = document.createElement('tr');
+                const netBadge = d.Net_Cash_Flow >= 0 ? 'badge-success' : 'badge-danger';
+                const burnRate = d.Budget_Burn_Rate_Pct || 0;
+                
+                tr.innerHTML = `
+                    <td><strong>${d.Department_Name}</strong> <br><small style="color: #64748b;">${d.Department_ID} • ${d.Manager_Name}</small></td>
+                    <td>${d.Faculty_Name}</td>
+                    <td><span class="badge badge-info">${d.Active_Students} SV</span></td>
+                    <td>${formatBillion(d.Billed_Tuition)}</td>
+                    <td>${formatBillion(d.Collected_Tuition)}</td>
+                    <td>
+                        <span>${d.Collection_Rate_Pct}%</span>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: ${Math.min(100, d.Collection_Rate_Pct)}%"></div></div>
+                    </td>
+                    <td>${formatBillion(d.Approved_Expenses)}</td>
+                    <td><span class="badge ${netBadge}">${formatBillion(d.Net_Cash_Flow)}</span></td>
+                    <td>
+                        <strong>${burnRate}%</strong>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: ${Math.min(100, burnRate)}%; background: ${burnRate > 80 ? '#f43f5e' : '#10b981'}"></div></div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderAgingTable() {
+            if (!DASHBOARD_DATA || !DASHBOARD_DATA.debt_aging) return;
+            const tbody = document.getElementById('agingTableBody');
+            tbody.innerHTML = '';
+
+            DASHBOARD_DATA.debt_aging.forEach(a => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${a.Aging_Bucket}</strong></td>
+                    <td><span class="badge badge-info">${a.Invoices_Count.toLocaleString()} HĐ</span></td>
+                    <td><strong>${formatVND(a.Total_Debt_In_Bucket)}</strong></td>
+                    <td><span class="badge ${a.Share_Of_Total_Debt_Pct > 50 ? 'badge-danger' : 'badge-warning'}">${a.Share_Of_Total_Debt_Pct}%</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        let allStudents = [];
+        function renderStudentTable() {
+            if (!DASHBOARD_DATA || !DASHBOARD_DATA.top_risk_students) return;
+            allStudents = DASHBOARD_DATA.top_risk_students;
+            filterStudents();
+        }
+
+        function filterStudents() {
+            const query = (document.getElementById('studentSearch')?.value || '').toLowerCase();
+            const tbody = document.getElementById('studentTableBody');
+            tbody.innerHTML = '';
+
+            const filtered = allStudents.filter(s => 
+                s.Full_Name.toLowerCase().includes(query) || 
+                s.Student_ID.toLowerCase().includes(query) ||
+                s.Department_Name.toLowerCase().includes(query)
+            );
+
+            filtered.slice(0, 50).forEach(s => {
+                const tr = document.createElement('tr');
+                const score = s.Composite_Risk_Score || 0;
+                let scoreBadge = 'badge-success';
+                if (score > 60) scoreBadge = 'badge-danger';
+                else if (score > 30) scoreBadge = 'badge-warning';
+
+                let statusBadge = 'badge-info';
+                if (s.Status === 'Dropped Out') statusBadge = 'badge-danger';
+                else if (s.Status === 'Suspended') statusBadge = 'badge-warning';
+
+                tr.innerHTML = `
+                    <td><code>${s.Student_ID}</code></td>
+                    <td><strong>${s.Full_Name}</strong></td>
+                    <td>${s.Department_Name} <br><small style="color: #64748b;">${s.Major}</small></td>
+                    <td><span class="badge ${statusBadge}">${s.Status}</span></td>
+                    <td><strong style="color: #fb7185;">${formatVND(s.total_remaining_debt)}</strong></td>
+                    <td>${(s.payment_completion_rate * 100).toFixed(1)}%</td>
+                    <td>${s.failed_payments_count > 0 ? `<span class="badge badge-danger">${s.failed_payments_count} lỗi</span>` : '<span style="color:#64748b;">0</span>'}</td>
+                    <td><span class="badge ${scoreBadge}">Điểm ${score}</span></td>
+                    <td>${s.target_high_debt_risk === 1 ? '⚠️ Nợ xấu cao' : '✅ Bình thường'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderAuditTable() {
+            if (!DASHBOARD_DATA || !DASHBOARD_DATA.data_quality_audit) return;
+            const tbody = document.getElementById('auditTableBody');
+            tbody.innerHTML = '';
+
+            DASHBOARD_DATA.data_quality_audit.forEach(a => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><code>${a.Table_Name}</code></td>
+                    <td><span class="badge badge-warning">${a.Error_Type}</span></td>
+                    <td><code>${a.Column_Name}</code></td>
+                    <td><strong>${a.Total_Corrupted_Records}</strong></td>
+                    <td style="color: #94a3b8; font-size: 0.8rem;">${a.Sample_Description}</td>
+                    <td><span class="badge badge-success">✓ Đã Khắc Phục (100%)</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Initialize on DOM load
+        window.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+</body>
+</html>

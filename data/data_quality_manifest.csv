@@ -1,0 +1,1087 @@
+﻿Table_Name,Record_ID,Error_Type,Column_Name,Original_Value,Corrupted_Value,Description
+dim_students,STU000097,MISSING_MAJOR,Major,Du lịch - Khách sạn,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001182,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000928,MISSING_MAJOR,Major,Kỹ thuật điện,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000503,MISSING_MAJOR,Major,Truyền thông,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000401,MISSING_MAJOR,Major,Ngoại ngữ,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000398,MISSING_MAJOR,Major,Truyền thông,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000468,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000910,MISSING_MAJOR,Major,Công nghệ thông tin,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001032,MISSING_MAJOR,Major,Tài chính - Kế toán,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000537,MISSING_MAJOR,Major,Công nghệ thông tin,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000054,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000152,MISSING_MAJOR,Major,Luật,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001290,MISSING_MAJOR,Major,Kỹ thuật xây dựng,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000677,MISSING_MAJOR,Major,Kỹ thuật xây dựng,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000112,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001353,MISSING_MAJOR,Major,Công nghệ sinh học,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001472,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000456,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000523,MISSING_MAJOR,Major,Tài chính - Kế toán,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000071,MISSING_MAJOR,Major,Công nghệ thông tin,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000573,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000291,MISSING_MAJOR,Major,Tài chính - Kế toán,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000760,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001424,MISSING_MAJOR,Major,Tài chính - Kế toán,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000383,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001360,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000943,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001343,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001088,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000247,MISSING_MAJOR,Major,Ngoại ngữ,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001054,MISSING_MAJOR,Major,Du lịch - Khách sạn,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000395,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000172,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000278,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001005,MISSING_MAJOR,Major,Truyền thông,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000728,MISSING_MAJOR,Major,Quản trị kinh doanh,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000511,MISSING_MAJOR,Major,Truyền thông,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000306,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000990,MISSING_MAJOR,Major,Du lịch - Khách sạn,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000613,MISSING_MAJOR,Major,Kinh tế,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001260,MISSING_MAJOR,Major,Công nghệ sinh học,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000502,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000017,MISSING_MAJOR,Major,Du lịch - Khách sạn,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU001425,MISSING_MAJOR,Major,Khoa học dữ liệu,,Sinh viên thiếu thông tin chuyên ngành.
+dim_students,STU000515,MISSING_MAJOR,Major,Tài chính - Kế toán,,Sinh viên thiếu thông tin chuyên ngành.
+fact_payments,PAY0000972,MISSING_PAYMENT_DATE,Payment_Date,2026-10-24 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003497,MISSING_PAYMENT_DATE,Payment_Date,2022-06-05 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001293,MISSING_PAYMENT_DATE,Payment_Date,2021-05-18 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002900,MISSING_PAYMENT_DATE,Payment_Date,2023-05-05 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002045,MISSING_PAYMENT_DATE,Payment_Date,2028-08-04 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000617,MISSING_PAYMENT_DATE,Payment_Date,2024-12-08 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002530,MISSING_PAYMENT_DATE,Payment_Date,2023-05-30 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001560,MISSING_PAYMENT_DATE,Payment_Date,2025-05-21 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003448,MISSING_PAYMENT_DATE,Payment_Date,2023-03-03 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003427,MISSING_PAYMENT_DATE,Payment_Date,2027-08-24 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001928,MISSING_PAYMENT_DATE,Payment_Date,2025-08-03 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000731,MISSING_PAYMENT_DATE,Payment_Date,2024-09-22 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003194,MISSING_PAYMENT_DATE,Payment_Date,2026-11-11 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001490,MISSING_PAYMENT_DATE,Payment_Date,2022-10-20 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001339,MISSING_PAYMENT_DATE,Payment_Date,2027-05-19 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001152,MISSING_PAYMENT_DATE,Payment_Date,2029-10-20 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001702,MISSING_PAYMENT_DATE,Payment_Date,2022-12-18 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002182,MISSING_PAYMENT_DATE,Payment_Date,2024-04-20 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001952,MISSING_PAYMENT_DATE,Payment_Date,2027-11-28 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002165,MISSING_PAYMENT_DATE,Payment_Date,2024-09-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002014,MISSING_PAYMENT_DATE,Payment_Date,2021-12-12 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001197,MISSING_PAYMENT_DATE,Payment_Date,2023-05-21 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001116,MISSING_PAYMENT_DATE,Payment_Date,2024-07-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000953,MISSING_PAYMENT_DATE,Payment_Date,2024-12-05 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003461,MISSING_PAYMENT_DATE,Payment_Date,2026-11-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001397,MISSING_PAYMENT_DATE,Payment_Date,2022-10-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001065,MISSING_PAYMENT_DATE,Payment_Date,2023-12-25 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001575,MISSING_PAYMENT_DATE,Payment_Date,2026-11-13 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001042,MISSING_PAYMENT_DATE,Payment_Date,2025-08-13 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000358,MISSING_PAYMENT_DATE,Payment_Date,2025-12-19 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001992,MISSING_PAYMENT_DATE,Payment_Date,2022-09-13 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000574,MISSING_PAYMENT_DATE,Payment_Date,2023-09-14 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000433,MISSING_PAYMENT_DATE,Payment_Date,2021-12-28 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002320,MISSING_PAYMENT_DATE,Payment_Date,2029-10-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001492,MISSING_PAYMENT_DATE,Payment_Date,2026-04-28 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001985,MISSING_PAYMENT_DATE,Payment_Date,2026-01-29 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000189,MISSING_PAYMENT_DATE,Payment_Date,2024-06-27 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003130,MISSING_PAYMENT_DATE,Payment_Date,2025-05-11 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001929,MISSING_PAYMENT_DATE,Payment_Date,2022-02-15 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002917,MISSING_PAYMENT_DATE,Payment_Date,2026-04-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001828,MISSING_PAYMENT_DATE,Payment_Date,2022-10-15 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001902,MISSING_PAYMENT_DATE,Payment_Date,2023-11-24 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000755,MISSING_PAYMENT_DATE,Payment_Date,2028-11-09 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001069,MISSING_PAYMENT_DATE,Payment_Date,2022-05-10 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001151,MISSING_PAYMENT_DATE,Payment_Date,2024-12-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000981,MISSING_PAYMENT_DATE,Payment_Date,2022-03-24 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000766,MISSING_PAYMENT_DATE,Payment_Date,2027-07-12 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003277,MISSING_PAYMENT_DATE,Payment_Date,2023-01-17 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003157,MISSING_PAYMENT_DATE,Payment_Date,2022-06-19 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001855,MISSING_PAYMENT_DATE,Payment_Date,2025-11-28 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003326,MISSING_PAYMENT_DATE,Payment_Date,2026-10-30 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000594,MISSING_PAYMENT_DATE,Payment_Date,2026-01-26 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001210,MISSING_PAYMENT_DATE,Payment_Date,2026-11-29 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003184,MISSING_PAYMENT_DATE,Payment_Date,2028-04-03 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000873,MISSING_PAYMENT_DATE,Payment_Date,2024-11-05 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001814,MISSING_PAYMENT_DATE,Payment_Date,2028-06-02 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000936,MISSING_PAYMENT_DATE,Payment_Date,2024-12-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002126,MISSING_PAYMENT_DATE,Payment_Date,2023-08-31 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002565,MISSING_PAYMENT_DATE,Payment_Date,2023-08-30 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000039,MISSING_PAYMENT_DATE,Payment_Date,2028-09-27 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001651,MISSING_PAYMENT_DATE,Payment_Date,2024-11-07 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001305,MISSING_PAYMENT_DATE,Payment_Date,2025-09-17 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002375,MISSING_PAYMENT_DATE,Payment_Date,2022-03-03 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001984,MISSING_PAYMENT_DATE,Payment_Date,2026-04-30 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000219,MISSING_PAYMENT_DATE,Payment_Date,2025-10-19 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002673,MISSING_PAYMENT_DATE,Payment_Date,2021-12-17 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000693,MISSING_PAYMENT_DATE,Payment_Date,2025-09-24 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002136,MISSING_PAYMENT_DATE,Payment_Date,2024-08-31 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001457,MISSING_PAYMENT_DATE,Payment_Date,2023-04-14 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002843,MISSING_PAYMENT_DATE,Payment_Date,2026-01-02 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002644,MISSING_PAYMENT_DATE,Payment_Date,2027-11-11 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003344,MISSING_PAYMENT_DATE,Payment_Date,2029-12-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000303,MISSING_PAYMENT_DATE,Payment_Date,2024-05-21 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002797,MISSING_PAYMENT_DATE,Payment_Date,2022-02-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0003247,MISSING_PAYMENT_DATE,Payment_Date,2029-03-27 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000460,MISSING_PAYMENT_DATE,Payment_Date,2022-08-17 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001000,MISSING_PAYMENT_DATE,Payment_Date,2023-06-01 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000023,MISSING_PAYMENT_DATE,Payment_Date,2026-10-04 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001948,MISSING_PAYMENT_DATE,Payment_Date,2023-11-22 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002511,MISSING_PAYMENT_DATE,Payment_Date,2024-05-26 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000780,MISSING_PAYMENT_DATE,Payment_Date,2023-08-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002753,MISSING_PAYMENT_DATE,Payment_Date,2025-01-31 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002073,MISSING_PAYMENT_DATE,Payment_Date,2025-09-27 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002649,MISSING_PAYMENT_DATE,Payment_Date,2026-02-06 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0000052,MISSING_PAYMENT_DATE,Payment_Date,2021-04-14 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002727,MISSING_PAYMENT_DATE,Payment_Date,2024-12-10 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001469,MISSING_PAYMENT_DATE,Payment_Date,2024-06-28 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0002639,MISSING_PAYMENT_DATE,Payment_Date,2025-09-10 00:00:00,,Giao dịch tồn tại nhưng ngày thanh toán bị null.
+fact_payments,PAY0001635,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-04-12 00:00:00,2026-01-17 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003159,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-03-23 00:00:00,2024-11-20 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003254,PAYMENT_BEFORE_INVOICE,Payment_Date,2021-11-06 00:00:00,2021-08-30 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003000,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-01-24 00:00:00,2025-10-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000500,PAYMENT_BEFORE_INVOICE,Payment_Date,2028-03-26 00:00:00,2028-01-30 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000814,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-05-10 00:00:00,2026-02-06 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000402,PAYMENT_BEFORE_INVOICE,Payment_Date,2028-01-24 00:00:00,2027-10-06 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003166,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-11-03 00:00:00,2024-09-08 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001788,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-01-04 00:00:00,2025-10-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002133,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-11-29 00:00:00,2027-08-15 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002641,PAYMENT_BEFORE_INVOICE,Payment_Date,2029-11-02 00:00:00,2029-07-13 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000476,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-12-03 00:00:00,2024-07-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000330,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-03-02 00:00:00,2025-11-05 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001859,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-02-13 00:00:00,2023-10-21 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002788,PAYMENT_BEFORE_INVOICE,Payment_Date,2029-12-05 00:00:00,2029-09-08 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002938,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-05-18 00:00:00,2023-01-17 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002295,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-02-02 00:00:00,2021-10-22 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003404,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-11-23 00:00:00,2023-08-13 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001004,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-07-14 00:00:00,2023-03-15 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002028,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-09-05 00:00:00,2026-04-16 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002143,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-01-23 00:00:00,2024-09-27 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001603,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-11-09 00:00:00,2026-07-03 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001897,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-11-03 00:00:00,2024-07-14 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002747,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-11-18 00:00:00,2022-09-28 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003359,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-08-20 00:00:00,2022-03-26 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001360,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-11-24 00:00:00,2025-08-17 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000708,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-06-09 00:00:00,2023-02-27 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000426,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-11-10 00:00:00,2023-08-24 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000547,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-07-11 00:00:00,2022-04-15 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002402,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-06-24 00:00:00,2027-03-08 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001424,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-11-17 00:00:00,2022-08-14 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002354,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-08-28 00:00:00,2022-04-26 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002472,PAYMENT_BEFORE_INVOICE,Payment_Date,2030-05-29 00:00:00,2030-02-23 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003465,PAYMENT_BEFORE_INVOICE,Payment_Date,2021-08-27 00:00:00,2021-04-13 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001390,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-05-31 00:00:00,2023-04-09 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001540,PAYMENT_BEFORE_INVOICE,Payment_Date,2021-07-04 00:00:00,2021-04-06 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000561,PAYMENT_BEFORE_INVOICE,Payment_Date,2022-01-08 00:00:00,2021-12-30 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000987,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-01-31 00:00:00,2024-11-29 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002963,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-08-30 00:00:00,2023-07-30 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001504,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-02-23 00:00:00,2023-01-02 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000451,PAYMENT_BEFORE_INVOICE,Payment_Date,2021-06-04 00:00:00,2021-02-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003115,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-02-08 00:00:00,2026-11-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003385,PAYMENT_BEFORE_INVOICE,Payment_Date,2028-02-23 00:00:00,2028-01-15 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002877,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-05-02 00:00:00,2027-01-21 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002572,PAYMENT_BEFORE_INVOICE,Payment_Date,2029-08-28 00:00:00,2029-06-16 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000911,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-05-22 00:00:00,2024-04-15 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002844,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-08-05 00:00:00,2024-04-12 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000657,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-04-19 00:00:00,2026-12-10 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0003290,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-09-19 00:00:00,2023-07-17 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002203,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-11-10 00:00:00,2024-07-10 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002499,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-05-01 00:00:00,2025-02-26 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002084,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-07-27 00:00:00,2027-05-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000864,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-10-20 00:00:00,2025-07-22 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000737,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-04-14 00:00:00,2023-01-14 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002751,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-10-02 00:00:00,2025-06-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002262,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-04-30 00:00:00,2026-02-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000479,PAYMENT_BEFORE_INVOICE,Payment_Date,2029-01-04 00:00:00,2028-08-13 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001735,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-03-11 00:00:00,2026-11-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000831,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-12-23 00:00:00,2024-11-10 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000959,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-08-10 00:00:00,2026-06-23 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001236,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-09-30 00:00:00,2027-07-18 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002035,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-08-28 00:00:00,2027-07-04 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002692,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-01-21 00:00:00,2026-01-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001070,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-07-23 00:00:00,2024-04-10 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000369,PAYMENT_BEFORE_INVOICE,Payment_Date,2025-10-28 00:00:00,2025-08-05 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002000,PAYMENT_BEFORE_INVOICE,Payment_Date,2024-02-04 00:00:00,2024-01-07 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0000819,PAYMENT_BEFORE_INVOICE,Payment_Date,2029-01-06 00:00:00,2028-09-26 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002358,PAYMENT_BEFORE_INVOICE,Payment_Date,2027-07-04 00:00:00,2027-04-25 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002862,PAYMENT_BEFORE_INVOICE,Payment_Date,2026-11-15 00:00:00,2026-10-10 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0002152,PAYMENT_BEFORE_INVOICE,Payment_Date,2023-09-01 00:00:00,2023-05-02 00:00:00,Ngày đóng tiền sớm hơn ngày tạo hóa đơn.
+fact_payments,PAY0001215,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,20760000,86788000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000406,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7998000,35719000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002230,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,14133000,51095000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003369,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,5197000,28939000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001827,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,8692000,30163000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003459,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7401000,29939000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003253,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,18901000,62047000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000829,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,13233000,79583000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000153,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,8160000,19838000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001997,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4031000,14399000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001954,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,2759000,26368000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002758,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,9350000,18423000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001764,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,9849000,40361000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000078,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,8805000,27853000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002098,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,21406000,68239000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003305,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,10336000,29615000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000300,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7253000,30618000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000183,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7233000,11600000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003348,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,12316000,28753000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001170,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,10229000,47470000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002963,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,23913000,59982000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002517,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,11750000,33005000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002471,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,18613000,48120000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001830,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,2687000,20384000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002916,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,11128000,36405000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001393,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,12740000,58436000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001425,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,10563000,38299000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000386,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,27250000,59012000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002648,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4083000,27229000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002432,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,5798000,26930000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001138,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4089000,28719000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001011,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,9732000,34666000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003486,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,21208000,60908000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003005,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,19316000,52000000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002733,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,6573000,37304000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001714,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,8642000,30940000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001752,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,6972000,16512000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002431,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,17828000,60579000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001882,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,5658000,17715000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000317,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,10471000,37975000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000143,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,17180000,57028000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003410,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,8646000,77714000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000076,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4859000,25911000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001706,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,14576000,57869000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001862,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7009000,52655000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003049,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,11972000,50689000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000643,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,15651000,29611000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000126,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,12711000,75029000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000937,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,5687000,34001000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002093,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4731000,33482000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002335,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,15759000,85061000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001956,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,11083000,22457000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000291,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,4214000,10016000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000130,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,6046000,28832000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003172,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7967000,46606000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000723,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,11778000,21469000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002292,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,22638000,60983000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000398,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,23269000,66193000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002582,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,12467000,42452000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002123,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,6079000,11959000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002177,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7795000,18068000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0003200,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,12655000,45629000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001935,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,10652000,45710000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001703,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,25523000,36120000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0000707,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,20163000,41994000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002266,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,7246000,14443000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002622,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,19561000,32093000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002128,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,1620000,15040000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001235,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,3211000,14787000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0001489,AMOUNT_PAID_EXCEEDS_INVOICE,Amount_Paid,20753000,83733000,Số tiền của một giao dịch lớn hơn tổng giá trị hóa đơn.
+fact_payments,PAY0002960,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-03-17 00:00:00,2027-01-17 00:00:00,Sinh viên STU000340 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000760,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-12-22 00:00:00,2023-06-27 00:00:00,Sinh viên STU000575 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001987,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-04-19 00:00:00,2023-06-20 00:00:00,Sinh viên STU000448 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002579,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-12-30 00:00:00,2024-12-27 00:00:00,Sinh viên STU000822 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000384,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-03-09 00:00:00,2024-10-23 00:00:00,Sinh viên STU001037 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001625,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-06-20 00:00:00,2025-03-07 00:00:00,Sinh viên STU001148 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001694,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-11-30 00:00:00,2023-02-07 00:00:00,Sinh viên STU000667 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000561,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-12-30 00:00:00,2021-08-27 00:00:00,Sinh viên STU000761 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002008,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-01-16 00:00:00,2021-11-08 00:00:00,Sinh viên STU000761 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002571,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-07-15 00:00:00,2026-10-25 00:00:00,Sinh viên STU000955 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001275,PAYMENT_AFTER_DROPOUT,Payment_Date,2028-04-08 00:00:00,2026-03-06 00:00:00,Sinh viên STU001343 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002066,PAYMENT_AFTER_DROPOUT,Payment_Date,2024-10-28 00:00:00,2024-02-07 00:00:00,Sinh viên STU000526 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000612,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-01-05 00:00:00,2021-09-27 00:00:00,Sinh viên STU000947 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001057,PAYMENT_AFTER_DROPOUT,Payment_Date,2020-07-25 00:00:00,2022-11-21 00:00:00,Sinh viên STU000838 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001288,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-04-20 00:00:00,2023-01-11 00:00:00,Sinh viên STU000667 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000341,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-10-03 00:00:00,2023-04-08 00:00:00,Sinh viên STU000483 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000702,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-04-06 00:00:00,2023-09-26 00:00:00,Sinh viên STU000330 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000817,PAYMENT_AFTER_DROPOUT,Payment_Date,2028-04-26 00:00:00,2026-07-07 00:00:00,Sinh viên STU001004 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001600,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-06-19 00:00:00,2026-02-02 00:00:00,Sinh viên STU001427 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000999,PAYMENT_AFTER_DROPOUT,Payment_Date,2028-12-31 00:00:00,2025-11-13 00:00:00,Sinh viên STU000652 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002168,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-11-13 00:00:00,2022-10-25 00:00:00,Sinh viên STU001260 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000053,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-11-17 00:00:00,2022-09-13 00:00:00,Sinh viên STU000651 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000312,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-07-03 00:00:00,2026-08-08 00:00:00,Sinh viên STU001183 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002093,PAYMENT_AFTER_DROPOUT,Payment_Date,2024-06-23 00:00:00,2026-06-04 00:00:00,Sinh viên STU001343 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001283,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-12-31 00:00:00,2027-04-30 00:00:00,Sinh viên STU000904 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000032,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-01-11 00:00:00,2021-10-05 00:00:00,Sinh viên STU000278 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000351,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-08-06 00:00:00,2023-06-09 00:00:00,Sinh viên STU000390 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001479,PAYMENT_AFTER_DROPOUT,Payment_Date,2028-06-02 00:00:00,2027-02-18 00:00:00,Sinh viên STU001004 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001568,PAYMENT_AFTER_DROPOUT,Payment_Date,2029-06-06 00:00:00,2028-07-16 00:00:00,Sinh viên STU000583 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003073,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-07-13 00:00:00,2026-04-10 00:00:00,Sinh viên STU000713 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000015,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-08-03 00:00:00,2022-07-10 00:00:00,Sinh viên STU001474 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002059,PAYMENT_AFTER_DROPOUT,Payment_Date,2024-01-29 00:00:00,2023-01-08 00:00:00,Sinh viên STU000614 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003122,PAYMENT_AFTER_DROPOUT,Payment_Date,2028-12-16 00:00:00,2028-03-05 00:00:00,Sinh viên STU000772 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003324,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-03-02 00:00:00,2024-07-30 00:00:00,Sinh viên STU000575 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002956,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-06-25 00:00:00,2024-12-09 00:00:00,Sinh viên STU000822 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000230,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-12-04 00:00:00,2027-03-30 00:00:00,Sinh viên STU000904 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003298,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-07-03 00:00:00,2021-12-18 00:00:00,Sinh viên STU000124 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002762,PAYMENT_AFTER_DROPOUT,Payment_Date,2021-03-10 00:00:00,2024-01-06 00:00:00,Sinh viên STU000923 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001071,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-10-25 00:00:00,2026-11-19 00:00:00,Sinh viên STU001237 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002408,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-06-08 00:00:00,2026-09-14 00:00:00,Sinh viên STU001217 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002882,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-10-11 00:00:00,2024-09-24 00:00:00,Sinh viên STU000368 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002540,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-12-21 00:00:00,2025-11-02 00:00:00,Sinh viên STU001392 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000003,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-09-05 00:00:00,2026-05-03 00:00:00,Sinh viên STU000340 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003336,PAYMENT_AFTER_DROPOUT,Payment_Date,2022-03-07 00:00:00,2023-06-18 00:00:00,Sinh viên STU001091 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000366,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-09-13 00:00:00,2022-08-15 00:00:00,Sinh viên STU000801 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002850,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-10-20 00:00:00,2025-07-01 00:00:00,Sinh viên STU001041 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000414,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-07-06 00:00:00,2026-04-06 00:00:00,Sinh viên STU001300 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002811,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-07-17 00:00:00,2024-09-30 00:00:00,Sinh viên STU000041 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0003016,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-12-08 00:00:00,2024-05-03 00:00:00,Sinh viên STU001019 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002924,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-07-18 00:00:00,2023-03-17 00:00:00,Sinh viên STU000801 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002064,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-01-05 00:00:00,2021-11-28 00:00:00,Sinh viên STU000701 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001318,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-01-27 00:00:00,2023-09-28 00:00:00,Sinh viên STU001326 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001607,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-06-22 00:00:00,2026-05-08 00:00:00,Sinh viên STU001004 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002521,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-12-26 00:00:00,2025-09-17 00:00:00,Sinh viên STU001392 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000369,PAYMENT_AFTER_DROPOUT,Payment_Date,2025-08-05 00:00:00,2025-04-27 00:00:00,Sinh viên STU000825 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0000881,PAYMENT_AFTER_DROPOUT,Payment_Date,2029-12-08 00:00:00,2026-09-03 00:00:00,Sinh viên STU001248 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002173,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-06-22 00:00:00,2026-09-05 00:00:00,Sinh viên STU000093 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002090,PAYMENT_AFTER_DROPOUT,Payment_Date,2023-05-19 00:00:00,2024-10-31 00:00:00,Sinh viên STU000825 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0001761,PAYMENT_AFTER_DROPOUT,Payment_Date,2026-10-23 00:00:00,2025-02-14 00:00:00,Sinh viên STU000355 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_payments,PAY0002198,PAYMENT_AFTER_DROPOUT,Payment_Date,2027-06-13 00:00:00,2023-07-20 00:00:00,Sinh viên STU000041 đã nghỉ học nhưng vẫn phát sinh thanh toán sau Dropout_Date.
+fact_tuition_invoices,INV0001386,TOTAL_FORMULA_MISMATCH,Total_Amount,31142000,31871000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001194,TOTAL_FORMULA_MISMATCH,Total_Amount,9033000,12334000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000279,TOTAL_FORMULA_MISMATCH,Total_Amount,25760000,27566000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000025,TOTAL_FORMULA_MISMATCH,Total_Amount,11971000,12627000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000694,TOTAL_FORMULA_MISMATCH,Total_Amount,16813000,17157000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000419,TOTAL_FORMULA_MISMATCH,Total_Amount,12768000,15726000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002059,TOTAL_FORMULA_MISMATCH,Total_Amount,8699000,11943000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000114,TOTAL_FORMULA_MISMATCH,Total_Amount,17992000,21539000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002600,TOTAL_FORMULA_MISMATCH,Total_Amount,14370000,14574000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001021,TOTAL_FORMULA_MISMATCH,Total_Amount,16863000,20552000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001737,TOTAL_FORMULA_MISMATCH,Total_Amount,6544000,9134000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002095,TOTAL_FORMULA_MISMATCH,Total_Amount,4759000,7553000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001779,TOTAL_FORMULA_MISMATCH,Total_Amount,13084000,14656000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002698,TOTAL_FORMULA_MISMATCH,Total_Amount,14869000,18141000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001686,TOTAL_FORMULA_MISMATCH,Total_Amount,27659000,28497000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000704,TOTAL_FORMULA_MISMATCH,Total_Amount,22144000,23623000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002627,TOTAL_FORMULA_MISMATCH,Total_Amount,29874000,31168000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002977,TOTAL_FORMULA_MISMATCH,Total_Amount,26952000,29373000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000093,TOTAL_FORMULA_MISMATCH,Total_Amount,29793000,31964000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002048,TOTAL_FORMULA_MISMATCH,Total_Amount,21763000,24821000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000054,TOTAL_FORMULA_MISMATCH,Total_Amount,27810000,28665000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001981,TOTAL_FORMULA_MISMATCH,Total_Amount,15444000,16075000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001121,TOTAL_FORMULA_MISMATCH,Total_Amount,6491000,10437000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002057,TOTAL_FORMULA_MISMATCH,Total_Amount,34073000,35239000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002268,TOTAL_FORMULA_MISMATCH,Total_Amount,34735000,38716000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001561,TOTAL_FORMULA_MISMATCH,Total_Amount,21783000,25672000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0000109,TOTAL_FORMULA_MISMATCH,Total_Amount,13229000,14380000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002649,TOTAL_FORMULA_MISMATCH,Total_Amount,14392000,16825000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0002293,TOTAL_FORMULA_MISMATCH,Total_Amount,8365000,9025000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_tuition_invoices,INV0001393,TOTAL_FORMULA_MISMATCH,Total_Amount,12245000,14511000,Total_Amount không bằng Tuition_Fee - Scholarship_Amount + Late_Fee.
+fact_expenses,EXP0000353,EXPENSE_OUTLIER_X100,Amount,10604000,1060400000,Khoản chi của DEP004 bị nhân 100 lần do lỗi nhập liệu.
+fact_expenses,EXP0001045,EXPENSE_OUTLIER_X100,Amount,743224000,74322400000,Khoản chi của DEP004 bị nhân 100 lần do lỗi nhập liệu.
+fact_expenses,EXP0000221,EXPENSE_OUTLIER_X100,Amount,969865000,96986500000,Khoản chi của DEP004 bị nhân 100 lần do lỗi nhập liệu.
+fact_expenses,EXP0001065,EXPENSE_OUTLIER_X100,Amount,108071000,10807100000,Khoản chi của DEP004 bị nhân 100 lần do lỗi nhập liệu.
+dim_students,STU000165,INCONSISTENT_TEXT_FORMAT,Full_Name,Chị Lâm Vũ,chị lâm vũ,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001130,INCONSISTENT_TEXT_FORMAT,Full_Name,Ông Châu Nguyễn,ÔNG CHÂU NGUYỄN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000263,INCONSISTENT_TEXT_FORMAT,Full_Name,Nhật Mai Phạm,  Nhật Mai Phạm   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000511,INCONSISTENT_TEXT_FORMAT,Full_Name,Quang Hoàng,quang hoàng,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001383,INCONSISTENT_TEXT_FORMAT,Full_Name,Bác Minh Vũ,  Bác Minh Vũ   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001165,INCONSISTENT_TEXT_FORMAT,Full_Name,Yến Hoàng,  Yến Hoàng   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000350,INCONSISTENT_TEXT_FORMAT,Full_Name,Bảo Hữu Lê,  Bảo Hữu Lê   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000734,INCONSISTENT_TEXT_FORMAT,Full_Name,Chị Lan Nguyễn,  Chị Lan Nguyễn   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000844,INCONSISTENT_TEXT_FORMAT,Full_Name,Tùng Bùi,TÙNG BÙI,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000295,INCONSISTENT_TEXT_FORMAT,Full_Name,Chị Khoa Mai,CHỊ KHOA MAI,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU001283,INCONSISTENT_TEXT_FORMAT,Full_Name,Thảo Trần,thảo trần,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000768,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý cô Nhật Trần,  Quý cô Nhật Trần   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000688,INCONSISTENT_TEXT_FORMAT,Full_Name,Duyên Phạm,duyên phạm,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000030,INCONSISTENT_TEXT_FORMAT,Full_Name,Hương Đặng,hương đặng,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001251,INCONSISTENT_TEXT_FORMAT,Full_Name,Nhật Bùi,nhật bùi,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001258,INCONSISTENT_TEXT_FORMAT,Full_Name,Minh Hải Trần,minh hải trần,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001233,INCONSISTENT_TEXT_FORMAT,Full_Name,Bảo Hoàng,BẢO HOÀNG,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000035,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý cô An Nguyễn,  Quý cô An Nguyễn   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000299,INCONSISTENT_TEXT_FORMAT,Full_Name,Hà Lê,HÀ LÊ,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000708,INCONSISTENT_TEXT_FORMAT,Full_Name,Hoàng Dương,hoàng dương,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000052,INCONSISTENT_TEXT_FORMAT,Full_Name,Châu Đức Hoàng,CHÂU ĐỨC HOÀNG,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000989,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý ông Hưng Nguyễn,QUÝ ÔNG HƯNG NGUYỄN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000967,INCONSISTENT_TEXT_FORMAT,Full_Name,Bảo Mai Bảo Lê,BẢO MAI BẢO LÊ,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000985,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý cô Vân Bùi,QUÝ CÔ VÂN BÙI,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000020,INCONSISTENT_TEXT_FORMAT,Full_Name,Anh Trọng Nguyễn,ANH TRỌNG NGUYỄN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000565,INCONSISTENT_TEXT_FORMAT,Full_Name,Cô Ngọc Hoàng,CÔ NGỌC HOÀNG,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000727,INCONSISTENT_TEXT_FORMAT,Full_Name,Bảo Trần,  Bảo Trần   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000881,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý cô Hà Dương,  Quý cô Hà Dương   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000408,INCONSISTENT_TEXT_FORMAT,Full_Name,Bác Nam Lê,BÁC NAM LÊ,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU001131,INCONSISTENT_TEXT_FORMAT,Full_Name,Nam Lê,  Nam Lê   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001223,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý ông Hưng Trần,  Quý ông Hưng Trần   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000601,INCONSISTENT_TEXT_FORMAT,Full_Name,Ông Minh Mai,ÔNG MINH MAI,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000103,INCONSISTENT_TEXT_FORMAT,Full_Name,Bác Nhiên Trần,bác nhiên trần,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001391,INCONSISTENT_TEXT_FORMAT,Full_Name,Phương Tấn Vũ,  Phương Tấn Vũ   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000602,INCONSISTENT_TEXT_FORMAT,Full_Name,Cô Lâm Nguyễn,CÔ LÂM NGUYỄN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU001218,INCONSISTENT_TEXT_FORMAT,Full_Name,Hưng Nguyễn,hưng nguyễn,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000482,INCONSISTENT_TEXT_FORMAT,Full_Name,Hải Dương,  Hải Dương   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000913,INCONSISTENT_TEXT_FORMAT,Full_Name,Khoa Hoàng Hoàng,KHOA HOÀNG HOÀNG,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU001474,INCONSISTENT_TEXT_FORMAT,Full_Name,Kim Thế Đặng,kim thế đặng,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000282,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý cô Dương Nguyễn,  Quý cô Dương Nguyễn   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001140,INCONSISTENT_TEXT_FORMAT,Full_Name,Thành Phạm,THÀNH PHẠM,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000676,INCONSISTENT_TEXT_FORMAT,Full_Name,Lâm Bảo Bùi,  Lâm Bảo Bùi   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000480,INCONSISTENT_TEXT_FORMAT,Full_Name,Hưng Mai Phạm,  Hưng Mai Phạm   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001394,INCONSISTENT_TEXT_FORMAT,Full_Name,Chị Hồng Mai,chị hồng mai,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU000500,INCONSISTENT_TEXT_FORMAT,Full_Name,Bà Hồng Dương,bà hồng dương,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001016,INCONSISTENT_TEXT_FORMAT,Full_Name,Hà Nguyễn,HÀ NGUYỄN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000461,INCONSISTENT_TEXT_FORMAT,Full_Name,Thành Hải Hoàng,  Thành Hải Hoàng   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001020,INCONSISTENT_TEXT_FORMAT,Full_Name,Kim Hoàng,kim hoàng,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001210,INCONSISTENT_TEXT_FORMAT,Full_Name,Nhật Bùi,  Nhật Bùi   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU001334,INCONSISTENT_TEXT_FORMAT,Full_Name,Anh Anh Trần,  Anh Anh Trần   ,Chuỗi bị biến đổi kiểu spaces.
+dim_students,STU000056,INCONSISTENT_TEXT_FORMAT,Full_Name,Quý ông Khoa Vũ,quý ông khoa vũ,Chuỗi bị biến đổi kiểu lower.
+dim_students,STU001008,INCONSISTENT_TEXT_FORMAT,Full_Name,Bà An Vũ,BÀ AN VŨ,Chuỗi bị biến đổi kiểu upper.
+dim_departments,DEP001,INCONSISTENT_TEXT_FORMAT,Manager_Name,Dũng Hoàng Vũ,  Dũng Hoàng Vũ   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000791,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng và đối tác Công ty Hợp danh,hoàng và đối tác công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001926,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Đặng Trần Công ty TNHH,  Đặng Trần Công ty TNHH   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000066,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê và Dương Doanh nghiệp tư nhân,lê và dương doanh nghiệp tư nhân,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000654,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Mai Công ty Trách nhiệm hữu hạn,  Lê Mai Công ty Trách nhiệm hữu hạn   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000368,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ và đối tác Công ty Hợp danh,vũ và đối tác công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000656,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và đối tác Công ty TNHH,  Mai và đối tác Công ty TNHH   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001691,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương và đối tác Công ty Cổ phần,  Dương và đối tác Công ty Cổ phần   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001581,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương và Hoàng Công ty TNHH MTV,DƯƠNG VÀ HOÀNG CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000929,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Công ty Trách nhiệm hữu hạn,LÊ CÔNG TY TRÁCH NHIỆM HỮU HẠN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001286,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ và đối tác Công ty TNHH,VŨ VÀ ĐỐI TÁC CÔNG TY TNHH,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001980,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai Bùi Công ty TNHH,mai bùi công ty tnhh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001957,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ Mai Doanh nghiệp tư nhân,  Vũ Mai Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000722,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ Công ty TNHH,vũ công ty tnhh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000035,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương và đối tác Công ty Hợp danh,dương và đối tác công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000234,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi Lê Công ty Trách nhiệm hữu hạn,  Bùi Lê Công ty Trách nhiệm hữu hạn   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001407,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng và Phạm Công ty Trách nhiệm hữu hạn,hoàng và phạm công ty trách nhiệm hữu hạn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000254,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và Vũ Công ty TNHH MTV,  Mai và Vũ Công ty TNHH MTV   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000600,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Trần và Lê Công ty Hợp danh,TRẦN VÀ LÊ CÔNG TY HỢP DANH,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000911,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương và Lê Công ty TNHH MTV,DƯƠNG VÀ LÊ CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000122,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi và đối tác Tập Đoàn,bùi và đối tác tập đoàn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001806,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm Công ty TNHH MTV,  Phạm Công ty TNHH MTV   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000831,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Nguyễn và đối tác Tập Đoàn,nguyễn và đối tác tập đoàn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000664,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Trần Công ty TNHH MTV,LÊ TRẦN CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001810,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng và Mai Công ty TNHH MTV,HOÀNG VÀ MAI CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001944,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi và đối tác Công ty Hợp danh,BÙI VÀ ĐỐI TÁC CÔNG TY HỢP DANH,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001342,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai Công ty Trách nhiệm hữu hạn,  Mai Công ty Trách nhiệm hữu hạn   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000613,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và đối tác Công ty Trách nhiệm hữu hạn,MAI VÀ ĐỐI TÁC CÔNG TY TRÁCH NHIỆM HỮU HẠN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000068,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng và đối tác Doanh nghiệp tư nhân,  Hoàng và đối tác Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000071,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm Vũ Tập Đoàn,PHẠM VŨ TẬP ĐOÀN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000529,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Doanh nghiệp tư nhân,LÊ DOANH NGHIỆP TƯ NHÂN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001309,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Trần Mai Công ty Hợp danh,trần mai công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000550,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi Trần Tập Đoàn,bùi trần tập đoàn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000747,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và Phạm Doanh nghiệp tư nhân,MAI VÀ PHẠM DOANH NGHIỆP TƯ NHÂN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000277,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng Nguyễn Công ty Hợp danh,  Hoàng Nguyễn Công ty Hợp danh   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001606,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê và Trần Doanh nghiệp tư nhân,LÊ VÀ TRẦN DOANH NGHIỆP TƯ NHÂN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001230,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ Công ty TNHH,  Vũ Công ty TNHH   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001200,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi Công ty TNHH MTV,BÙI CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001029,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm và Đặng Tập Đoàn,PHẠM VÀ ĐẶNG TẬP ĐOÀN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001573,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Trần và đối tác Công ty Trách nhiệm hữu hạn,  Trần và đối tác Công ty Trách nhiệm hữu hạn   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001086,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng và đối tác Doanh nghiệp tư nhân,  Hoàng và đối tác Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000492,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Nguyễn Nguyễn Doanh nghiệp tư nhân,nguyễn nguyễn doanh nghiệp tư nhân,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000159,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê và Mai Công ty TNHH,LÊ VÀ MAI CÔNG TY TNHH,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001789,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Hoàng Công ty Hợp danh,hoàng công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000937,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm Công ty Cổ phần,phạm công ty cổ phần,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000730,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Vũ và Hoàng Doanh nghiệp tư nhân,vũ và hoàng doanh nghiệp tư nhân,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001400,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Đặng Dương Công ty Hợp danh,  Đặng Dương Công ty Hợp danh   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000698,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Trần và đối tác Tập Đoàn,TRẦN VÀ ĐỐI TÁC TẬP ĐOÀN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000010,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi Nguyễn Công ty TNHH,  Bùi Nguyễn Công ty TNHH   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001968,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Trần và đối tác Doanh nghiệp tư nhân,  Trần và đối tác Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000961,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm Nguyễn Công ty TNHH MTV,PHẠM NGUYỄN CÔNG TY TNHH MTV,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001896,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương và Lê Doanh nghiệp tư nhân,  Dương và Lê Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000553,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và đối tác Công ty TNHH,mai và đối tác công ty tnhh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001525,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Nguyễn Công ty Hợp danh,  Nguyễn Công ty Hợp danh   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000336,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Nguyễn và Dương Doanh nghiệp tư nhân,NGUYỄN VÀ DƯƠNG DOANH NGHIỆP TƯ NHÂN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0000391,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Mai và Bùi Công ty Hợp danh,  Mai và Bùi Công ty Hợp danh   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000570,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Đặng và Đặng Doanh nghiệp tư nhân,  Đặng và Đặng Doanh nghiệp tư nhân   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001364,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm Công ty TNHH,phạm công ty tnhh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000783,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi và Nguyễn Công ty Cổ phần,bùi và nguyễn công ty cổ phần,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001713,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm và đối tác Công ty TNHH,phạm và đối tác công ty tnhh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000109,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm và Nguyễn Công ty TNHH MTV,  Phạm và Nguyễn Công ty TNHH MTV   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0000696,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Phạm và đối tác Doanh nghiệp tư nhân,PHẠM VÀ ĐỐI TÁC DOANH NGHIỆP TƯ NHÂN,Chuỗi bị biến đổi kiểu upper.
+fact_expenses,EXP0001277,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Dương Nguyễn Công ty Trách nhiệm hữu hạn,dương nguyễn công ty trách nhiệm hữu hạn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000231,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Mai Doanh nghiệp tư nhân,lê mai doanh nghiệp tư nhân,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000181,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê Dương Công ty Hợp danh,lê dương công ty hợp danh,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000419,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Nguyễn Tập Đoàn,nguyễn tập đoàn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000651,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Lê và Bùi Doanh nghiệp tư nhân,lê và bùi doanh nghiệp tư nhân,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0001802,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Đặng và Lê Công ty Trách nhiệm hữu hạn,đặng và lê công ty trách nhiệm hữu hạn,Chuỗi bị biến đổi kiểu lower.
+fact_expenses,EXP0000286,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Bùi và Dương Công ty Cổ phần,  Bùi và Dương Công ty Cổ phần   ,Chuỗi bị biến đổi kiểu spaces.
+fact_expenses,EXP0001571,INCONSISTENT_TEXT_FORMAT,Vendor_Name,Đặng Công ty Cổ phần,ĐẶNG CÔNG TY CỔ PHẦN,Chuỗi bị biến đổi kiểu upper.
+dim_students,STU000417,MIXED_DATE_FORMAT,Date_Of_Birth,1999-07-09,09/07/1999,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000459,MIXED_DATE_FORMAT,Date_Of_Birth,2002-10-15,15/10/2002,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000513,MIXED_DATE_FORMAT,Date_Of_Birth,2003-08-28,28/08/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001048,MIXED_DATE_FORMAT,Date_Of_Birth,2002-11-27,27/11/2002,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001135,MIXED_DATE_FORMAT,Date_Of_Birth,2005-11-21,21/11/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000320,MIXED_DATE_FORMAT,Date_Of_Birth,1999-05-26,26/05/1999,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000186,MIXED_DATE_FORMAT,Date_Of_Birth,2007-01-23,23/01/2007,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001368,MIXED_DATE_FORMAT,Date_Of_Birth,2005-01-11,11/01/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001385,MIXED_DATE_FORMAT,Date_Of_Birth,2000-04-21,21/04/2000,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000895,MIXED_DATE_FORMAT,Date_Of_Birth,2006-08-30,30/08/2006,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000200,MIXED_DATE_FORMAT,Date_Of_Birth,1999-08-07,07/08/1999,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000338,MIXED_DATE_FORMAT,Date_Of_Birth,1999-07-11,11/07/1999,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001073,MIXED_DATE_FORMAT,Date_Of_Birth,2003-01-30,30/01/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001387,MIXED_DATE_FORMAT,Date_Of_Birth,2005-06-05,05/06/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000613,MIXED_DATE_FORMAT,Date_Of_Birth,2000-11-19,19/11/2000,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001126,MIXED_DATE_FORMAT,Date_Of_Birth,2003-06-11,11/06/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001021,MIXED_DATE_FORMAT,Date_Of_Birth,1998-08-17,17/08/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000902,MIXED_DATE_FORMAT,Date_Of_Birth,2003-01-25,25/01/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000293,MIXED_DATE_FORMAT,Date_Of_Birth,2004-12-27,27/12/2004,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001339,MIXED_DATE_FORMAT,Date_Of_Birth,2002-09-04,04/09/2002,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001140,MIXED_DATE_FORMAT,Date_Of_Birth,2007-08-11,11/08/2007,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000110,MIXED_DATE_FORMAT,Date_Of_Birth,2005-02-25,25/02/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000098,MIXED_DATE_FORMAT,Date_Of_Birth,2004-09-02,02/09/2004,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000834,MIXED_DATE_FORMAT,Date_Of_Birth,2005-12-01,01/12/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000695,MIXED_DATE_FORMAT,Date_Of_Birth,2005-12-14,14/12/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000262,MIXED_DATE_FORMAT,Date_Of_Birth,1999-07-24,24/07/1999,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000844,MIXED_DATE_FORMAT,Date_Of_Birth,2003-01-14,14/01/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001428,MIXED_DATE_FORMAT,Date_Of_Birth,2005-04-02,02/04/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001490,MIXED_DATE_FORMAT,Date_Of_Birth,2003-03-10,10/03/2003,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000223,MIXED_DATE_FORMAT,Date_Of_Birth,2007-10-16,16/10/2007,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000415,MIXED_DATE_FORMAT,Date_Of_Birth,1998-12-12,12/12/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000062,MIXED_DATE_FORMAT,Date_Of_Birth,2006-09-24,24/09/2006,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000139,MIXED_DATE_FORMAT,Date_Of_Birth,2005-06-17,17/06/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001118,MIXED_DATE_FORMAT,Date_Of_Birth,2001-07-08,08/07/2001,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000473,MIXED_DATE_FORMAT,Date_Of_Birth,2005-05-08,08/05/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001078,MIXED_DATE_FORMAT,Date_Of_Birth,2006-12-11,11/12/2006,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000442,MIXED_DATE_FORMAT,Date_Of_Birth,1998-11-11,11/11/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000579,MIXED_DATE_FORMAT,Date_Of_Birth,2005-12-03,03/12/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001388,MIXED_DATE_FORMAT,Date_Of_Birth,1998-01-21,21/01/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000001,MIXED_DATE_FORMAT,Date_Of_Birth,2004-06-01,01/06/2004,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000777,MIXED_DATE_FORMAT,Date_Of_Birth,1998-04-06,06/04/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001007,MIXED_DATE_FORMAT,Date_Of_Birth,2000-05-16,16/05/2000,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000156,MIXED_DATE_FORMAT,Date_Of_Birth,1998-08-11,11/08/1998,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000642,MIXED_DATE_FORMAT,Date_Of_Birth,2005-11-17,17/11/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000835,MIXED_DATE_FORMAT,Date_Of_Birth,2001-04-05,05/04/2001,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000794,MIXED_DATE_FORMAT,Date_Of_Birth,2005-06-02,02/06/2005,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000959,MIXED_DATE_FORMAT,Date_Of_Birth,2004-04-12,12/04/2004,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000733,MIXED_DATE_FORMAT,Date_Of_Birth,2006-08-10,10/08/2006,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000493,MIXED_DATE_FORMAT,Date_Of_Birth,2002-04-18,18/04/2002,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000956,MIXED_DATE_FORMAT,Date_Of_Birth,2002-01-25,25/01/2002,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001395,MIXED_DATE_FORMAT,Date_Of_Birth,2004-10-12,12/10/2004,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000281,MIXED_DATE_FORMAT,Date_Of_Birth,2001-01-20,20/01/2001,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000039,MIXED_DATE_FORMAT,Enrollment_Date,2020-10-24,24/10/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001045,MIXED_DATE_FORMAT,Enrollment_Date,2023-02-07,07/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001076,MIXED_DATE_FORMAT,Enrollment_Date,2019-12-15,15/12/2019,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001122,MIXED_DATE_FORMAT,Enrollment_Date,2025-05-18,18/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001373,MIXED_DATE_FORMAT,Enrollment_Date,2020-08-15,15/08/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000131,MIXED_DATE_FORMAT,Enrollment_Date,2020-01-20,20/01/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000316,MIXED_DATE_FORMAT,Enrollment_Date,2024-03-25,25/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001292,MIXED_DATE_FORMAT,Enrollment_Date,2024-11-03,03/11/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000335,MIXED_DATE_FORMAT,Enrollment_Date,2020-06-21,21/06/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001454,MIXED_DATE_FORMAT,Enrollment_Date,2023-05-14,14/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000982,MIXED_DATE_FORMAT,Enrollment_Date,2023-07-20,20/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001445,MIXED_DATE_FORMAT,Enrollment_Date,2022-09-10,10/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001272,MIXED_DATE_FORMAT,Enrollment_Date,2022-01-23,23/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000304,MIXED_DATE_FORMAT,Enrollment_Date,2025-01-31,31/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000806,MIXED_DATE_FORMAT,Enrollment_Date,2023-06-05,05/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000732,MIXED_DATE_FORMAT,Enrollment_Date,2020-11-22,22/11/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001091,MIXED_DATE_FORMAT,Enrollment_Date,2021-11-17,17/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000492,MIXED_DATE_FORMAT,Enrollment_Date,2020-02-27,27/02/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001465,MIXED_DATE_FORMAT,Enrollment_Date,2021-11-20,20/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000564,MIXED_DATE_FORMAT,Enrollment_Date,2024-12-11,11/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000554,MIXED_DATE_FORMAT,Enrollment_Date,2020-04-08,08/04/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000185,MIXED_DATE_FORMAT,Enrollment_Date,2024-05-31,31/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000798,MIXED_DATE_FORMAT,Enrollment_Date,2019-09-07,07/09/2019,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001450,MIXED_DATE_FORMAT,Enrollment_Date,2025-02-13,13/02/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000643,MIXED_DATE_FORMAT,Enrollment_Date,2025-03-25,25/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000487,MIXED_DATE_FORMAT,Enrollment_Date,2023-02-19,19/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000465,MIXED_DATE_FORMAT,Enrollment_Date,2023-12-31,31/12/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000485,MIXED_DATE_FORMAT,Enrollment_Date,2021-09-05,05/09/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000835,MIXED_DATE_FORMAT,Enrollment_Date,2021-05-02,02/05/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000508,MIXED_DATE_FORMAT,Enrollment_Date,2025-03-16,16/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001141,MIXED_DATE_FORMAT,Enrollment_Date,2023-12-03,03/12/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001285,MIXED_DATE_FORMAT,Enrollment_Date,2025-05-02,02/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000017,MIXED_DATE_FORMAT,Enrollment_Date,2022-03-04,04/03/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001412,MIXED_DATE_FORMAT,Enrollment_Date,2022-08-10,10/08/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001260,MIXED_DATE_FORMAT,Enrollment_Date,2020-02-10,10/02/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001398,MIXED_DATE_FORMAT,Enrollment_Date,2021-12-22,22/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000538,MIXED_DATE_FORMAT,Enrollment_Date,2021-06-11,11/06/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000376,MIXED_DATE_FORMAT,Enrollment_Date,2020-03-03,03/03/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001146,MIXED_DATE_FORMAT,Enrollment_Date,2025-05-15,15/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001030,MIXED_DATE_FORMAT,Enrollment_Date,2024-02-26,26/02/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000269,MIXED_DATE_FORMAT,Enrollment_Date,2023-12-01,01/12/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000194,MIXED_DATE_FORMAT,Enrollment_Date,2023-09-18,18/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000035,MIXED_DATE_FORMAT,Enrollment_Date,2025-03-25,25/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000754,MIXED_DATE_FORMAT,Enrollment_Date,2021-11-27,27/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001484,MIXED_DATE_FORMAT,Enrollment_Date,2024-06-23,23/06/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000130,MIXED_DATE_FORMAT,Enrollment_Date,2024-08-19,19/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000437,MIXED_DATE_FORMAT,Enrollment_Date,2024-07-26,26/07/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001405,MIXED_DATE_FORMAT,Enrollment_Date,2022-12-18,18/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000515,MIXED_DATE_FORMAT,Enrollment_Date,2020-11-23,23/11/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001171,MIXED_DATE_FORMAT,Enrollment_Date,2025-06-25,25/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000159,MIXED_DATE_FORMAT,Enrollment_Date,2021-11-20,20/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000252,MIXED_DATE_FORMAT,Enrollment_Date,2020-06-24,24/06/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001019,MIXED_DATE_FORMAT,Dropout_Date,2023-07-07,07/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001383,MIXED_DATE_FORMAT,Dropout_Date,2025-09-15,15/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000308,MIXED_DATE_FORMAT,Dropout_Date,2021-08-14,14/08/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001276,MIXED_DATE_FORMAT,Dropout_Date,2021-03-29,29/03/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001262,MIXED_DATE_FORMAT,Dropout_Date,2023-02-08,08/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000977,MIXED_DATE_FORMAT,Dropout_Date,2023-04-15,15/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000483,MIXED_DATE_FORMAT,Dropout_Date,2023-01-23,23/01/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000129,MIXED_DATE_FORMAT,Dropout_Date,2020-10-28,28/10/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001012,MIXED_DATE_FORMAT,Dropout_Date,2022-07-12,12/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000572,MIXED_DATE_FORMAT,Dropout_Date,2022-06-28,28/06/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000288,MIXED_DATE_FORMAT,Dropout_Date,2021-03-11,11/03/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000093,MIXED_DATE_FORMAT,Dropout_Date,2025-12-08,08/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000440,MIXED_DATE_FORMAT,Dropout_Date,2024-09-29,29/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000784,MIXED_DATE_FORMAT,Dropout_Date,2025-08-26,26/08/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000540,MIXED_DATE_FORMAT,Dropout_Date,2025-06-15,15/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001148,MIXED_DATE_FORMAT,Dropout_Date,2024-12-12,12/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001064,MIXED_DATE_FORMAT,Dropout_Date,2024-10-18,18/10/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000925,MIXED_DATE_FORMAT,Dropout_Date,2021-12-02,02/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001177,MIXED_DATE_FORMAT,Dropout_Date,2027-01-30,30/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000671,MIXED_DATE_FORMAT,Dropout_Date,2025-01-13,13/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000502,MIXED_DATE_FORMAT,Dropout_Date,2021-01-12,12/01/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000037,MIXED_DATE_FORMAT,Dropout_Date,2024-01-16,16/01/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001370,MIXED_DATE_FORMAT,Dropout_Date,2022-09-22,22/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001377,MIXED_DATE_FORMAT,Dropout_Date,2025-04-26,26/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001451,MIXED_DATE_FORMAT,Dropout_Date,2022-01-18,18/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001041,MIXED_DATE_FORMAT,Dropout_Date,2025-01-19,19/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000825,MIXED_DATE_FORMAT,Dropout_Date,2024-02-20,20/02/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001275,MIXED_DATE_FORMAT,Dropout_Date,2021-03-03,03/03/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001248,MIXED_DATE_FORMAT,Dropout_Date,2026-07-16,16/07/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000355,MIXED_DATE_FORMAT,Dropout_Date,2024-08-19,19/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000869,MIXED_DATE_FORMAT,Dropout_Date,2025-11-21,21/11/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001242,MIXED_DATE_FORMAT,Dropout_Date,2023-01-23,23/01/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001195,MIXED_DATE_FORMAT,Dropout_Date,2024-12-22,22/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000667,MIXED_DATE_FORMAT,Dropout_Date,2021-12-29,29/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001364,MIXED_DATE_FORMAT,Dropout_Date,2025-07-06,06/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000772,MIXED_DATE_FORMAT,Dropout_Date,2027-10-31,31/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000656,MIXED_DATE_FORMAT,Dropout_Date,2023-03-07,07/03/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000574,MIXED_DATE_FORMAT,Dropout_Date,2022-10-21,21/10/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000919,MIXED_DATE_FORMAT,Dropout_Date,2022-12-18,18/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000633,MIXED_DATE_FORMAT,Dropout_Date,2024-02-26,26/02/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000383,MIXED_DATE_FORMAT,Dropout_Date,2025-06-25,25/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001201,MIXED_DATE_FORMAT,Dropout_Date,2022-12-03,03/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000421,MIXED_DATE_FORMAT,Dropout_Date,2021-05-11,11/05/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000203,MIXED_DATE_FORMAT,Dropout_Date,2025-12-13,13/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000598,MIXED_DATE_FORMAT,Dropout_Date,2026-06-18,18/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000804,MIXED_DATE_FORMAT,Dropout_Date,2024-11-01,01/11/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000212,MIXED_DATE_FORMAT,Dropout_Date,2025-08-21,21/08/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000104,MIXED_DATE_FORMAT,Dropout_Date,2020-10-10,10/10/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001209,MIXED_DATE_FORMAT,Dropout_Date,2027-04-11,11/04/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000358,MIXED_DATE_FORMAT,Dropout_Date,2021-03-19,19/03/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001144,MIXED_DATE_FORMAT,Dropout_Date,2022-02-22,22/02/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU000614,MIXED_DATE_FORMAT,Dropout_Date,2022-03-30,30/03/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_departments,DEP013,MIXED_DATE_FORMAT,Created_Date,2008-05-19,19/05/2008,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000420,MIXED_DATE_FORMAT,Invoice_Date,2027-10-09,09/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002585,MIXED_DATE_FORMAT,Invoice_Date,2023-11-22,22/11/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000673,MIXED_DATE_FORMAT,Invoice_Date,2025-10-11,11/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002602,MIXED_DATE_FORMAT,Invoice_Date,2027-10-03,03/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002557,MIXED_DATE_FORMAT,Invoice_Date,2025-03-01,01/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000190,MIXED_DATE_FORMAT,Invoice_Date,2022-05-22,22/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001209,MIXED_DATE_FORMAT,Invoice_Date,2024-04-09,09/04/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000322,MIXED_DATE_FORMAT,Invoice_Date,2025-08-19,19/08/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000516,MIXED_DATE_FORMAT,Invoice_Date,2026-03-14,14/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001296,MIXED_DATE_FORMAT,Invoice_Date,2025-02-17,17/02/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002527,MIXED_DATE_FORMAT,Invoice_Date,2028-06-19,19/06/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000120,MIXED_DATE_FORMAT,Invoice_Date,2020-12-25,25/12/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002488,MIXED_DATE_FORMAT,Invoice_Date,2029-03-29,29/03/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002314,MIXED_DATE_FORMAT,Invoice_Date,2023-11-28,28/11/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001044,MIXED_DATE_FORMAT,Invoice_Date,2027-12-13,13/12/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001760,MIXED_DATE_FORMAT,Invoice_Date,2025-03-07,07/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002293,MIXED_DATE_FORMAT,Invoice_Date,2025-12-15,15/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002786,MIXED_DATE_FORMAT,Invoice_Date,2021-10-27,27/10/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001946,MIXED_DATE_FORMAT,Invoice_Date,2026-06-16,16/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000951,MIXED_DATE_FORMAT,Invoice_Date,2026-04-21,21/04/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001937,MIXED_DATE_FORMAT,Invoice_Date,2028-11-20,20/11/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002654,MIXED_DATE_FORMAT,Invoice_Date,2026-03-10,10/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000334,MIXED_DATE_FORMAT,Invoice_Date,2021-07-16,16/07/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001240,MIXED_DATE_FORMAT,Invoice_Date,2026-12-04,04/12/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000935,MIXED_DATE_FORMAT,Invoice_Date,2026-03-19,19/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000795,MIXED_DATE_FORMAT,Invoice_Date,2022-07-31,31/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000471,MIXED_DATE_FORMAT,Invoice_Date,2020-06-10,10/06/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001517,MIXED_DATE_FORMAT,Invoice_Date,2022-09-10,10/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002518,MIXED_DATE_FORMAT,Invoice_Date,2028-10-08,08/10/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000864,MIXED_DATE_FORMAT,Invoice_Date,2025-07-26,26/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002226,MIXED_DATE_FORMAT,Invoice_Date,2021-10-21,21/10/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002978,MIXED_DATE_FORMAT,Invoice_Date,2023-02-07,07/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001961,MIXED_DATE_FORMAT,Invoice_Date,2025-11-17,17/11/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001211,MIXED_DATE_FORMAT,Invoice_Date,2021-05-04,04/05/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000356,MIXED_DATE_FORMAT,Invoice_Date,2024-01-21,21/01/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000342,MIXED_DATE_FORMAT,Invoice_Date,2023-04-01,01/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002615,MIXED_DATE_FORMAT,Invoice_Date,2021-12-27,27/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002065,MIXED_DATE_FORMAT,Invoice_Date,2022-08-31,31/08/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001639,MIXED_DATE_FORMAT,Invoice_Date,2027-05-16,16/05/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001986,MIXED_DATE_FORMAT,Invoice_Date,2020-11-27,27/11/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002088,MIXED_DATE_FORMAT,Invoice_Date,2024-06-29,29/06/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000762,MIXED_DATE_FORMAT,Invoice_Date,2024-08-19,19/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002360,MIXED_DATE_FORMAT,Invoice_Date,2025-10-22,22/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001724,MIXED_DATE_FORMAT,Invoice_Date,2027-09-07,07/09/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001844,MIXED_DATE_FORMAT,Invoice_Date,2023-04-02,02/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002565,MIXED_DATE_FORMAT,Invoice_Date,2025-11-21,21/11/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001388,MIXED_DATE_FORMAT,Invoice_Date,2025-12-17,17/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001261,MIXED_DATE_FORMAT,Invoice_Date,2024-12-15,15/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001591,MIXED_DATE_FORMAT,Invoice_Date,2026-05-13,13/05/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002852,MIXED_DATE_FORMAT,Invoice_Date,2026-06-02,02/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001840,MIXED_DATE_FORMAT,Invoice_Date,2023-04-09,09/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002201,MIXED_DATE_FORMAT,Invoice_Date,2024-01-22,22/01/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000604,MIXED_DATE_FORMAT,Invoice_Date,2025-03-22,22/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001632,MIXED_DATE_FORMAT,Invoice_Date,2026-09-16,16/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000538,MIXED_DATE_FORMAT,Invoice_Date,2021-04-03,03/04/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000600,MIXED_DATE_FORMAT,Invoice_Date,2025-09-28,28/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001477,MIXED_DATE_FORMAT,Invoice_Date,2020-12-31,31/12/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000614,MIXED_DATE_FORMAT,Invoice_Date,2022-01-09,09/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000952,MIXED_DATE_FORMAT,Invoice_Date,2026-02-28,28/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001136,MIXED_DATE_FORMAT,Invoice_Date,2021-12-26,26/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001703,MIXED_DATE_FORMAT,Invoice_Date,2022-11-19,19/11/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000989,MIXED_DATE_FORMAT,Invoice_Date,2027-02-14,14/02/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001677,MIXED_DATE_FORMAT,Invoice_Date,2029-12-03,03/12/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001578,MIXED_DATE_FORMAT,Invoice_Date,2024-07-10,10/07/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002981,MIXED_DATE_FORMAT,Invoice_Date,2024-09-05,05/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000318,MIXED_DATE_FORMAT,Invoice_Date,2022-01-25,25/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002182,MIXED_DATE_FORMAT,Invoice_Date,2021-02-14,14/02/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001722,MIXED_DATE_FORMAT,Invoice_Date,2027-10-11,11/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002909,MIXED_DATE_FORMAT,Invoice_Date,2022-05-27,27/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000205,MIXED_DATE_FORMAT,Invoice_Date,2024-05-09,09/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000669,MIXED_DATE_FORMAT,Invoice_Date,2025-01-23,23/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001259,MIXED_DATE_FORMAT,Invoice_Date,2021-11-07,07/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002933,MIXED_DATE_FORMAT,Invoice_Date,2027-10-20,20/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001189,MIXED_DATE_FORMAT,Invoice_Date,2024-12-03,03/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000926,MIXED_DATE_FORMAT,Invoice_Date,2025-04-18,18/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001416,MIXED_DATE_FORMAT,Invoice_Date,2023-07-05,05/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000375,MIXED_DATE_FORMAT,Invoice_Date,2026-01-11,11/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000515,MIXED_DATE_FORMAT,Invoice_Date,2027-05-08,08/05/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000282,MIXED_DATE_FORMAT,Invoice_Date,2027-01-02,02/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000720,MIXED_DATE_FORMAT,Invoice_Date,2028-08-29,29/08/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000617,MIXED_DATE_FORMAT,Invoice_Date,2025-09-25,25/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000464,MIXED_DATE_FORMAT,Invoice_Date,2023-02-06,06/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002525,MIXED_DATE_FORMAT,Invoice_Date,2025-06-06,06/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001524,MIXED_DATE_FORMAT,Invoice_Date,2022-07-23,23/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001512,MIXED_DATE_FORMAT,Invoice_Date,2027-06-20,20/06/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001803,MIXED_DATE_FORMAT,Invoice_Date,2021-06-13,13/06/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002576,MIXED_DATE_FORMAT,Invoice_Date,2024-03-30,30/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002839,MIXED_DATE_FORMAT,Invoice_Date,2026-01-16,16/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002442,MIXED_DATE_FORMAT,Invoice_Date,2026-10-20,20/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002685,MIXED_DATE_FORMAT,Invoice_Date,2025-10-19,19/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000085,MIXED_DATE_FORMAT,Invoice_Date,2026-02-15,15/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001540,MIXED_DATE_FORMAT,Invoice_Date,2021-08-02,02/08/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002202,MIXED_DATE_FORMAT,Invoice_Date,2023-03-31,31/03/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001967,MIXED_DATE_FORMAT,Invoice_Date,2028-10-03,03/10/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002702,MIXED_DATE_FORMAT,Invoice_Date,2026-11-16,16/11/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002459,MIXED_DATE_FORMAT,Invoice_Date,2027-12-06,06/12/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001712,MIXED_DATE_FORMAT,Invoice_Date,2025-05-11,11/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002733,MIXED_DATE_FORMAT,Invoice_Date,2027-02-26,26/02/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000663,MIXED_DATE_FORMAT,Invoice_Date,2025-03-22,22/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000691,MIXED_DATE_FORMAT,Invoice_Date,2029-07-19,19/07/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001473,MIXED_DATE_FORMAT,Invoice_Date,2026-10-28,28/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001393,MIXED_DATE_FORMAT,Invoice_Date,2023-10-23,23/10/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001777,MIXED_DATE_FORMAT,Invoice_Date,2023-04-07,07/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002827,MIXED_DATE_FORMAT,Invoice_Date,2025-03-23,23/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001253,MIXED_DATE_FORMAT,Due_Date,2028-04-10,10/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002261,MIXED_DATE_FORMAT,Due_Date,2025-12-24,24/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002728,MIXED_DATE_FORMAT,Due_Date,2024-06-17,17/06/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001430,MIXED_DATE_FORMAT,Due_Date,2024-04-10,10/04/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002452,MIXED_DATE_FORMAT,Due_Date,2026-12-30,30/12/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002059,MIXED_DATE_FORMAT,Due_Date,2025-12-10,10/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000032,MIXED_DATE_FORMAT,Due_Date,2027-10-24,24/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001339,MIXED_DATE_FORMAT,Due_Date,2019-11-19,19/11/2019,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001292,MIXED_DATE_FORMAT,Due_Date,2023-12-12,12/12/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001376,MIXED_DATE_FORMAT,Due_Date,2029-04-29,29/04/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001108,MIXED_DATE_FORMAT,Due_Date,2025-05-20,20/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002461,MIXED_DATE_FORMAT,Due_Date,2025-12-23,23/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001239,MIXED_DATE_FORMAT,Due_Date,2027-10-26,26/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002700,MIXED_DATE_FORMAT,Due_Date,2025-12-21,21/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001302,MIXED_DATE_FORMAT,Due_Date,2028-04-04,04/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002692,MIXED_DATE_FORMAT,Due_Date,2026-12-09,09/12/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000501,MIXED_DATE_FORMAT,Due_Date,2024-03-07,07/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002179,MIXED_DATE_FORMAT,Due_Date,2022-07-28,28/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002305,MIXED_DATE_FORMAT,Due_Date,2023-08-10,10/08/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000189,MIXED_DATE_FORMAT,Due_Date,2023-08-05,05/08/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001897,MIXED_DATE_FORMAT,Due_Date,2023-09-17,17/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002541,MIXED_DATE_FORMAT,Due_Date,2026-09-19,19/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001948,MIXED_DATE_FORMAT,Due_Date,2026-06-19,19/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001506,MIXED_DATE_FORMAT,Due_Date,2023-07-14,14/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000605,MIXED_DATE_FORMAT,Due_Date,2024-05-04,04/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001552,MIXED_DATE_FORMAT,Due_Date,2024-06-09,09/06/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001568,MIXED_DATE_FORMAT,Due_Date,2025-07-15,15/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001931,MIXED_DATE_FORMAT,Due_Date,2025-04-16,16/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002747,MIXED_DATE_FORMAT,Due_Date,2026-05-10,10/05/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000352,MIXED_DATE_FORMAT,Due_Date,2024-04-08,08/04/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000863,MIXED_DATE_FORMAT,Due_Date,2027-02-08,08/02/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001613,MIXED_DATE_FORMAT,Due_Date,2023-09-16,16/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002335,MIXED_DATE_FORMAT,Due_Date,2029-10-11,11/10/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001456,MIXED_DATE_FORMAT,Due_Date,2022-10-02,02/10/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002324,MIXED_DATE_FORMAT,Due_Date,2022-11-20,20/11/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000042,MIXED_DATE_FORMAT,Due_Date,2025-03-12,12/03/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002462,MIXED_DATE_FORMAT,Due_Date,2026-02-27,27/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000058,MIXED_DATE_FORMAT,Due_Date,2023-04-23,23/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002906,MIXED_DATE_FORMAT,Due_Date,2022-02-01,01/02/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000956,MIXED_DATE_FORMAT,Due_Date,2026-12-15,15/12/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000905,MIXED_DATE_FORMAT,Due_Date,2024-01-21,21/01/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002956,MIXED_DATE_FORMAT,Due_Date,2022-08-21,21/08/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000903,MIXED_DATE_FORMAT,Due_Date,2025-09-07,07/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000580,MIXED_DATE_FORMAT,Due_Date,2027-06-28,28/06/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001136,MIXED_DATE_FORMAT,Due_Date,2022-02-22,22/02/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001675,MIXED_DATE_FORMAT,Due_Date,2023-05-13,13/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000286,MIXED_DATE_FORMAT,Due_Date,2027-01-19,19/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001886,MIXED_DATE_FORMAT,Due_Date,2028-02-19,19/02/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000592,MIXED_DATE_FORMAT,Due_Date,2022-07-16,16/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000919,MIXED_DATE_FORMAT,Due_Date,2025-05-29,29/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002757,MIXED_DATE_FORMAT,Due_Date,2024-12-10,10/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001780,MIXED_DATE_FORMAT,Due_Date,2023-05-01,01/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002347,MIXED_DATE_FORMAT,Due_Date,2028-03-09,09/03/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001496,MIXED_DATE_FORMAT,Due_Date,2030-06-04,04/06/2030,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002041,MIXED_DATE_FORMAT,Due_Date,2026-09-27,27/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001824,MIXED_DATE_FORMAT,Due_Date,2026-01-27,27/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000581,MIXED_DATE_FORMAT,Due_Date,2027-02-06,06/02/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000306,MIXED_DATE_FORMAT,Due_Date,2025-12-26,26/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001133,MIXED_DATE_FORMAT,Due_Date,2022-02-27,27/02/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001469,MIXED_DATE_FORMAT,Due_Date,2021-12-05,05/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001830,MIXED_DATE_FORMAT,Due_Date,2022-01-24,24/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002457,MIXED_DATE_FORMAT,Due_Date,2026-08-12,12/08/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000124,MIXED_DATE_FORMAT,Due_Date,2024-10-04,04/10/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002798,MIXED_DATE_FORMAT,Due_Date,2026-03-25,25/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000086,MIXED_DATE_FORMAT,Due_Date,2026-07-05,05/07/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001352,MIXED_DATE_FORMAT,Due_Date,2025-10-08,08/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002792,MIXED_DATE_FORMAT,Due_Date,2026-09-13,13/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000496,MIXED_DATE_FORMAT,Due_Date,2021-07-20,20/07/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000309,MIXED_DATE_FORMAT,Due_Date,2027-11-12,12/11/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001775,MIXED_DATE_FORMAT,Due_Date,2025-09-10,10/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002380,MIXED_DATE_FORMAT,Due_Date,2029-08-01,01/08/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000876,MIXED_DATE_FORMAT,Due_Date,2024-10-27,27/10/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000433,MIXED_DATE_FORMAT,Due_Date,2026-06-22,22/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001950,MIXED_DATE_FORMAT,Due_Date,2026-04-01,01/04/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002663,MIXED_DATE_FORMAT,Due_Date,2028-03-22,22/03/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001240,MIXED_DATE_FORMAT,Due_Date,2027-01-08,08/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000632,MIXED_DATE_FORMAT,Due_Date,2025-07-14,14/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002885,MIXED_DATE_FORMAT,Due_Date,2028-11-20,20/11/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001025,MIXED_DATE_FORMAT,Due_Date,2025-09-15,15/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001419,MIXED_DATE_FORMAT,Due_Date,2024-02-15,15/02/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002421,MIXED_DATE_FORMAT,Due_Date,2023-07-14,14/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000800,MIXED_DATE_FORMAT,Due_Date,2025-12-22,22/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001930,MIXED_DATE_FORMAT,Due_Date,2022-04-02,02/04/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000310,MIXED_DATE_FORMAT,Due_Date,2028-04-17,17/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000398,MIXED_DATE_FORMAT,Due_Date,2026-06-01,01/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000887,MIXED_DATE_FORMAT,Due_Date,2026-03-13,13/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002259,MIXED_DATE_FORMAT,Due_Date,2026-02-15,15/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001031,MIXED_DATE_FORMAT,Due_Date,2023-08-04,04/08/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000337,MIXED_DATE_FORMAT,Due_Date,2023-04-01,01/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000703,MIXED_DATE_FORMAT,Due_Date,2026-09-11,11/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002712,MIXED_DATE_FORMAT,Due_Date,2022-03-16,16/03/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001748,MIXED_DATE_FORMAT,Due_Date,2022-04-29,29/04/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001009,MIXED_DATE_FORMAT,Due_Date,2022-06-08,08/06/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000987,MIXED_DATE_FORMAT,Due_Date,2026-06-17,17/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000735,MIXED_DATE_FORMAT,Due_Date,2025-04-11,11/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001372,MIXED_DATE_FORMAT,Due_Date,2023-11-10,10/11/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002367,MIXED_DATE_FORMAT,Due_Date,2026-04-28,28/04/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001636,MIXED_DATE_FORMAT,Due_Date,2027-04-24,24/04/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002412,MIXED_DATE_FORMAT,Due_Date,2024-09-25,25/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0000582,MIXED_DATE_FORMAT,Due_Date,2022-07-18,18/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001998,MIXED_DATE_FORMAT,Due_Date,2025-12-19,19/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0002887,MIXED_DATE_FORMAT,Due_Date,2023-05-29,29/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001575,MIXED_DATE_FORMAT,Due_Date,2022-05-15,15/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_tuition_invoices,INV0001509,MIXED_DATE_FORMAT,Due_Date,2025-12-02,02/12/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001533,MIXED_DATE_FORMAT,Payment_Date,2026-07-09,09/07/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002923,MIXED_DATE_FORMAT,Payment_Date,2029-05-16,16/05/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002913,MIXED_DATE_FORMAT,Payment_Date,2028-12-23,23/12/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000182,MIXED_DATE_FORMAT,Payment_Date,2028-11-23,23/11/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000994,MIXED_DATE_FORMAT,Payment_Date,2020-08-02,02/08/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002274,MIXED_DATE_FORMAT,Payment_Date,2022-09-04,04/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003025,MIXED_DATE_FORMAT,Payment_Date,2027-09-14,14/09/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003006,MIXED_DATE_FORMAT,Payment_Date,2026-09-20,20/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000149,MIXED_DATE_FORMAT,Payment_Date,2021-08-07,07/08/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001176,MIXED_DATE_FORMAT,Payment_Date,2027-11-12,12/11/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001975,MIXED_DATE_FORMAT,Payment_Date,2023-10-03,03/10/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002272,MIXED_DATE_FORMAT,Payment_Date,2026-02-23,23/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003192,MIXED_DATE_FORMAT,Payment_Date,2028-02-04,04/02/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001052,MIXED_DATE_FORMAT,Payment_Date,2022-12-12,12/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001200,MIXED_DATE_FORMAT,Payment_Date,2023-02-22,22/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001147,MIXED_DATE_FORMAT,Payment_Date,2025-06-14,14/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000812,MIXED_DATE_FORMAT,Payment_Date,2027-01-18,18/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000135,MIXED_DATE_FORMAT,Payment_Date,2025-06-26,26/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000706,MIXED_DATE_FORMAT,Payment_Date,2026-08-06,06/08/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002361,MIXED_DATE_FORMAT,Payment_Date,2026-02-18,18/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000325,MIXED_DATE_FORMAT,Payment_Date,2029-02-26,26/02/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002403,MIXED_DATE_FORMAT,Payment_Date,2024-08-21,21/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003358,MIXED_DATE_FORMAT,Payment_Date,2021-05-21,21/05/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000010,MIXED_DATE_FORMAT,Payment_Date,2027-04-20,20/04/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000928,MIXED_DATE_FORMAT,Payment_Date,2026-10-17,17/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003185,MIXED_DATE_FORMAT,Payment_Date,2025-02-09,09/02/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000721,MIXED_DATE_FORMAT,Payment_Date,2022-07-07,07/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000517,MIXED_DATE_FORMAT,Payment_Date,2023-11-05,05/11/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000063,MIXED_DATE_FORMAT,Payment_Date,2027-11-12,12/11/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002420,MIXED_DATE_FORMAT,Payment_Date,2023-05-03,03/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000321,MIXED_DATE_FORMAT,Payment_Date,2020-11-17,17/11/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000903,MIXED_DATE_FORMAT,Payment_Date,2027-01-14,14/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000543,MIXED_DATE_FORMAT,Payment_Date,2024-05-26,26/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002621,MIXED_DATE_FORMAT,Payment_Date,2020-10-19,19/10/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002370,MIXED_DATE_FORMAT,Payment_Date,2021-12-10,10/12/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001068,MIXED_DATE_FORMAT,Payment_Date,2023-06-27,27/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002512,MIXED_DATE_FORMAT,Payment_Date,2022-12-19,19/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002211,MIXED_DATE_FORMAT,Payment_Date,2029-06-04,04/06/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001569,MIXED_DATE_FORMAT,Payment_Date,2024-09-12,12/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002015,MIXED_DATE_FORMAT,Payment_Date,2028-03-13,13/03/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003234,MIXED_DATE_FORMAT,Payment_Date,2021-08-06,06/08/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000176,MIXED_DATE_FORMAT,Payment_Date,2026-01-27,27/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001655,MIXED_DATE_FORMAT,Payment_Date,2027-09-24,24/09/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002124,MIXED_DATE_FORMAT,Payment_Date,2023-06-20,20/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001263,MIXED_DATE_FORMAT,Payment_Date,2022-06-14,14/06/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001453,MIXED_DATE_FORMAT,Payment_Date,2024-12-22,22/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000454,MIXED_DATE_FORMAT,Payment_Date,2028-11-22,22/11/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001535,MIXED_DATE_FORMAT,Payment_Date,2026-10-05,05/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002604,MIXED_DATE_FORMAT,Payment_Date,2027-09-12,12/09/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000839,MIXED_DATE_FORMAT,Payment_Date,2028-04-16,16/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003361,MIXED_DATE_FORMAT,Payment_Date,2026-09-23,23/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000008,MIXED_DATE_FORMAT,Payment_Date,2023-09-30,30/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000540,MIXED_DATE_FORMAT,Payment_Date,2026-01-12,12/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002016,MIXED_DATE_FORMAT,Payment_Date,2025-07-30,30/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000188,MIXED_DATE_FORMAT,Payment_Date,2026-03-28,28/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001866,MIXED_DATE_FORMAT,Payment_Date,2023-09-22,22/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001241,MIXED_DATE_FORMAT,Payment_Date,2022-05-11,11/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002979,MIXED_DATE_FORMAT,Payment_Date,2023-09-05,05/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002726,MIXED_DATE_FORMAT,Payment_Date,2024-09-24,24/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001715,MIXED_DATE_FORMAT,Payment_Date,2023-05-05,05/05/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000113,MIXED_DATE_FORMAT,Payment_Date,2027-10-10,10/10/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001039,MIXED_DATE_FORMAT,Payment_Date,2021-11-17,17/11/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003129,MIXED_DATE_FORMAT,Payment_Date,2027-01-05,05/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002648,MIXED_DATE_FORMAT,Payment_Date,2025-11-11,11/11/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000017,MIXED_DATE_FORMAT,Payment_Date,2024-05-27,27/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001266,MIXED_DATE_FORMAT,Payment_Date,2024-12-17,17/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003023,MIXED_DATE_FORMAT,Payment_Date,2024-10-08,08/10/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003397,MIXED_DATE_FORMAT,Payment_Date,2026-09-04,04/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001622,MIXED_DATE_FORMAT,Payment_Date,2024-05-04,04/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000570,MIXED_DATE_FORMAT,Payment_Date,2027-06-04,04/06/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002168,MIXED_DATE_FORMAT,Payment_Date,2022-10-25,25/10/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000869,MIXED_DATE_FORMAT,Payment_Date,2023-06-30,30/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000314,MIXED_DATE_FORMAT,Payment_Date,2026-09-08,08/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000624,MIXED_DATE_FORMAT,Payment_Date,2021-04-02,02/04/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001581,MIXED_DATE_FORMAT,Payment_Date,2025-06-01,01/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001108,MIXED_DATE_FORMAT,Payment_Date,2025-01-06,06/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001313,MIXED_DATE_FORMAT,Payment_Date,2027-01-15,15/01/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002968,MIXED_DATE_FORMAT,Payment_Date,2022-01-13,13/01/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002986,MIXED_DATE_FORMAT,Payment_Date,2027-07-16,16/07/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000355,MIXED_DATE_FORMAT,Payment_Date,2025-07-14,14/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000478,MIXED_DATE_FORMAT,Payment_Date,2024-01-25,25/01/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002686,MIXED_DATE_FORMAT,Payment_Date,2023-03-16,16/03/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002862,MIXED_DATE_FORMAT,Payment_Date,2026-10-10,10/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000591,MIXED_DATE_FORMAT,Payment_Date,2023-07-13,13/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001522,MIXED_DATE_FORMAT,Payment_Date,2028-01-14,14/01/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001356,MIXED_DATE_FORMAT,Payment_Date,2020-06-23,23/06/2020,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002090,MIXED_DATE_FORMAT,Payment_Date,2024-10-31,31/10/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000452,MIXED_DATE_FORMAT,Payment_Date,2021-04-25,25/04/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000885,MIXED_DATE_FORMAT,Payment_Date,2024-08-26,26/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000361,MIXED_DATE_FORMAT,Payment_Date,2026-08-18,18/08/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003070,MIXED_DATE_FORMAT,Payment_Date,2027-07-04,04/07/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002577,MIXED_DATE_FORMAT,Payment_Date,2026-10-23,23/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000422,MIXED_DATE_FORMAT,Payment_Date,2023-03-24,24/03/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003257,MIXED_DATE_FORMAT,Payment_Date,2025-09-03,03/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002995,MIXED_DATE_FORMAT,Payment_Date,2024-11-12,12/11/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001548,MIXED_DATE_FORMAT,Payment_Date,2023-02-10,10/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000196,MIXED_DATE_FORMAT,Payment_Date,2028-04-22,22/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003163,MIXED_DATE_FORMAT,Payment_Date,2025-07-22,22/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002342,MIXED_DATE_FORMAT,Payment_Date,2022-04-21,21/04/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000273,MIXED_DATE_FORMAT,Payment_Date,2023-07-28,28/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000763,MIXED_DATE_FORMAT,Payment_Date,2024-06-25,25/06/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002935,MIXED_DATE_FORMAT,Payment_Date,2023-06-16,16/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000481,MIXED_DATE_FORMAT,Payment_Date,2026-09-21,21/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001594,MIXED_DATE_FORMAT,Payment_Date,2029-11-23,23/11/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003035,MIXED_DATE_FORMAT,Payment_Date,2021-03-06,06/03/2021,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003491,MIXED_DATE_FORMAT,Payment_Date,2026-05-25,25/05/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000333,MIXED_DATE_FORMAT,Payment_Date,2025-04-04,04/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000759,MIXED_DATE_FORMAT,Payment_Date,2024-04-15,15/04/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002942,MIXED_DATE_FORMAT,Payment_Date,2022-12-10,10/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002160,MIXED_DATE_FORMAT,Payment_Date,2027-09-25,25/09/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002629,MIXED_DATE_FORMAT,Payment_Date,2029-07-09,09/07/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000668,MIXED_DATE_FORMAT,Payment_Date,2028-04-17,17/04/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002970,MIXED_DATE_FORMAT,Payment_Date,2028-06-22,22/06/2028,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002951,MIXED_DATE_FORMAT,Payment_Date,2025-09-10,10/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003374,MIXED_DATE_FORMAT,Payment_Date,2024-05-08,08/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002355,MIXED_DATE_FORMAT,Payment_Date,2027-08-16,16/08/2027,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0003300,MIXED_DATE_FORMAT,Payment_Date,2024-12-09,09/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002965,MIXED_DATE_FORMAT,Payment_Date,2026-10-04,04/10/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000531,MIXED_DATE_FORMAT,Payment_Date,2022-07-02,02/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000530,MIXED_DATE_FORMAT,Payment_Date,2025-04-11,11/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0001119,MIXED_DATE_FORMAT,Payment_Date,2026-09-16,16/09/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0000904,MIXED_DATE_FORMAT,Payment_Date,2025-07-13,13/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_payments,PAY0002188,MIXED_DATE_FORMAT,Payment_Date,2029-11-07,07/11/2029,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001483,MIXED_DATE_FORMAT,Expense_Date,2022-09-23,23/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000054,MIXED_DATE_FORMAT,Expense_Date,2026-03-17,17/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001426,MIXED_DATE_FORMAT,Expense_Date,2025-09-08,08/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000198,MIXED_DATE_FORMAT,Expense_Date,2022-05-18,18/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001584,MIXED_DATE_FORMAT,Expense_Date,2024-05-16,16/05/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000983,MIXED_DATE_FORMAT,Expense_Date,2025-07-24,24/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001535,MIXED_DATE_FORMAT,Expense_Date,2023-06-05,05/06/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001868,MIXED_DATE_FORMAT,Expense_Date,2023-07-31,31/07/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001114,MIXED_DATE_FORMAT,Expense_Date,2022-08-30,30/08/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000926,MIXED_DATE_FORMAT,Expense_Date,2022-06-05,05/06/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001012,MIXED_DATE_FORMAT,Expense_Date,2024-12-05,05/12/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000702,MIXED_DATE_FORMAT,Expense_Date,2023-11-10,10/11/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000788,MIXED_DATE_FORMAT,Expense_Date,2026-02-02,02/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001351,MIXED_DATE_FORMAT,Expense_Date,2024-03-29,29/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000481,MIXED_DATE_FORMAT,Expense_Date,2024-03-18,18/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001259,MIXED_DATE_FORMAT,Expense_Date,2025-04-13,13/04/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000171,MIXED_DATE_FORMAT,Expense_Date,2024-03-31,31/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000304,MIXED_DATE_FORMAT,Expense_Date,2023-02-18,18/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000381,MIXED_DATE_FORMAT,Expense_Date,2024-08-15,15/08/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000061,MIXED_DATE_FORMAT,Expense_Date,2025-06-01,01/06/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001384,MIXED_DATE_FORMAT,Expense_Date,2026-06-14,14/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000473,MIXED_DATE_FORMAT,Expense_Date,2022-08-05,05/08/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001781,MIXED_DATE_FORMAT,Expense_Date,2024-04-16,16/04/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001296,MIXED_DATE_FORMAT,Expense_Date,2026-05-13,13/05/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000821,MIXED_DATE_FORMAT,Expense_Date,2025-07-18,18/07/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000133,MIXED_DATE_FORMAT,Expense_Date,2023-08-12,12/08/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001530,MIXED_DATE_FORMAT,Expense_Date,2025-10-30,30/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000670,MIXED_DATE_FORMAT,Expense_Date,2023-10-28,28/10/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001632,MIXED_DATE_FORMAT,Expense_Date,2025-09-17,17/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000306,MIXED_DATE_FORMAT,Expense_Date,2023-01-19,19/01/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000149,MIXED_DATE_FORMAT,Expense_Date,2025-09-18,18/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000924,MIXED_DATE_FORMAT,Expense_Date,2026-03-29,29/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001459,MIXED_DATE_FORMAT,Expense_Date,2026-06-03,03/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001784,MIXED_DATE_FORMAT,Expense_Date,2022-05-23,23/05/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001232,MIXED_DATE_FORMAT,Expense_Date,2023-04-13,13/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000387,MIXED_DATE_FORMAT,Expense_Date,2025-05-20,20/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001120,MIXED_DATE_FORMAT,Expense_Date,2024-03-04,04/03/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000674,MIXED_DATE_FORMAT,Expense_Date,2026-06-03,03/06/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000065,MIXED_DATE_FORMAT,Expense_Date,2022-07-07,07/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000268,MIXED_DATE_FORMAT,Expense_Date,2022-10-15,15/10/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001955,MIXED_DATE_FORMAT,Expense_Date,2022-04-03,03/04/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001577,MIXED_DATE_FORMAT,Expense_Date,2023-01-07,07/01/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001005,MIXED_DATE_FORMAT,Expense_Date,2025-09-02,02/09/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000537,MIXED_DATE_FORMAT,Expense_Date,2023-12-05,05/12/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001175,MIXED_DATE_FORMAT,Expense_Date,2024-02-18,18/02/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001865,MIXED_DATE_FORMAT,Expense_Date,2026-01-05,05/01/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001462,MIXED_DATE_FORMAT,Expense_Date,2022-03-16,16/03/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001470,MIXED_DATE_FORMAT,Expense_Date,2022-07-27,27/07/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000003,MIXED_DATE_FORMAT,Expense_Date,2022-10-08,08/10/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000793,MIXED_DATE_FORMAT,Expense_Date,2022-12-07,07/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001847,MIXED_DATE_FORMAT,Expense_Date,2022-12-23,23/12/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001022,MIXED_DATE_FORMAT,Expense_Date,2026-03-06,06/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001017,MIXED_DATE_FORMAT,Expense_Date,2023-09-30,30/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001254,MIXED_DATE_FORMAT,Expense_Date,2023-09-19,19/09/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001926,MIXED_DATE_FORMAT,Expense_Date,2025-11-09,09/11/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000542,MIXED_DATE_FORMAT,Expense_Date,2023-10-07,07/10/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001475,MIXED_DATE_FORMAT,Expense_Date,2026-02-24,24/02/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000494,MIXED_DATE_FORMAT,Expense_Date,2026-08-01,01/08/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001268,MIXED_DATE_FORMAT,Expense_Date,2024-09-12,12/09/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001710,MIXED_DATE_FORMAT,Expense_Date,2023-01-06,06/01/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000667,MIXED_DATE_FORMAT,Expense_Date,2026-03-05,05/03/2026,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001363,MIXED_DATE_FORMAT,Expense_Date,2025-02-05,05/02/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001951,MIXED_DATE_FORMAT,Expense_Date,2025-01-02,02/01/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001313,MIXED_DATE_FORMAT,Expense_Date,2022-09-15,15/09/2022,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000875,MIXED_DATE_FORMAT,Expense_Date,2025-10-21,21/10/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000709,MIXED_DATE_FORMAT,Expense_Date,2024-11-14,14/11/2024,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000225,MIXED_DATE_FORMAT,Expense_Date,2023-04-24,24/04/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0001603,MIXED_DATE_FORMAT,Expense_Date,2023-02-02,02/02/2023,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+fact_expenses,EXP0000905,MIXED_DATE_FORMAT,Expense_Date,2025-05-30,30/05/2025,Ngày được lưu theo DD/MM/YYYY thay vì YYYY-MM-DD.
+dim_students,STU001301,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU001131,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU001000,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU000990,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU000009,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU001088,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU000409,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU000139,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU001098,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+dim_students,STU000436,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0001478,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0001653,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0002490,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0001850,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0000703,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0001818,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0001717,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0002552,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0000639,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0002486,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0002675,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0002792,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0000337,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0000413,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_tuition_invoices,INV0000223,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000575,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001385,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000860,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001243,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001338,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001003,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001868,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000243,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001026,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000621,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000882,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001954,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0001432,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000716,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
+fact_expenses,EXP0000405,EXACT_DUPLICATE_ROW,ALL_COLUMNS,unique row,duplicated row,"Toàn bộ bản ghi, bao gồm business key, bị ghi nhận hai lần."
