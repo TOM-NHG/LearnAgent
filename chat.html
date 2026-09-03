@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRP AI Financial & Graph Intelligence Agent</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -505,7 +506,7 @@
         const chatInput = document.getElementById("chatInput");
         const sendBtn = document.getElementById("sendBtn");
 
-        function appendMessage(text, isUser = false, cypher = null) {
+        function appendMessage(text, isUser = false, cypher = null, source = null, routingMs = null) {
             const row = document.createElement("div");
             row.className = `message-row ${isUser ? 'user' : ''}`;
             
@@ -515,13 +516,32 @@
 
             const bubble = document.createElement("div");
             bubble.className = "message-bubble";
-            bubble.innerHTML = text.replace(/\n/g, "<br>");
+
+            // Simple markdown parsing for bold and line breaks
+            let formatted = text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/`([^`]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.15rem 0.35rem; border-radius: 4px; font-family: monospace;">$1</code>')
+                .replace(/\n/g, "<br>");
+
+            bubble.innerHTML = formatted;
+
+            if (!isUser && (source || routingMs !== null)) {
+                const metaDiv = document.createElement("div");
+                metaDiv.style.marginTop = "0.5rem";
+                metaDiv.style.fontSize = "0.72rem";
+                metaDiv.style.color = "var(--accent-cyan)";
+                metaDiv.style.display = "flex";
+                metaDiv.style.gap = "0.5rem";
+                metaDiv.style.alignItems = "center";
+                metaDiv.innerHTML = `<span>⚡ Nguồn: <b>${source || 'FAST_PATH'}</b></span> ${routingMs !== null ? `<span>⏱️ <b>${routingMs} ms</b></span>` : ''}`;
+                bubble.appendChild(metaDiv);
+            }
 
             if (cypher && !isUser) {
                 const cypherDiv = document.createElement("div");
                 cypherDiv.className = "cypher-badge";
                 cypherDiv.innerHTML = `
-                    <div class="cypher-badge-header">⚡ Lệnh Cypher Thực Thi Trên Neo4j:</div>
+                    <div class="cypher-badge-header">⚡ Lệnh Cypher Mẫu:</div>
                     <code>${cypher.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code>
                 `;
                 bubble.appendChild(cypherDiv);
@@ -589,7 +609,7 @@
                 } else {
                     const data = await response.json();
                     const cypherQuery = data.metadata ? data.metadata.cypher : null;
-                    appendMessage(data.answer, false, cypherQuery);
+                    appendMessage(data.answer, false, cypherQuery, data.source, data.routing_time_ms);
                 }
             } catch (err) {
                 removeTypingIndicator();
