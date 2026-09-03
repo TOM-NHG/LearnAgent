@@ -1,0 +1,94 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix mrp: <http://nhg.edu.vn/ontology/mrp#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    SHACL Validation Shapes for MRP Financial Intelligence
+#################################################################
+
+# 1. Ràng buộc toàn vẹn dữ liệu Sinh viên (Student Shape)
+mrp:StudentShape a sh:NodeShape ;
+    sh:targetClass mrp:Student ;
+    sh:property [
+        sh:path mrp:studentId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Mỗi sinh viên bắt buộc phải có duy nhất một Mã số sinh viên (studentId)."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:riskScore ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 100.0 ;
+        sh:message "Điểm rủi ro (riskScore) của sinh viên phải nằm trong khoảng từ 0.0 đến 100.0."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:belongsToDepartment ;
+        sh:class mrp:Department ;
+        sh:minCount 1 ;
+        sh:message "Mỗi sinh viên bắt buộc phải trực thuộc một Khoa/Phòng ban (Department)."@vi ;
+    ] .
+
+# 2. Ràng buộc toàn vẹn dữ liệu Hóa đơn học phí (Invoice Shape)
+mrp:InvoiceShape a sh:NodeShape ;
+    sh:targetClass mrp:Invoice ;
+    sh:property [
+        sh:path mrp:invoiceId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Mỗi hóa đơn phải có đúng một mã hóa đơn duy nhất (invoiceId)."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:totalAmount ;
+        sh:datatype xsd:long ;
+        sh:minInclusive 0 ;
+        sh:message "Tổng số tiền hóa đơn (totalAmount) không được âm."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:remainingBalance ;
+        sh:datatype xsd:long ;
+        sh:minInclusive 0 ;
+        sh:message "Số dư công nợ còn lại (remainingBalance) không được âm."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:billedTo ;
+        sh:class mrp:Student ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Hóa đơn phải được xuất cho chính xác một sinh viên (Student)."@vi ;
+    ] .
+
+# 3. Ràng buộc toàn vẹn dữ liệu Thanh toán (Payment Shape)
+mrp:PaymentShape a sh:NodeShape ;
+    sh:targetClass mrp:Payment ;
+    sh:property [
+        sh:path mrp:amountPaid ;
+        sh:datatype xsd:long ;
+        sh:minInclusive 1 ;
+        sh:message "Số tiền thanh toán (amountPaid) phải lớn hơn 0 VNĐ."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:settles ;
+        sh:class mrp:Invoice ;
+        sh:minCount 1 ;
+        sh:message "Mỗi giao dịch thanh toán phải quyết toán cho ít nhất một hóa đơn (Invoice)."@vi ;
+    ] .
+
+# 4. Ràng buộc toàn vẹn dữ liệu Chi phí hoạt động (Expense Shape)
+mrp:ExpenseShape a sh:NodeShape ;
+    sh:targetClass mrp:Expense ;
+    sh:property [
+        sh:path mrp:expenseAmount ;
+        sh:datatype xsd:long ;
+        sh:minInclusive 0 ;
+        sh:message "Khoản chi phí hoạt động (expenseAmount) không được âm."@vi ;
+    ] ;
+    sh:property [
+        sh:path mrp:incurredBy ;
+        sh:class mrp:Department ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Khoản chi phải phát sinh từ chính xác một Khoa/Phòng ban."@vi ;
+    ] .

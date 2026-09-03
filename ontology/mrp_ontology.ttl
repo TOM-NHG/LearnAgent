@@ -1,0 +1,236 @@
+@prefix mrp: <http://nhg.edu.vn/ontology/mrp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://nhg.edu.vn/ontology/mrp> a owl:Ontology ;
+    dc:title "MRP University Financial & Academic Knowledge Graph Ontology"@vi ;
+    dc:description "Formal W3C OWL 2 Ontology modeling students, tuition fees, debts, operating expenses, and academic hierarchy."@en ;
+    owl:versionInfo "2.0.0" .
+
+#################################################################
+#    Classes & Taxonomy Hierarchy
+#################################################################
+
+# Base Classes
+mrp:Entity a owl:Class ;
+    rdfs:label "Thực thể hệ thống"@vi .
+
+mrp:Person a owl:Class ;
+    rdfs:subClassOf mrp:Entity ;
+    rdfs:label "Cá nhân"@vi .
+
+mrp:OrganizationUnit a owl:Class ;
+    rdfs:subClassOf mrp:Entity ;
+    rdfs:label "Đơn vị tổ chức"@vi .
+
+mrp:FinancialTransaction a owl:Class ;
+    rdfs:subClassOf mrp:Entity ;
+    rdfs:label "Giao dịch tài chính"@vi .
+
+mrp:FinancialDocument a owl:Class ;
+    rdfs:subClassOf mrp:Entity ;
+    rdfs:label "Chứng từ tài chính"@vi .
+
+# Department & Academic Unit
+mrp:Department a owl:Class ;
+    rdfs:subClassOf mrp:OrganizationUnit ;
+    rdfs:label "Khoa / Phòng ban"@vi .
+
+mrp:Major a owl:Class ;
+    rdfs:subClassOf mrp:OrganizationUnit ;
+    rdfs:label "Chuyên ngành đào tạo"@vi .
+
+mrp:Vendor a owl:Class ;
+    rdfs:subClassOf mrp:OrganizationUnit ;
+    rdfs:label "Nhà cung cấp hàng hóa & dịch vụ"@vi .
+
+# Student Taxonomy Hierarchy
+mrp:Student a owl:Class ;
+    rdfs:subClassOf mrp:Person ;
+    rdfs:label "Sinh viên"@vi .
+
+mrp:GoodStandingStudent a owl:Class ;
+    rdfs:subClassOf mrp:Student ;
+    rdfs:label "Sinh viên chấp hành tốt (Không nợ xấu)"@vi ;
+    rdfs:comment "Sinh viên có tỷ lệ thanh toán học phí cao, không có nợ quá hạn."@vi .
+
+mrp:AtRiskStudent a owl:Class ;
+    rdfs:subClassOf mrp:Student ;
+    rdfs:label "Sinh viên có nguy cơ rủi ro tài chính"@vi ;
+    rdfs:comment "Sinh viên có số nợ tồn đọng lớn hơn 15 triệu VNĐ hoặc tỷ lệ giao dịch thất bại cao."@vi .
+
+mrp:DropoutCandidateStudent a owl:Class ;
+    rdfs:subClassOf mrp:AtRiskStudent ;
+    rdfs:label "Sinh viên có nguy cơ bỏ học / Thôi học"@vi ;
+    rdfs:comment "Sinh viên nợ quá hạn > 90 ngày hoặc trạng thái Suspended / Dropped Out."@vi .
+
+# Invoice Taxonomy Hierarchy
+mrp:Invoice a owl:Class ;
+    rdfs:subClassOf mrp:FinancialDocument ;
+    rdfs:label "Hóa đơn học phí"@vi .
+
+mrp:PaidInvoice a owl:Class ;
+    rdfs:subClassOf mrp:Invoice ;
+    rdfs:label "Hóa đơn đã tất toán đủ 100%"@vi .
+
+mrp:OverdueInvoice a owl:Class ;
+    rdfs:subClassOf mrp:Invoice ;
+    rdfs:label "Hóa đơn nợ quá hạn thanh toán"@vi .
+
+mrp:BadDebtInvoice a owl:Class ;
+    rdfs:subClassOf mrp:OverdueInvoice ;
+    rdfs:label "Hóa đơn nợ xấu khó đòi (> 90 ngày)"@vi .
+
+# Expense Taxonomy Hierarchy
+mrp:Expense a owl:Class ;
+    rdfs:subClassOf mrp:FinancialDocument ;
+    rdfs:label "Khoản chi phí vận hành"@vi .
+
+mrp:AcademicExpense a owl:Class ;
+    rdfs:subClassOf mrp:Expense ;
+    rdfs:label "Chi phí đào tạo & Nghiên cứu khoa học"@vi .
+
+mrp:OperatingExpense a owl:Class ;
+    rdfs:subClassOf mrp:Expense ;
+    rdfs:label "Chi phí vận hành thường xuyên"@vi .
+
+mrp:SalaryExpense a owl:Class ;
+    rdfs:subClassOf mrp:OperatingExpense ;
+    rdfs:label "Chi phí lương giảng viên & cán bộ nhân viên"@vi .
+
+mrp:FacilityExpense a owl:Class ;
+    rdfs:subClassOf mrp:Expense ;
+    rdfs:label "Chi phí cơ sở vật chất & trang thiết bị"@vi .
+
+# Payment
+mrp:Payment a owl:Class ;
+    rdfs:subClassOf mrp:FinancialTransaction ;
+    rdfs:label "Giao dịch thanh toán học phí"@vi .
+
+mrp:DataQualityAudit a owl:Class ;
+    rdfs:subClassOf mrp:Entity ;
+    rdfs:label "Nhật ký kiểm toán chất lượng dữ liệu"@vi .
+
+#################################################################
+#    Object Properties (Relationships)
+#################################################################
+
+# Invoice <-> Student
+mrp:billedTo a owl:ObjectProperty ;
+    rdfs:label "xuất hóa đơn cho"@vi ;
+    rdfs:domain mrp:Invoice ;
+    rdfs:range mrp:Student ;
+    owl:inverseOf mrp:hasInvoice .
+
+mrp:hasInvoice a owl:ObjectProperty ;
+    rdfs:label "có hóa đơn học phí"@vi ;
+    rdfs:domain mrp:Student ;
+    rdfs:range mrp:Invoice .
+
+# Payment <-> Invoice
+mrp:settles a owl:ObjectProperty ;
+    rdfs:label "quyết toán cho hóa đơn"@vi ;
+    rdfs:domain mrp:Payment ;
+    rdfs:range mrp:Invoice .
+
+# Payment <-> Student
+mrp:madeBy a owl:ObjectProperty ;
+    rdfs:label "được thanh toán bởi"@vi ;
+    rdfs:domain mrp:Payment ;
+    rdfs:range mrp:Student ;
+    owl:inverseOf mrp:madePayment .
+
+mrp:madePayment a owl:ObjectProperty ;
+    rdfs:label "thực hiện giao dịch thanh toán"@vi ;
+    rdfs:domain mrp:Student ;
+    rdfs:range mrp:Payment .
+
+# Student <-> Department & Major
+mrp:belongsToDepartment a owl:ObjectProperty ;
+    rdfs:label "thuộc khoa/phòng ban"@vi ;
+    rdfs:domain mrp:Student ;
+    rdfs:range mrp:Department .
+
+mrp:studiesMajor a owl:ObjectProperty ;
+    rdfs:label "học chuyên ngành"@vi ;
+    rdfs:domain mrp:Student ;
+    rdfs:range mrp:Major .
+
+mrp:offeredBy a owl:ObjectProperty ;
+    rdfs:label "được đào tạo bởi khoa"@vi ;
+    rdfs:domain mrp:Major ;
+    rdfs:range mrp:Department .
+
+# Expense <-> Department & Vendor
+mrp:incurredBy a owl:ObjectProperty ;
+    rdfs:label "phát sinh từ khoa/phòng ban"@vi ;
+    rdfs:domain mrp:Expense ;
+    rdfs:range mrp:Department .
+
+mrp:paidToVendor a owl:ObjectProperty ;
+    rdfs:label "chi trả cho nhà cung cấp"@vi ;
+    rdfs:domain mrp:Expense ;
+    rdfs:range mrp:Vendor .
+
+#################################################################
+#    Datatype Properties (Attributes)
+#################################################################
+
+mrp:studentId a owl:DatatypeProperty ;
+    rdfs:domain mrp:Student ;
+    rdfs:range xsd:string .
+
+mrp:fullName a owl:DatatypeProperty ;
+    rdfs:domain mrp:Person ;
+    rdfs:range xsd:string .
+
+mrp:riskScore a owl:DatatypeProperty ;
+    rdfs:domain mrp:Student ;
+    rdfs:range xsd:float .
+
+mrp:totalRemainingDebt a owl:DatatypeProperty ;
+    rdfs:domain mrp:Student ;
+    rdfs:range xsd:long .
+
+mrp:paymentCompletionRate a owl:DatatypeProperty ;
+    rdfs:domain mrp:Student ;
+    rdfs:range xsd:float .
+
+mrp:invoiceId a owl:DatatypeProperty ;
+    rdfs:domain mrp:Invoice ;
+    rdfs:range xsd:string .
+
+mrp:totalAmount a owl:DatatypeProperty ;
+    rdfs:domain mrp:Invoice ;
+    rdfs:range xsd:long .
+
+mrp:remainingBalance a owl:DatatypeProperty ;
+    rdfs:domain mrp:Invoice ;
+    rdfs:range xsd:long .
+
+mrp:dueDate a owl:DatatypeProperty ;
+    rdfs:domain mrp:Invoice ;
+    rdfs:range xsd:date .
+
+mrp:amountPaid a owl:DatatypeProperty ;
+    rdfs:domain mrp:Payment ;
+    rdfs:range xsd:long .
+
+mrp:paymentStatus a owl:DatatypeProperty ;
+    rdfs:domain mrp:Payment ;
+    rdfs:range xsd:string .
+
+mrp:annualBudget a owl:DatatypeProperty ;
+    rdfs:domain mrp:Department ;
+    rdfs:range xsd:long .
+
+mrp:expenseAmount a owl:DatatypeProperty ;
+    rdfs:domain mrp:Expense ;
+    rdfs:range xsd:long .
+
+mrp:approvalStatus a owl:DatatypeProperty ;
+    rdfs:domain mrp:Expense ;
+    rdfs:range xsd:string .
