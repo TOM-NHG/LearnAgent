@@ -110,7 +110,7 @@ class SuperCypherEngine:
         if any(w in q_lower for w in ["thanh toán", "nộp tiền", "chuyển khoản", "giao dịch"]):
             selected_schemas.append(CORE_SCHEMA_MAP["payment"])
 
-        if any(w in q_lower for w in ["chi phí", "khoản chi", "mua sắm", "lương", "nhà cung cấp", "vendor"]):
+        if any(w in q_lower for w in ["chi phí", "khoản chi", "chi", "mua sắm", "thiết bị", "lương", "nhà cung cấp", "vendor", "ngân sách"]):
             selected_schemas.append(CORE_SCHEMA_MAP["expense"])
             selected_few_shots.append(FEW_SHOTS_CATALOG[2])
 
