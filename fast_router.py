@@ -182,9 +182,9 @@ class FastPathRouter:
                 """,
                 "Tỷ lệ thu hồi học phí toàn trường"
             ),
-            # 11. Thống kê tổng số sinh viên & khoa
+            # 11. Thống kê tổng số sinh viên toàn trường & tổng số khoa (không kèm tên khoa cụ thể)
             (
-                r"(tổng\s+)?(số\s+sinh\s+viên|sinh\s+viên\s+và|số\s+khoa|thống\s+kê\s+tổng)",
+                r"^(\s*thống\s+kê\s+)?(tổng\s+số\s+sinh\s+viên|số\s+sinh\s+viên\s+toàn\s+trường|sinh\s+viên\s+và\s+khoa)(\s+toàn\s+trường)?$",
                 "TOTAL_STUDENTS_AND_DEPARTMENTS",
                 """
                 MATCH (s:Student) WITH count(s) AS tong_sv
@@ -192,18 +192,18 @@ class FastPathRouter:
                 MATCH (i:Invoice) WITH tong_sv, tong_khoa, count(i) AS tong_hd
                 RETURN tong_sv, tong_khoa, tong_hd
                 """,
-                "Thống kê tổng số lượng sinh viên, khoa và hóa đơn"
+                "Thống kê tổng số lượng sinh viên, khoa và hóa đơn toàn trường"
             ),
-            # 12. Sinh viên khoa Công nghệ thông tin
+            # 12. Sinh viên theo Khoa cụ thể (Luật, Công nghệ thông tin, Kinh tế, Du lịch...)
             (
-                r"(bao\s+nhiêu\s+)?(sinh\s+viên|sv)\s+(đang\s+học\s+tại\s+)?khoa\s+công\s+nghệ\s+thông\s+tin",
-                "IT_STUDENTS_COUNT",
+                r"(bao\s+nhiêu\s+)?(sinh\s+viên|sv)\s+(đang\s+học\s+tại\s+|của\s+)?khoa\s+([a-zA-Z0-9_\s\u00C0-\u1EF9\-]+)",
+                "DEPARTMENT_STUDENTS_COUNT",
                 """
                 MATCH (s:Student)-[:BELONGS_TO]->(d:Department)
-                WHERE d.name CONTAINS 'Công nghệ thông tin'
-                RETURN count(s) AS so_sv, sum(CASE WHEN s.status = 'Active' THEN 1 ELSE 0 END) AS dang_hoc
+                WHERE toLower(d.name) CONTAINS toLower($dept_name)
+                RETURN d.name AS ten_khoa, count(s) AS so_sv, sum(CASE WHEN s.status = 'Active' THEN 1 ELSE 0 END) AS dang_hoc
                 """,
-                "Số sinh viên khoa Công nghệ thông tin"
+                "Số lượng sinh viên của một khoa cụ thể"
             ),
             # 13. Sinh viên bỏ học (Dropout)
             (
@@ -256,6 +256,11 @@ class FastPathRouter:
                         if num_match:
                             limit = int(num_match.group(1))
                     params["limit"] = limit
+
+                # Extract department name if applicable
+                if name == "DEPARTMENT_STUDENTS_COUNT" and match.groups():
+                    dept_raw = match.group(len(match.groups())).strip()
+                    params["dept_name"] = dept_raw
 
                 elapsed_ms = (time.perf_counter() - start_time) * 1000
                 return {

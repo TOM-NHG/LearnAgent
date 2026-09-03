@@ -166,14 +166,19 @@ def query_sqlite_fallback(template_name: str, params: dict) -> str:
             inv_count = cursor.execute("SELECT COUNT(Invoice_ID) FROM fact_tuition_invoices;").fetchone()[0] or 0
             return f"📊 **Thống kê toàn hệ thống:** Hiện có **{sv_count:,} sinh viên** đang theo học tại **{dept_count} Khoa/Phòng ban** với tổng cộng **{inv_count:,} hóa đơn học phí** đã phát hành."
 
-        elif template_name == "IT_STUDENTS_COUNT":
+        elif template_name in ["DEPARTMENT_STUDENTS_COUNT", "IT_STUDENTS_COUNT"]:
+            dept_kw = params.get("dept_name", "Công nghệ thông tin") if template_name == "DEPARTMENT_STUDENTS_COUNT" else "Công nghệ thông tin"
             row = cursor.execute("""
-                SELECT COUNT(s.Student_ID), SUM(CASE WHEN s.Status = 'Active' THEN 1 ELSE 0 END)
-                FROM dim_students s
-                JOIN dim_departments d ON s.Department_ID = d.Department_ID
-                WHERE d.Department_Name LIKE '%Công nghệ thông tin%';
-            """).fetchone()
-            return f"💻 **Khoa Công nghệ thông tin:** Hiện có tổng cộng **{row[0]:,} sinh viên** (trong đó **{row[1]:,} sinh viên** đang theo học `Active`)."
+                SELECT d.Department_Name, COUNT(s.Student_ID), SUM(CASE WHEN s.Status = 'Active' THEN 1 ELSE 0 END)
+                FROM dim_departments d
+                LEFT JOIN dim_students s ON s.Department_ID = d.Department_ID
+                WHERE LOWER(d.Department_Name) LIKE LOWER(?)
+                GROUP BY d.Department_ID;
+            """, (f"%{dept_kw}%",)).fetchone()
+            if row:
+                return f"⚖️ **Khoa {row[0]}:** Hiện có tổng cộng **{row[1]:,} sinh viên** (trong đó **{row[2]:,} sinh viên** đang theo học `Active`)."
+            else:
+                return f"Không tìm thấy khoa nào có tên khớp với '{dept_kw}'."
 
         elif template_name == "DROPOUT_STUDENTS_COUNT":
             count = cursor.execute("SELECT COUNT(Student_ID) FROM dim_students WHERE Status = 'Dropped Out';").fetchone()[0] or 0
