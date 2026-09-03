@@ -194,9 +194,9 @@ class FastPathRouter:
                 """,
                 "Thống kê tổng số lượng sinh viên, khoa và hóa đơn toàn trường"
             ),
-            # 12. Sinh viên theo Khoa cụ thể (Luật, Công nghệ thông tin, Kinh tế, Du lịch...)
+            # 12. Sinh viên theo Khoa cụ thể (chỉ bắt khi có tên khoa cụ thể ở cuối: Luật, Kinh tế, CNTT...)
             (
-                r"(bao\s+nhiêu\s+)?(sinh\s+viên|sv)\s+(đang\s+học\s+tại\s+|của\s+)?khoa\s+([a-zA-Z0-9_\s\u00C0-\u1EF9\-]+)",
+                r"^(bao\s+nhiêu\s+)?(sinh\s+viên|sv)\s+(đang\s+học\s+tại\s+|của\s+)?khoa\s+(công\s+nghệ\s+thông\s+tin|luật|kinh\s+tế|tài\s+chính\s*-\s*kế\s+toán|quản\s+trị\s+kinh\s+doanh|ngoại\s+ngữ|kỹ\s+thuật\s+điện|kỹ\s+thuật\s+xây\s+dựng|công\s+nghệ\s+sinh\s+học|du\s+lịch\s*-\s*khách\s+sạn|truyền\s+thông|khoa\s+học\s+dữ\s+liệu)$",
                 "DEPARTMENT_STUDENTS_COUNT",
                 """
                 MATCH (s:Student)-[:BELONGS_TO]->(d:Department)
