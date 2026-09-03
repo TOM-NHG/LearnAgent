@@ -52,35 +52,71 @@ d:/NHG/AgentofMRP/
 
 ---
 
-## 🧪 Hướng Dẫn Chạy & Kiểm Thử Hệ Thống (Test Runner)
+## 🚀 Hướng Dẫn Khởi Chạy Toàn Diện (Quick Start Guide)
 
-### 1. Chạy bộ kiểm thử tự động (Automated Test Suite)
-Để kiểm tra tính toàn vẹn của Ontology, SHACL Shapes, Fast-Path Router và FastAPI Server:
+Để khởi chạy toàn bộ hệ thống hoạt động trơn tru từ A đến Z, bạn chỉ cần thực hiện 3 bước đơn giản sau:
+
+### 🔹 Bước 1: Khởi động Đồ thị Tri thức Neo4j (Docker)
+Đảm bảo phần mềm Docker Desktop đã mở, sau đó chạy lệnh:
 ```bash
-venv\Scripts\python test_v2_suite.py
+docker start neo4j
 ```
-> **Kết quả kỳ vọng:** `ALL 5 TEST CASES PASSED SUCCESSFULLY (100% GREEN)!`
+* Kiểm tra trạng thái: `docker ps --filter "name=neo4j"` (Đảm bảo cổng `7687` và `7474` đang hoạt động).
+* Giao diện đồ thị trực quan: Truy cập `http://localhost:7474` (User: `neo4j` / Password: `your_password`).
 
-### 2. Khởi động máy chủ API & Giao diện Web Chat V2.0
+### 🔹 Bước 2: Khởi động Mô hình AI Cục Bộ (Ollama)
+Mở một cửa sổ Terminal mới và chạy:
+```bash
+ollama serve
+```
+*(Ollama sẽ chạy nền tại cổng `http://127.0.0.1:11434` để sẵn sàng cho mô hình `qwen2.5:7b-instruct` dịch câu hỏi tự do sang Cypher)*.
+
+### 🔹 Bước 3: Khởi động Máy Chủ Web & AI API Server (FastAPI V2.0)
+Tại thư mục dự án `d:\NHG\AgentofMRP`, chạy lệnh:
 ```bash
 venv\Scripts\python main.py
 ```
-Truy cập trình duyệt:
-* 💬 **Web Chat UI:** `http://127.0.0.1:8000` hoặc `http://127.0.0.1:8000/chat-ui`
-* 📚 **Tài liệu Swagger REST API:** `http://127.0.0.1:8000/docs`
-* 📊 **Executive Financial Dashboard:** Mở file `reports/mrp_executive_dashboard.html`
+Máy chủ sẽ khởi chạy tại: **`http://127.0.0.1:8000`**
 
-### 3. Thử nghiệm các câu hỏi mẫu trên Web Chat hoặc API
-| Nhóm Câu Hỏi | Câu Hỏi Mẫu | Thời Gian Phản Hồi | Nguồn Xử Lý |
+---
+
+## 🌐 Các Điểm Truy Cập & Trải Nghiệm Ứng Dụng
+
+| Dịch Vụ | Đường Dẫn Truy Cập | Mục Đích Sử Dụng |
+|---|---|---|
+| 💬 **Web Chat AI Agent** | **`http://127.0.0.1:8000`** | Giao diện hỏi đáp đàm thoại thông minh (hỗ trợ Fast-Path < 1ms & Super Cypher) |
+| 📊 **Executive Dashboard** | Mở file `reports/mrp_executive_dashboard.html` | Bảng điều khiển tài chính động, tuổi nợ, KPI 20 khoa và tra cứu công thức SQL |
+| 📚 **Swagger REST API** | **`http://127.0.0.1:8000/docs`** | Tài liệu kỹ thuật API endpoint `POST /chat` cho lập trình viên |
+| 🕸️ **Neo4j Graph Browser**| **`http://localhost:7474`** | Trực quan hóa mạng lưới 12.929 Nodes & 18.469 Relationships và W3C Ontology |
+
+---
+
+## 🧪 Kiểm Thử Tự Động Toàn Diện (Automated Test Suite)
+
+Trước khi nghiệm thu hoặc triển khai, chạy script test để kiểm tra 5 thành phần cốt lõi:
+```bash
+venv\Scripts\python test_v2_suite.py
+```
+> ✅ **Kết quả kiểm thử:** `ALL 5 TEST CASES PASSED SUCCESSFULLY (100% GREEN)!`  
+> Bao gồm: Kiểm định W3C OWL 2, SHACL Shapes, suy diễn phân cấp Neosemantics, Fast-Path Router latency (< 1ms), và endpoint FastAPI.
+
+---
+
+## 💡 Bảng Câu Hỏi Mẫu Thử Nghiệm
+
+| Phân Loại Nghiệp Vụ | Câu Hỏi Thử Nghiệm Mẫu | Tốc Độ Phản Hồi | Nguồn Xử Lý |
 |---|---|:---:|:---:|
-| **Công nợ toàn trường** | *"Tổng công nợ còn lại của trường là bao nhiêu?"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Doanh thu học phí** | *"Doanh thu học phí đã lập hóa đơn"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Tiền thực thu** | *"Tổng tiền thực thu về tài khoản"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Top sinh viên nợ** | *"Top 5 sinh viên nợ nhiều nhất"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Điểm rủi ro sinh viên**| *"Top 5 sinh viên có rủi ro cao nhất"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Ngân sách các khoa** | *"Khoa nào có ngân sách lớn nhất"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Dòng tiền thuần** | *"Dòng tiền thuần của trường đang âm hay dương?"*| **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
-| **Tỷ lệ thu học phí** | *"Tỷ lệ thu học phí đạt bao nhiêu %?"* | **< 0.05 giây** | `FAST_PATH_TEMPLATE` |
+| **Công nợ toàn trường** | *"Tổng công nợ còn lại của trường là bao nhiêu?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Học phí lập hóa đơn** | *"Doanh thu học phí đã lập hóa đơn"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Tiền thực thu** | *"Tổng tiền thực thu về tài khoản"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Top sinh viên nợ** | *"Top 5 sinh viên nợ nhiều nhất"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Sinh viên rủi ro cao** | *"Top 5 sinh viên có rủi ro cao nhất"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Thống kê sinh viên** | *"Tổng số sinh viên và tổng số khoa trong hệ thống"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Sinh viên khoa CNTT** | *"Có bao nhiêu sinh viên đang học tại khoa Công nghệ thông tin?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Sinh viên thôi học** | *"Có bao nhiêu sinh viên đã thôi học (Dropout)?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Nhà cung cấp chi phí** | *"Nhà cung cấp nào nhận nhiều tiền chi phí nhất?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Dòng tiền thuần** | *"Dòng tiền thuần của trường đang âm hay dương?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
+| **Tỷ lệ thu hồi học phí**| *"Tỷ lệ thu học phí đạt bao nhiêu %?"* | **< 0.05s** | `FAST_PATH_TEMPLATE` |
 
 ---
 
