@@ -400,6 +400,110 @@
             40% { transform: scale(1); }
         }
 
+        /* Model Switcher & Performance Dashboard styles */
+        .model-control-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.9rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .select-input, .text-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.45rem 0.65rem;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .select-input:focus, .text-input:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .switch-btn {
+            background: var(--gradient-primary);
+            border: none;
+            color: #fff;
+            padding: 0.4rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .switch-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Benchmark Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background: var(--bg-sidebar);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .perf-table th, .perf-table td {
+            padding: 0.65rem 0.85rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .perf-table th {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .perf-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
         @media (max-width: 768px) {
             .sidebar { display: none; }
             .messages-pane { padding: 1rem; }
@@ -415,14 +519,50 @@
             <div class="brand-logo">MRP</div>
             <div class="brand-title">
                 <h2>Graph AI Agent</h2>
-                <p>Ollama Qwen 2.5 • Neo4j</p>
+                <p id="headerModelTag">Ollama • Qwen 2.5</p>
             </div>
         </div>
 
-        <div class="section-title">💡 Câu Hỏi Mẫu Gợi Ý</div>
+        <!-- Dynamic Model Manager Card -->
+        <div class="section-title">⚙️ Quản Lý Mô Hình (Model Manager)</div>
+        <div class="model-control-card">
+            <div>
+                <label style="font-size: 0.72rem; color: var(--text-secondary); display:block; margin-bottom: 0.25rem;">Nhà cung cấp (Provider):</label>
+                <select id="providerSelect" class="select-input" onchange="handleProviderChange()">
+                    <option value="ollama">Local Ollama (Offline)</option>
+                    <option value="groq">Groq Cloud (Siêu tốc &lt; 0.5s)</option>
+                    <option value="openai">OpenAI (GPT-4o mini)</option>
+                </select>
+            </div>
+
+            <div>
+                <label style="font-size: 0.72rem; color: var(--text-secondary); display:block; margin-bottom: 0.25rem;">Mô hình (Model):</label>
+                <select id="modelSelect" class="select-input"></select>
+            </div>
+
+            <div id="apiKeyGroup" style="display: none;">
+                <label style="font-size: 0.72rem; color: var(--text-secondary); display:block; margin-bottom: 0.25rem;">API Key (Cloud):</label>
+                <input type="password" id="apiKeyInput" class="text-input" placeholder="gsk_... hoặc sk-...">
+            </div>
+
+            <div class="toggle-row">
+                <span>Fast-Path Cache:</span>
+                <input type="checkbox" id="fastPathToggle" checked style="cursor: pointer;">
+            </div>
+
+            <button class="switch-btn" onclick="applyModelConfig()">⚡ Áp Dụng Cấu Hình</button>
+        </div>
+
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+            <span>💡 Câu Hỏi Mẫu</span>
+            <button onclick="openBenchmarkModal()" style="background: none; border: none; color: var(--accent-cyan); font-size: 0.72rem; cursor: pointer; text-decoration: underline;">📊 Xem Hiệu Suất</button>
+        </div>
         <div class="suggested-list">
             <button class="suggest-btn" onclick="sendPrompt('Tổng số sinh viên và tổng số khoa trong hệ thống là bao nhiêu?')">
                 📊 Thống kê tổng số sinh viên & khoa
+            </button>
+            <button class="suggest-btn" onclick="sendPrompt('Những sinh viên nào được giảm học phí?')">
+                🎓 Sinh viên được giảm học phí (Ad-hoc)
             </button>
             <button class="suggest-btn" onclick="sendPrompt('Khoa nào có ngân sách năm (annual_budget) cao nhất và số tiền là bao nhiêu?')">
                 🏛️ Khoa có ngân sách năm cao nhất
@@ -433,29 +573,23 @@
             <button class="suggest-btn" onclick="sendPrompt('Liệt kê top 5 sinh viên có điểm rủi ro tài chính (risk_score) cao nhất kèm mã SV và tên khoa?')">
                 ⚠️ Top 5 sinh viên rủi ro nợ xấu cao nhất
             </button>
-            <button class="suggest-btn" onclick="sendPrompt('Có bao nhiêu sinh viên đang ở trạng thái Dropped Out (đã nghỉ học)?')">
-                🛑 Số lượng sinh viên đã thôi học (Dropout)
-            </button>
             <button class="suggest-btn" onclick="sendPrompt('Nhà cung cấp (Vendor) nào nhận được tổng chi phí lớn nhất từ các khoa?')">
                 🏢 Nhà cung cấp nhận nhiều tiền chi phí nhất
-            </button>
-            <button class="suggest-btn" onclick="sendPrompt('Có bao nhiêu giao dịch nộp tiền học phí có trạng thái Successful?')">
-                💵 Số lượng giao dịch đóng học phí thành công
             </button>
         </div>
 
         <div class="system-status-box">
             <div class="status-row">
-                <span style="color: var(--text-secondary);">Graph Database:</span>
-                <span class="status-badge"><span class="status-dot"></span> Neo4j 5.26</span>
+                <span style="color: var(--text-secondary);">Neo4j Graph:</span>
+                <span class="status-badge"><span class="status-dot"></span> Online (Port 7687)</span>
             </div>
             <div class="status-row">
-                <span style="color: var(--text-secondary);">LLM Engine:</span>
-                <span style="color: var(--accent-cyan); font-weight: 600;">Qwen 2.5 (7B)</span>
+                <span style="color: var(--text-secondary);">Mô hình hiện tại:</span>
+                <span id="statusActiveModel" style="color: var(--accent-cyan); font-weight: 600; font-size: 0.72rem;">qwen2.5:1.5b</span>
             </div>
             <div class="status-row">
-                <span style="color: var(--text-secondary);">Bảo mật:</span>
-                <span style="color: var(--accent-emerald); font-weight: 600;">Local Offline (Free)</span>
+                <span style="color: var(--text-secondary);">Độ trễ trung bình:</span>
+                <span id="statusAvgLatency" style="color: var(--accent-emerald); font-weight: 600;">-- ms</span>
             </div>
         </div>
     </aside>
@@ -466,7 +600,10 @@
             <div class="chat-header-title">
                 <h1>Hỏi Đáp Tri Thức Quản Trị Đại Học (MRP AI Assistant)</h1>
             </div>
-            <button class="clear-btn" onclick="clearChat()">🗑️ Xóa Lịch Sử</button>
+            <div style="display: flex; gap: 0.5rem;">
+                <button class="clear-btn" onclick="openBenchmarkModal()">📊 Bảng Hiệu Suất</button>
+                <button class="clear-btn" onclick="clearChat()">🗑️ Xóa Lịch Sử</button>
+            </div>
         </header>
 
         <!-- Messages Pane -->
@@ -475,16 +612,11 @@
             <div class="message-row">
                 <div class="avatar ai">🤖</div>
                 <div class="message-bubble">
-                    Xin chào! Tôi là <strong>Trợ lý AI Quản trị Đại học MRP</strong>, được trang bị <strong>Đồ thị Tri thức Neo4j</strong> và mô hình <strong>Qwen 2.5</strong>.
+                    Xin chào! Tôi là <strong>Trợ lý AI Quản trị Đại học MRP (V2.1 Multi-Model)</strong>.
                     <br><br>
-                    Tôi có thể giúp bạn tra cứu tức thì về:
-                    <ul style="margin-left: 1.25rem; margin-top: 0.35rem;">
-                        <li>Thông tin <strong>1.490 sinh viên</strong>, chuyên ngành và đánh giá rủi ro nợ.</li>
-                        <li>Doanh thu học phí, <strong>2.985 hóa đơn</strong> và các khoản thanh toán.</li>
-                        <li>Ngân sách, chi phí hoạt động và nhà cung cấp của <strong>20 khoa</strong>.</li>
-                    </ul>
-                    <br>
-                    Bạn hãy chọn các câu hỏi mẫu bên trái hoặc nhập bất kỳ câu hỏi nào bằng tiếng Việt bên dưới nhé!
+                    ✨ <strong>Nâng cấp mới:</strong> Bạn có thể linh hoạt chuyển đổi giữa <strong>Local Ollama 1.5B/7B</strong> hoặc <strong>Groq/OpenAI Cloud API</strong> bằng bảng điều khiển bên trái để so sánh độ trễ và độ chính xác!
+                    <br><br>
+                    Hãy đặt bất kỳ câu hỏi nào để bắt đầu đánh giá hiệu suất nhé.
                 </div>
             </div>
         </div>
@@ -500,13 +632,164 @@
         </div>
     </main>
 
+    <!-- Benchmark Modal -->
+    <div id="benchmarkModal" class="modal-overlay">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: #fff;">📊 Bảng Quản Lý Hiệu Suất & So Sánh Mô Hình</h2>
+                <button onclick="closeBenchmarkModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.2rem; cursor: pointer;">✕</button>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.35rem;">
+                Theo dõi thời gian suy luận (Latency), mô hình sử dụng và tốc độ phản hồi thực tế của từng câu truy vấn đồ thị.
+            </p>
+
+            <table class="perf-table">
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Câu hỏi</th>
+                        <th>Mô hình</th>
+                        <th>Nguồn xử lý</th>
+                        <th>Thời gian LLM</th>
+                        <th>Tổng độ trễ</th>
+                    </tr>
+                </thead>
+                <tbody id="benchmarkTableBody">
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: var(--text-muted);">Chưa có lượt truy vấn nào được ghi nhận.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <script>
-        const API_URL = "http://127.0.0.1:8000/chat";
+        const API_BASE = "http://127.0.0.1:8000";
         const messagesPane = document.getElementById("messagesPane");
         const chatInput = document.getElementById("chatInput");
         const sendBtn = document.getElementById("sendBtn");
+        const providerSelect = document.getElementById("providerSelect");
+        const modelSelect = document.getElementById("modelSelect");
+        const apiKeyGroup = document.getElementById("apiKeyGroup");
+        const apiKeyInput = document.getElementById("apiKeyInput");
+        const fastPathToggle = document.getElementById("fastPathToggle");
 
-        function appendMessage(text, isUser = false, cypher = null, source = null, routingMs = null) {
+        const MODEL_OPTIONS = {
+            "ollama": ["qwen2.5:1.5b", "qwen2.5:7b-instruct"],
+            "groq": ["llama-3.3-70b-versatile", "qwen-2.5-32b", "llama-3.1-8b-instant"],
+            "openai": ["gpt-4o-mini", "gpt-4o"]
+        };
+
+        function handleProviderChange() {
+            const provider = providerSelect.value;
+            modelSelect.innerHTML = "";
+            MODEL_OPTIONS[provider].forEach(m => {
+                const opt = document.createElement("option");
+                opt.value = m;
+                opt.textContent = m;
+                modelSelect.appendChild(opt);
+            });
+
+            if (provider === "ollama") {
+                apiKeyGroup.style.display = "none";
+            } else {
+                apiKeyGroup.style.display = "block";
+            }
+        }
+
+        async function fetchModelStatus() {
+            try {
+                const res = await fetch(`${API_BASE}/api/model/status`);
+                if (res.ok) {
+                    const data = await res.json();
+                    providerSelect.value = data.provider;
+                    handleProviderChange();
+                    modelSelect.value = data.model;
+                    fastPathToggle.checked = data.fast_path_enabled;
+                    document.getElementById("statusActiveModel").textContent = `${data.provider.toUpperCase()}: ${data.model}`;
+                    document.getElementById("headerModelTag").textContent = `${data.provider.toUpperCase()} • ${data.model}`;
+
+                    if (data.recent_metrics && data.recent_metrics.length > 0) {
+                        const avg = data.recent_metrics.reduce((a, b) => a + b.total_time_ms, 0) / data.recent_metrics.length;
+                        document.getElementById("statusAvgLatency").textContent = `${Math.round(avg)} ms`;
+                    }
+                }
+            } catch (e) {
+                console.warn("Could not fetch initial model status:", e);
+            }
+        }
+
+        async function applyModelConfig() {
+            const payload = {
+                provider: providerSelect.value,
+                model: modelSelect.value,
+                api_key: apiKeyInput.value.trim() || null,
+                fast_path_enabled: fastPathToggle.checked
+            };
+
+            try {
+                const res = await fetch(`${API_BASE}/api/model/switch`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById("statusActiveModel").textContent = `${data.config.provider.toUpperCase()}: ${data.config.model}`;
+                    document.getElementById("headerModelTag").textContent = `${data.config.provider.toUpperCase()} • ${data.config.model}`;
+                    alert(`✅ Đã chuyển sang mô hình: ${data.config.provider.toUpperCase()} (${data.config.model})`);
+                } else {
+                    alert("❌ Không thể chuyển mô hình.");
+                }
+            } catch (err) {
+                alert(`❌ Lỗi kết nối: ${err.message}`);
+            }
+        }
+
+        function openBenchmarkModal() {
+            document.getElementById("benchmarkModal").style.display = "flex";
+            refreshBenchmarkTable();
+        }
+
+        function closeBenchmarkModal() {
+            document.getElementById("benchmarkModal").style.display = "none";
+        }
+
+        async function refreshBenchmarkTable() {
+            try {
+                const res = await fetch(`${API_BASE}/api/model/status`);
+                if (res.ok) {
+                    const data = await res.json();
+                    const tbody = document.getElementById("benchmarkTableBody");
+                    if (!data.recent_metrics || data.recent_metrics.length === 0) {
+                        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Chưa có lượt truy vấn nào được ghi nhận.</td></tr>`;
+                        return;
+                    }
+                    tbody.innerHTML = "";
+                    data.recent_metrics.slice().reverse().forEach(m => {
+                        const tr = document.createElement("tr");
+                        const dateStr = new Date(m.timestamp * 1000).toLocaleTimeString();
+                        tr.innerHTML = `
+                            <td>${dateStr}</td>
+                            <td><b>${m.question}</b></td>
+                            <td><span style="color: var(--accent-cyan); font-weight:600;">${m.provider}</span> (${m.model})</td>
+                            <td><span style="background: rgba(255,255,255,0.06); padding: 0.15rem 0.4rem; border-radius: 4px;">${m.source}</span></td>
+                            <td style="color: ${m.cypher_time_ms > 0 ? 'var(--accent-purple)' : 'var(--text-muted)'}; font-weight: 600;">
+                                ${m.cypher_time_ms > 0 ? (m.cypher_time_ms / 1000).toFixed(2) + 's' : '--'}
+                            </td>
+                            <td style="color: var(--accent-emerald); font-weight: 700;">
+                                ${(m.total_time_ms / 1000).toFixed(2)}s (${m.total_time_ms} ms)
+                            </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function appendMessage(text, isUser = false, cypher = null, source = null, totalMs = null, cypherMs = null, modelMeta = null) {
             const row = document.createElement("div");
             row.className = `message-row ${isUser ? 'user' : ''}`;
             
@@ -517,7 +800,6 @@
             const bubble = document.createElement("div");
             bubble.className = "message-bubble";
 
-            // Simple markdown parsing for bold and line breaks
             let formatted = text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                 .replace(/`([^`]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.15rem 0.35rem; border-radius: 4px; font-family: monospace;">$1</code>')
@@ -525,15 +807,24 @@
 
             bubble.innerHTML = formatted;
 
-            if (!isUser && (source || routingMs !== null)) {
+            if (!isUser && (source || totalMs !== null)) {
                 const metaDiv = document.createElement("div");
-                metaDiv.style.marginTop = "0.5rem";
-                metaDiv.style.fontSize = "0.72rem";
-                metaDiv.style.color = "var(--accent-cyan)";
+                metaDiv.style.marginTop = "0.65rem";
+                metaDiv.style.fontSize = "0.74rem";
+                metaDiv.style.color = "var(--text-secondary)";
                 metaDiv.style.display = "flex";
-                metaDiv.style.gap = "0.5rem";
+                metaDiv.style.flexWrap = "wrap";
+                metaDiv.style.gap = "0.65rem";
                 metaDiv.style.alignItems = "center";
-                metaDiv.innerHTML = `<span>⚡ Nguồn: <b>${source || 'FAST_PATH'}</b></span> ${routingMs !== null ? `<span>⏱️ <b>${routingMs} ms</b></span>` : ''}`;
+                metaDiv.style.borderTop = "1px solid rgba(255,255,255,0.06)";
+                metaDiv.style.paddingTop = "0.4rem";
+
+                let modelLabel = modelMeta ? `🧠 <b>${modelMeta}</b>` : '';
+                let latencyLabel = totalMs !== null ? `⏱️ Tổng: <b style="color: var(--accent-emerald);">${(totalMs/1000).toFixed(2)}s</b> (${totalMs} ms)` : '';
+                let llmLabel = cypherMs ? `⚡ Suy luận: <b style="color: var(--accent-purple);">${(cypherMs/1000).toFixed(2)}s</b>` : '';
+                let sourceBadge = `<span style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); padding: 0.1rem 0.4rem; border-radius: 4px;">${source || 'AGENT'}</span>`;
+
+                metaDiv.innerHTML = `${sourceBadge} ${modelLabel} ${latencyLabel} ${llmLabel}`;
                 bubble.appendChild(metaDiv);
             }
 
@@ -541,7 +832,7 @@
                 const cypherDiv = document.createElement("div");
                 cypherDiv.className = "cypher-badge";
                 cypherDiv.innerHTML = `
-                    <div class="cypher-badge-header">⚡ Lệnh Cypher Mẫu:</div>
+                    <div class="cypher-badge-header">⚡ Lệnh Cypher Thực Thi:</div>
                     <code>${cypher.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code>
                 `;
                 bubble.appendChild(cypherDiv);
@@ -566,7 +857,7 @@
             bubble.className = "message-bubble";
             bubble.innerHTML = `
                 <div class="typing-indicator">
-                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-right: 0.35rem;">Đang tra cứu đồ thị Neo4j...</span>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-right: 0.35rem;">Đang suy luận & tra cứu đồ thị...</span>
                     <div class="typing-dot"></div>
                     <div class="typing-dot"></div>
                     <div class="typing-dot"></div>
@@ -595,7 +886,7 @@
             appendTypingIndicator();
 
             try {
-                const response = await fetch(API_URL, {
+                const response = await fetch(`${API_BASE}/chat`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ question: question })
@@ -609,11 +900,21 @@
                 } else {
                     const data = await response.json();
                     const cypherQuery = data.metadata ? data.metadata.cypher : null;
-                    appendMessage(data.answer, false, cypherQuery, data.source, data.routing_time_ms);
+                    const modelMeta = data.metadata ? (data.metadata.model || data.metadata.provider) : null;
+                    appendMessage(
+                        data.answer, 
+                        false, 
+                        cypherQuery, 
+                        data.source, 
+                        data.total_time_ms, 
+                        data.cypher_time_ms,
+                        modelMeta
+                    );
+                    fetchModelStatus();
                 }
             } catch (err) {
                 removeTypingIndicator();
-                appendMessage(`❌ Lỗi kết nối: ${err.message}. Đảm bảo rằng server FastAPI đang chạy tại http://127.0.0.1:8000.`);
+                appendMessage(`❌ Lỗi kết nối: ${err.message}. Đảm bảo rằng server FastAPI đang chạy tại ${API_BASE}.`);
             } finally {
                 chatInput.disabled = false;
                 sendBtn.disabled = false;
@@ -636,6 +937,9 @@
             messagesPane.innerHTML = "";
             appendMessage("Đã làm mới cuộc hội thoại. Bạn hãy hỏi câu hỏi mới nhé!", false);
         }
+
+        // Initialize model status on load
+        window.addEventListener("DOMContentLoaded", fetchModelStatus);
     </script>
 </body>
 </html>

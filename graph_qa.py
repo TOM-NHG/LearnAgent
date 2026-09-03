@@ -337,19 +337,9 @@ class MRPCypherCorrector:
         return q
 
 def get_llm():
-    if llm_provider.lower() == "openai" and openai_api_key and openai_api_key != "your_openai_api_key_here":
-        return ChatOpenAI(
-            model="gpt-4o-mini",
-            temperature=0,
-            api_key=openai_api_key
-        )
-    else:
-        return ChatOpenAI(
-            base_url="http://localhost:11434/v1",
-            api_key="ollama",
-            model=ollama_model,
-            temperature=0
-        )
+    from model_manager import model_manager
+    return model_manager.get_llm()
+
 
 def get_graph_qa_chain():
     llm = get_llm()

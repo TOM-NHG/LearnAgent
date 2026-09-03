@@ -22,3 +22,5 @@ Thumbs.db
 
 # Temp / Logs
 *.log
+*.jar
+

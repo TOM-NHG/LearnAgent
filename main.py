@@ -203,6 +203,12 @@ def query_sqlite_fallback(template_name: str, params: dict) -> str:
     finally:
         conn.close()
 
+class ModelConfigRequest(BaseModel):
+    provider: str
+    model: str
+    api_key: Optional[str] = None
+    fast_path_enabled: Optional[bool] = None
+
 class ChatRequest(BaseModel):
     question: str
     session_id: Optional[str] = "default_session"
@@ -212,6 +218,8 @@ class ChatResponse(BaseModel):
     answer: str
     status: str = "success"
     source: str = "FAST_PATH"
+    total_time_ms: Optional[float] = None
+    cypher_time_ms: Optional[float] = None
     routing_time_ms: Optional[float] = None
     metadata: Optional[Dict[str, Any]] = None
 
@@ -222,7 +230,7 @@ def read_root():
         return FileResponse(chat_html_path)
     return {
         "service": "MRP Financial & Academic Intelligence AI Agent API",
-        "version": "2.0.0",
+        "version": "2.1.0",
         "status": "Online",
         "fast_path_ready": True
     }
@@ -231,58 +239,108 @@ def read_root():
 def get_chat_ui():
     return FileResponse(os.path.join(PROJECT_ROOT, "chat.html"))
 
+@app.get("/api/model/status")
+def get_model_status():
+    from model_manager import model_manager
+    return model_manager.get_status()
+
+@app.post("/api/model/switch")
+def switch_model(req: ModelConfigRequest):
+    from model_manager import model_manager
+    status = model_manager.update_config(
+        provider=req.provider,
+        model=req.model,
+        api_key=req.api_key,
+        fast_path_enabled=req.fast_path_enabled
+    )
+    return {
+        "status": "success",
+        "message": f"Switched to {req.provider.upper()} ({req.model})",
+        "config": status
+    }
+
 @app.get("/health")
 def health_check():
+    from model_manager import model_manager
     return {
         "status": "healthy",
-        "version": "2.0.0",
+        "version": "2.1.0",
+        "model_status": model_manager.get_status(),
         "fast_path_templates": len(fast_router.templates),
         "sqlite_db": os.path.exists(SQLITE_DB_PATH)
     }
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(req: ChatRequest):
+    import time
+    from model_manager import model_manager
+    t_start = time.perf_counter()
+
     if not req.question or not req.question.strip():
         raise HTTPException(status_code=400, detail="Câu hỏi không được để trống.")
 
-    # 1. Fast-Path Router (Sub-5ms Execution)
-    routed = fast_router.route(req.question)
-    if routed:
-        answer_text = query_sqlite_fallback(routed["template_name"], routed["params"])
-        return ChatResponse(
-            question=req.question,
-            answer=answer_text,
-            status="success",
-            source="FAST_PATH_TEMPLATE",
-            routing_time_ms=routed["routing_time_ms"],
-            metadata={"template": routed["template_name"], "cypher": routed["cypher"]}
-        )
+    # 1. Fast-Path Router (Only if enabled in model_manager)
+    if model_manager.fast_path_enabled:
+        routed = fast_router.route(req.question)
+        if routed:
+            answer_text = query_sqlite_fallback(routed["template_name"], routed["params"])
+            total_ms = (time.perf_counter() - t_start) * 1000
+            model_manager.record_metric(req.question, "FAST_PATH_TEMPLATE", total_ms, cypher=routed["cypher"])
+            return ChatResponse(
+                question=req.question,
+                answer=answer_text,
+                status="success",
+                source="FAST_PATH_TEMPLATE",
+                total_time_ms=round(total_ms, 2),
+                routing_time_ms=routed["routing_time_ms"],
+                metadata={
+                    "template": routed["template_name"],
+                    "cypher": routed["cypher"],
+                    "model": "Deterministic Regex/SQL"
+                }
+            )
 
-    # 2. Fallback to Neo4j Graph Cypher QA Chain if running
+    # 2. Neo4j Graph Cypher QA Chain via Active Model
     try:
         from graph_qa import get_graph_qa_chain
         qa_chain = get_graph_qa_chain()
+        t_llm_start = time.perf_counter()
         res = qa_chain.invoke({"query": req.question})
+        total_ms = (time.perf_counter() - t_start) * 1000
+        llm_ms = (time.perf_counter() - t_llm_start) * 1000
+
         answer = res.get("result", "Không thể tạo câu trả lời.")
         cypher_used = [step["query"] for step in res.get("intermediate_steps", []) if "query" in step]
+        chosen_cypher = cypher_used[0] if cypher_used else None
+
+        source_label = f"{model_manager.provider.upper()}_GRAPH_LLM"
+        model_manager.record_metric(req.question, source_label, total_ms, cypher_time_ms=llm_ms, cypher=chosen_cypher)
 
         return ChatResponse(
             question=req.question,
             answer=answer,
             status="success",
-            source="GRAPH_CYPHER_LLM",
-            metadata={"cypher": cypher_used[0] if cypher_used else None}
+            source=source_label,
+            total_time_ms=round(total_ms, 2),
+            cypher_time_ms=round(llm_ms, 2),
+            metadata={
+                "cypher": chosen_cypher,
+                "provider": model_manager.provider,
+                "model": model_manager.model
+            }
         )
     except Exception as e:
-        # Graceful response explaining offline state
+        total_ms = (time.perf_counter() - t_start) * 1000
         return ChatResponse(
             question=req.question,
-            answer=f"Câu hỏi của bạn cần phân tích đồ thị tự do. Lưu ý: dịch vụ Neo4j/Ollama đang ở trạng thái bảo trì hoặc chưa bật ({str(e)}). Vui lòng hỏi các chỉ số quản trị tài chính (công nợ, học phí, top sinh viên, ngân sách) để nhận phản hồi Fast-Path tức thì.",
+            answer=f"⚠️ Lỗi khi xử lý với mô hình {model_manager.provider.upper()} ({model_manager.model}): {str(e)}. Nếu dùng Cloud API, hãy kiểm tra lại API Key. Nếu dùng Ollama, hãy đảm bảo lệnh `ollama serve` đang mở.",
             status="degraded_fallback",
-            source="FALLBACK_ADVISOR"
+            source="MODEL_ERROR_ADVISOR",
+            total_time_ms=round(total_ms, 2)
         )
 
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Starting MRP Intelligence Server V2.0 on http://127.0.0.1:8000 ...")
+    print("🚀 Starting MRP Intelligence Server V2.1 on http://127.0.0.1:8000 ...")
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
+
