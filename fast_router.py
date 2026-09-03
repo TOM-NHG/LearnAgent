@@ -181,6 +181,52 @@ class FastPathRouter:
                     round(da_thu * 100.0 / phai_thu, 2) AS ty_le_thu_hoc_phi_pct
                 """,
                 "Tỷ lệ thu hồi học phí toàn trường"
+            ),
+            # 11. Thống kê tổng số sinh viên & khoa
+            (
+                r"(tổng\s+)?(số\s+sinh\s+viên|sinh\s+viên\s+và|số\s+khoa|thống\s+kê\s+tổng)",
+                "TOTAL_STUDENTS_AND_DEPARTMENTS",
+                """
+                MATCH (s:Student) WITH count(s) AS tong_sv
+                MATCH (d:Department) WITH tong_sv, count(d) AS tong_khoa
+                MATCH (i:Invoice) WITH tong_sv, tong_khoa, count(i) AS tong_hd
+                RETURN tong_sv, tong_khoa, tong_hd
+                """,
+                "Thống kê tổng số lượng sinh viên, khoa và hóa đơn"
+            ),
+            # 12. Sinh viên khoa Công nghệ thông tin
+            (
+                r"(bao\s+nhiêu\s+)?(sinh\s+viên|sv)\s+(đang\s+học\s+tại\s+)?khoa\s+công\s+nghệ\s+thông\s+tin",
+                "IT_STUDENTS_COUNT",
+                """
+                MATCH (s:Student)-[:BELONGS_TO]->(d:Department)
+                WHERE d.name CONTAINS 'Công nghệ thông tin'
+                RETURN count(s) AS so_sv, sum(CASE WHEN s.status = 'Active' THEN 1 ELSE 0 END) AS dang_hoc
+                """,
+                "Số sinh viên khoa Công nghệ thông tin"
+            ),
+            # 13. Sinh viên bỏ học (Dropout)
+            (
+                r"(sinh\s+viên|sv)\s+(đã\s+)?(nghỉ\s+học|thôi\s+học|dropped\s+out|dropout)",
+                "DROPOUT_STUDENTS_COUNT",
+                """
+                MATCH (s:Student)
+                WHERE s.status = 'Dropped Out'
+                RETURN count(s) AS so_sv_thoi_hoc
+                """,
+                "Số lượng sinh viên đã thôi học / nghỉ học"
+            ),
+            # 14. Nhà cung cấp nhận chi phí lớn nhất
+            (
+                r"(nhà\s+cung\s+cấp|vendor)\s+(nào\s+)?(lớn\s+nhất|nhiều\s+tiền\s+nhất|chi\s+phí\s+cao\s+nhất)",
+                "TOP_VENDOR_EXPENSE",
+                """
+                MATCH (e:Expense)-[:PAID_TO]->(v:Vendor)
+                WHERE e.approval_status = 'Approved'
+                RETURN v.name AS ten_vendor, sum(e.amount) AS tong_tien_chi_vnd
+                ORDER BY tong_tien_chi_vnd DESC LIMIT 5
+                """,
+                "Top nhà cung cấp nhận chi phí lớn nhất"
             )
         ]
 

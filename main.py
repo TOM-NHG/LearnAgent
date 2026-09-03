@@ -160,6 +160,40 @@ def query_sqlite_fallback(template_name: str, params: dict) -> str:
             rate = (thu / phai_thu) * 100.0
             return f"🎯 **Tỷ lệ thu hồi học phí toàn trường:** đạt **{rate:.2f}%** ({thu:,.0f} đ / {phai_thu:,.0f} đ)."
 
+        elif template_name == "TOTAL_STUDENTS_AND_DEPARTMENTS":
+            sv_count = cursor.execute("SELECT COUNT(Student_ID) FROM dim_students;").fetchone()[0] or 0
+            dept_count = cursor.execute("SELECT COUNT(Department_ID) FROM dim_departments;").fetchone()[0] or 0
+            inv_count = cursor.execute("SELECT COUNT(Invoice_ID) FROM fact_tuition_invoices;").fetchone()[0] or 0
+            return f"📊 **Thống kê toàn hệ thống:** Hiện có **{sv_count:,} sinh viên** đang theo học tại **{dept_count} Khoa/Phòng ban** với tổng cộng **{inv_count:,} hóa đơn học phí** đã phát hành."
+
+        elif template_name == "IT_STUDENTS_COUNT":
+            row = cursor.execute("""
+                SELECT COUNT(s.Student_ID), SUM(CASE WHEN s.Status = 'Active' THEN 1 ELSE 0 END)
+                FROM dim_students s
+                JOIN dim_departments d ON s.Department_ID = d.Department_ID
+                WHERE d.Department_Name LIKE '%Công nghệ thông tin%';
+            """).fetchone()
+            return f"💻 **Khoa Công nghệ thông tin:** Hiện có tổng cộng **{row[0]:,} sinh viên** (trong đó **{row[1]:,} sinh viên** đang theo học `Active`)."
+
+        elif template_name == "DROPOUT_STUDENTS_COUNT":
+            count = cursor.execute("SELECT COUNT(Student_ID) FROM dim_students WHERE Status = 'Dropped Out';").fetchone()[0] or 0
+            total_sv = cursor.execute("SELECT COUNT(Student_ID) FROM dim_students;").fetchone()[0] or 1
+            return f"🛑 **Số lượng sinh viên thôi học (Dropped Out):** Có **{count:,} sinh viên** đã nghỉ học (chiếm **{(count*100.0/total_sv):.2f}%** tổng số sinh viên toàn trường)."
+
+        elif template_name == "TOP_VENDOR_EXPENSE":
+            rows = cursor.execute("""
+                SELECT Vendor_Name, SUM(Amount) AS Tong_Tien
+                FROM fact_expenses
+                WHERE Approval_Status = 'Approved'
+                GROUP BY Vendor_Name
+                ORDER BY Tong_Tien DESC
+                LIMIT 5;
+            """).fetchall()
+            resp = "🏢 **Top 5 Nhà cung cấp (Vendors) nhận chi phí lớn nhất:**\n"
+            for idx, r in enumerate(rows, 1):
+                resp += f"{idx}. **{r[0]}**: được giải ngân **{r[1]:,.0f} VNĐ**\n"
+            return resp
+
         return "Không có dữ liệu phù hợp."
     finally:
         conn.close()
