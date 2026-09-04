@@ -156,7 +156,44 @@ class MRPCypherCorrector:
             flags=re.IGNORECASE
         )
 
-        # 9. Gọi CypherQueryCorrector tích hợp nếu có schema
+        # 9. Tự động sửa lỗi inline property match: (d:Department {name: toLower(...)}) hoặc (d:Department {name: '...'})
+        # Ví dụ: (d:Department {name: toLower('công nghệ thông tin')}) => (d:Department) WHERE toLower(d.name) CONTAINS 'công nghệ thông tin'
+        def _fix_dept_inline(m):
+            var_name = m.group(1).strip() if m.group(1) else "d"
+            val_content = m.group(2).strip()
+            # Bóc tách toLower(...) nếu có
+            to_lower_m = re.search(r"toLower\s*\(\s*['\"]([^'\"]+)['\"]\s*\)", val_content, re.IGNORECASE)
+            if to_lower_m:
+                val = to_lower_m.group(1).strip()
+            else:
+                val = val_content.strip("'\"")
+            return f"({var_name}:Department) WHERE toLower({var_name}.name) CONTAINS toLower('{val}')"
+
+        if re.search(r"\(\s*(\w*)\s*:?\s*Department\s*\{\s*name\s*:\s*([^}]+)\s*\}\s*\)", q, re.IGNORECASE):
+            # Nếu câu lệnh đã có WHERE thì nối AND, nếu chưa thì thêm WHERE
+            if re.search(r"\bWHERE\b", q, re.IGNORECASE):
+                # Thay pattern inline thành (d:Department) và chèn điều kiện vào sau WHERE
+                m = re.search(r"\(\s*(\w*)\s*:?\s*Department\s*\{\s*name\s*:\s*([^}]+)\s*\}\s*\)", q, re.IGNORECASE)
+                if m:
+                    var_name = m.group(1).strip() if m.group(1) else "d"
+                    val_content = m.group(2).strip()
+                    to_lower_m = re.search(r"toLower\s*\(\s*['\"]([^'\"]+)['\"]\s*\)", val_content, re.IGNORECASE)
+                    clean_val = to_lower_m.group(1).strip() if to_lower_m else val_content.strip("'\"")
+                    q = re.sub(r"\(\s*" + re.escape(var_name) + r"\s*:?\s*Department\s*\{\s*name\s*:\s*[^}]+\s*\}\s*\)", f"({var_name}:Department)", q, count=1)
+                    q = re.sub(r"\bWHERE\b", f"WHERE toLower({var_name}.name) CONTAINS toLower('{clean_val}') AND", q, count=1, flags=re.IGNORECASE)
+            else:
+                # Chưa có WHERE
+                m = re.search(r"\(\s*(\w*)\s*:?\s*Department\s*\{\s*name\s*:\s*([^}]+)\s*\}\s*\)", q, re.IGNORECASE)
+                if m:
+                    var_name = m.group(1).strip() if m.group(1) else "d"
+                    val_content = m.group(2).strip()
+                    to_lower_m = re.search(r"toLower\s*\(\s*['\"]([^'\"]+)['\"]\s*\)", val_content, re.IGNORECASE)
+                    clean_val = to_lower_m.group(1).strip() if to_lower_m else val_content.strip("'\"")
+                    q = re.sub(r"\(\s*" + re.escape(var_name) + r"\s*:?\s*Department\s*\{\s*name\s*:\s*[^}]+\s*\}\s*\)", f"({var_name}:Department)", q, count=1)
+                    # Chèn WHERE trước RETURN / WITH
+                    q = re.sub(r"\b(RETURN|WITH)\b", f"WHERE toLower({var_name}.name) CONTAINS toLower('{clean_val}') \\1", q, count=1, flags=re.IGNORECASE)
+
+        # 10. Gọi CypherQueryCorrector tích hợp nếu có schema
         if self.builtin_corrector:
             try:
                 corrected = self.builtin_corrector(q)

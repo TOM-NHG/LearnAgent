@@ -29,6 +29,9 @@ class SmartAnswerFormatterAgent:
         "s.full_name": "Họ và Tên",
         "so_sv": "Số Lượng Sinh Viên",
         "so_sinh_vien": "Số Lượng Sinh Viên",
+        "dang_hoc": "Đang Theo Học (Active)",
+        "count(distinct s)": "Tổng Số Sinh Viên",
+        "count(s)": "Tổng Số Sinh Viên",
         "so_sinh_vien_bo_hoc": "Số SV Thôi Học",
         "diem_rui_ro": "Điểm Rủi Ro",
         "risk_score": "Điểm Rủi Ro",
@@ -150,7 +153,10 @@ class SmartAnswerFormatterAgent:
         return str(val)
 
     def _get_label(self, key: str) -> str:
-        # Check dictionary exact match
+        # Check dictionary exact match or lower match
+        key_lower = key.strip().lower()
+        if key_lower in self.COLUMN_LABELS:
+            return self.COLUMN_LABELS[key_lower]
         if key in self.COLUMN_LABELS:
             return self.COLUMN_LABELS[key]
         # Normalize snake_case or dotted alias
