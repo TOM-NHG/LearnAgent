@@ -17,16 +17,16 @@ class SemanticCypherCache:
         
         # Parameterized templates: (Pattern, Parameterized Cypher)
         self.templates = [
-            # 1. Đếm sinh viên theo khoa: "có bao nhiêu sinh viên khoa luật", "sinh viên khoa CNTT"
+            # 1. Đếm sinh viên theo khoa
             (
-                r"(?:bao\s+nhiêu\s+)?(?:sinh\s+viên|sv)\s+(?:của\s+|thuộc\s+|đang\s+học\s+tại\s+)?khoa\s+([a-zA-Z\s\u00C0-\u1EF9\-]+)",
+                r"(?:bao\s+nhiêu\s+)?(?:sinh\s+viên|sv)\s+(?:của\s+|thuộc\s+|đang\s+học\s+tại\s+)?khoa\s+([a-zA-Z\u00C0-\u1EF9\s\-]+)",
                 """MATCH (s:Student)-[:BELONGS_TO]->(d:Department)
 WHERE toLower(d.name) CONTAINS toLower('{dept}')
 RETURN d.name AS ten_khoa, count(DISTINCT s) AS so_sinh_vien, sum(CASE WHEN s.status = 'Active' THEN 1 ELSE 0 END) AS dang_hoc"""
             ),
-            # 2. Sinh viên nợ học phí theo khoa: "danh sách sinh viên nợ khoa luật", "sinh viên nợ học phí khoa kinh tế"
+            # 2. Sinh viên nợ học phí theo khoa
             (
-                r"(?:danh\s+sách\s+)?(?:sinh\s+viên|sv)\s+(?:còn\s+)?(?:nợ|dư\s+nợ)\s+(?:học\s+phí\s+)?(?:của\s+)?khoa\s+([a-zA-Z\s\u00C0-\u1EF9\-]+)",
+                r"(?:danh\s+sách\s+)?(?:sinh\s+viên|sv)\s+.*(?:nợ|dư\s+nợ).*khoa\s+([a-zA-Z\u00C0-\u1EF9\s\-]+)",
                 """MATCH (s:Student)-[:BELONGS_TO]->(d:Department)
 WHERE toLower(d.name) CONTAINS toLower('{dept}') AND s.total_remaining_debt > 0
 RETURN s.id AS mssv, s.full_name AS ho_ten, s.total_remaining_debt AS tien_no, s.payment_completion_rate AS ty_le_hoan_thanh
@@ -61,7 +61,7 @@ LIMIT {limit}"""
             ),
             # 6. Ngân sách khoa lớn nhất / chi phí giải ngân
             (
-                r"(?:khoa|phòng\s+ban)\s+(?:nào\s+)?(?:ngân\s+sách\s+lớn\s+nhất|ngân\s+sách\s+cao\s+nhất|chi\s+phí\s+nhiều\s+nhất)",
+                r"(?:khoa|phòng\s+ban).*(?:ngân\s+sách\s+lớn\s+nhất|ngân\s+sách\s+cao\s+nhất|chi\s+phí\s+nhiều\s+nhất)",
                 """MATCH (d:Department)
 OPTIONAL MATCH (d)<-[:INCURRED_BY]-(e:Expense)
 WHERE e.approval_status = 'Approved' OR e.approval_status IS NULL
@@ -94,6 +94,12 @@ RETURN count(DISTINCT i) AS so_hoa_don_bi_phat, sum(i.late_fee) AS tong_tien_pha
             )
         ]
 
+    DEPT_NAMES = [
+        "công nghệ thông tin", "tài chính - kế toán", "quản trị kinh doanh", "kinh tế",
+        "luật", "ngoại ngữ", "kỹ thuật điện", "kỹ thuật xây dựng", "công nghệ sinh học",
+        "du lịch - khách sạn", "truyền thông", "khoa học dữ liệu"
+    ]
+
     def normalize(self, text: str) -> str:
         return re.sub(r"[?!.,]", "", text.strip().lower())
 
@@ -109,20 +115,24 @@ RETURN count(DISTINCT i) AS so_hoa_don_bi_phat, sum(i.late_fee) AS tong_tien_pha
         for pattern, cypher_tmpl in self.templates:
             match = re.search(pattern, norm_q, re.IGNORECASE)
             if match:
-                groups = match.groups()
                 # Determine limit
                 limit_val = 5
                 limit_search = re.search(r"top\s*(\d+)", norm_q)
                 if limit_search:
                     limit_val = int(limit_search.group(1))
 
-                # Determine dept
+                # Determine dept cleanly from known list first
                 dept_val = ""
-                if "{dept}" in cypher_tmpl and groups:
-                    dept_val = groups[0].strip()
+                for known_d in self.DEPT_NAMES:
+                    if known_d in norm_q:
+                        dept_val = known_d
+                        break
+                
+                # Fallback to group
+                if not dept_val and match.groups():
+                    dept_val = match.group(1).split()[0].strip()
 
                 rendered = cypher_tmpl.format(dept=dept_val, limit=limit_val)
-                # Store in exact cache for next time
                 self.exact_cache[norm_q] = rendered
                 return rendered
 
