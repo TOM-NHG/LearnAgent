@@ -300,25 +300,30 @@ async def chat_endpoint(req: ChatRequest):
                 }
             )
 
-    # 2. Neo4j Graph Cypher QA Chain via Active Model
+    # 2. Optimized Pipeline: 1-Turn LLM Cypher Generation + SmartAnswerFormatterAgent
     try:
-        from graph_qa import get_graph_qa_chain
-        qa_chain = get_graph_qa_chain()
-        t_llm_start = time.perf_counter()
-        res = qa_chain.invoke({"query": req.question})
+        from graph_qa import execute_graph_query_raw
+        from smart_formatter_agent import smart_formatter
+
+        raw_res = execute_graph_query_raw(req.question)
+        chosen_cypher = raw_res.get("cypher")
+        records = raw_res.get("records", [])
+        llm_ms = raw_res.get("gen_time_ms", 0)
+
+        # Smart Formatter formats data instantly without second LLM turn
+        formatted_answer = smart_formatter.format(
+            question=req.question,
+            records=records,
+            cypher_query=chosen_cypher
+        )
+
         total_ms = (time.perf_counter() - t_start) * 1000
-        llm_ms = (time.perf_counter() - t_llm_start) * 1000
-
-        answer = res.get("result", "Không thể tạo câu trả lời.")
-        cypher_used = [step["query"] for step in res.get("intermediate_steps", []) if "query" in step]
-        chosen_cypher = cypher_used[0] if cypher_used else None
-
-        source_label = f"{model_manager.provider.upper()}_GRAPH_LLM"
+        source_label = f"{model_manager.provider.upper()}_SMART_FORMATTER"
         model_manager.record_metric(req.question, source_label, total_ms, cypher_time_ms=llm_ms, cypher=chosen_cypher)
 
         return ChatResponse(
             question=req.question,
-            answer=answer,
+            answer=formatted_answer,
             status="success",
             source=source_label,
             total_time_ms=round(total_ms, 2),
@@ -326,7 +331,8 @@ async def chat_endpoint(req: ChatRequest):
             metadata={
                 "cypher": chosen_cypher,
                 "provider": model_manager.provider,
-                "model": model_manager.model
+                "model": model_manager.model,
+                "records_count": len(records)
             }
         )
     except Exception as e:

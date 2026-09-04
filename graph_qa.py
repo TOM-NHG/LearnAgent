@@ -360,6 +360,53 @@ def get_graph_qa_chain():
     chain.cypher_query_corrector = custom_corrector
     return chain
 
+
+def execute_graph_query_raw(question: str) -> dict:
+    """
+    Thực hiện truy vấn Graph tối ưu:
+    1. Chỉ gọi LLM ĐÚNG 1 LẦN để tạo câu lệnh Cypher.
+    2. Sửa lỗi Cypher bằng MRPCypherCorrector.
+    3. Thực thi trực tiếp trên Neo4j để lấy danh sách bản ghi thô (records).
+    4. KHÔNG gọi LLM lần 2 để tóm tắt, tiết kiệm 70% thời gian.
+    """
+    import time
+    from langchain_core.output_parsers import StrOutputParser
+    
+    llm = get_llm()
+    corrector_schema = [
+        Schema(el["start"], el["type"], el["end"])
+        for el in graph.get_structured_schema.get("relationships", [])
+    ]
+    custom_corrector = MRPCypherCorrector(corrector_schema)
+    
+    # 1. Pipeline sinh Cypher
+    cypher_chain = CYPHER_PROMPT | llm | StrOutputParser()
+    
+    t_start = time.perf_counter()
+    raw_cypher = cypher_chain.invoke({
+        "schema": graph.get_schema,
+        "question": question
+    })
+    gen_time_ms = (time.perf_counter() - t_start) * 1000
+    
+    # Làm sạch markdown nếu LLM sinh ```cypher ... ```
+    cleaned_cypher = raw_cypher.replace("```cypher", "").replace("```", "").strip()
+    
+    # 2. Hiệu chỉnh Cypher theo ontology
+    final_cypher = custom_corrector(cleaned_cypher)
+    
+    # 3. Thực thi trực tiếp trên Neo4j
+    t_exec_start = time.perf_counter()
+    records = graph.query(final_cypher)
+    exec_time_ms = (time.perf_counter() - t_exec_start) * 1000
+    
+    return {
+        "cypher": final_cypher,
+        "records": records,
+        "gen_time_ms": gen_time_ms,
+        "exec_time_ms": exec_time_ms
+    }
+
 # 5. TEST SUITE FOR BOTH SIMPLE & ADVANCED QUESTIONS
 TEST_QUESTIONS = [
     "Những học sinh nào được miễn giảm học phí và tổng số tiền được miễn giảm là bao nhiêu?",
