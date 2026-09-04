@@ -279,28 +279,7 @@ async def chat_endpoint(req: ChatRequest):
     if not req.question or not req.question.strip():
         raise HTTPException(status_code=400, detail="Câu hỏi không được để trống.")
 
-    # 1. Fast-Path Router (Only if enabled in model_manager)
-    if model_manager.fast_path_enabled:
-        routed = fast_router.route(req.question)
-        if routed:
-            answer_text = query_sqlite_fallback(routed["template_name"], routed["params"])
-            total_ms = (time.perf_counter() - t_start) * 1000
-            model_manager.record_metric(req.question, "FAST_PATH_TEMPLATE", total_ms, cypher=routed["cypher"])
-            return ChatResponse(
-                question=req.question,
-                answer=answer_text,
-                status="success",
-                source="FAST_PATH_TEMPLATE",
-                total_time_ms=round(total_ms, 2),
-                routing_time_ms=routed["routing_time_ms"],
-                metadata={
-                    "template": routed["template_name"],
-                    "cypher": routed["cypher"],
-                    "model": "Deterministic Regex/SQL"
-                }
-            )
-
-    # 2. Optimized Pipeline: 1-Turn LLM Cypher Generation + SmartAnswerFormatterAgent
+    # 1. Pipeline V3.0: Semantic Cache + Slim LLM Cypher Generator + SmartAnswerFormatterAgent
     try:
         from graph_qa import execute_graph_query_raw
         from smart_formatter_agent import smart_formatter
@@ -309,6 +288,7 @@ async def chat_endpoint(req: ChatRequest):
         chosen_cypher = raw_res.get("cypher")
         records = raw_res.get("records", [])
         llm_ms = raw_res.get("gen_time_ms", 0)
+        is_cached = raw_res.get("cached", False)
 
         # Smart Formatter formats data instantly without second LLM turn
         formatted_answer = smart_formatter.format(
@@ -318,7 +298,7 @@ async def chat_endpoint(req: ChatRequest):
         )
 
         total_ms = (time.perf_counter() - t_start) * 1000
-        source_label = f"{model_manager.provider.upper()}_SMART_FORMATTER"
+        source_label = "SEMANTIC_CACHE" if is_cached else f"{model_manager.provider.upper()}_SLIM_LLM"
         model_manager.record_metric(req.question, source_label, total_ms, cypher_time_ms=llm_ms, cypher=chosen_cypher)
 
         return ChatResponse(
@@ -330,8 +310,9 @@ async def chat_endpoint(req: ChatRequest):
             cypher_time_ms=round(llm_ms, 2),
             metadata={
                 "cypher": chosen_cypher,
-                "provider": model_manager.provider,
-                "model": model_manager.model,
+                "provider": model_manager.provider if not is_cached else "CACHE",
+                "model": model_manager.model if not is_cached else "Instant",
+                "cached": is_cached,
                 "records_count": len(records)
             }
         )
